@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 3584698451087164511}
   - component: {fileID: 3584698451087164508}
   - component: {fileID: 7396699320908357050}
-  m_Layer: 8
+  - component: {fileID: 5069942265949867039}
+  m_Layer: 6
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,8 +97,6 @@ MonoBehaviour:
   _rigidbody: {fileID: 3584698451087164511}
   _rotatableTransform: {fileID: 7373848885219825279}
   _scalableTransform: {fileID: 3584698450606065405}
-  _firstCollider: {fileID: 0}
-  _secondCollider: {fileID: 0}
   StretchMultiplier: 0.002
   SquashMultiplier: 0.04
   DelayMultiplier: 0.01
@@ -115,6 +114,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5069942265949867039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584698451087164510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57145b750ba4502448954f2de07dd8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxBallSpeed: 20
+  _maxBallHorizontalSpeed: 10
+  IsGround: 0
 --- !u!1 &3584698452484104035
 GameObject:
   m_ObjectHideFlags: 0

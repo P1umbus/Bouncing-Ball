@@ -60,15 +60,22 @@ public class SquashAndStretch : MonoBehaviour
 
         _savedContactNormal = collision.contacts[0].normal;
         _savedVelocity = _rigidbody.velocity;
-        float velocityProjectionMagnitude = Vector3.Project(_savedVelocity, -_savedContactNormal).magnitude;
 
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Trampoline")) //Trampoline
+        {
+            _savedVelocity *= 2;
+            _rigidbody.velocity = _savedVelocity;
+        }
+
+        float velocityProjectionMagnitude = Vector3.Project(_savedVelocity, -_savedContactNormal).magnitude;
         float angleMultiplier = Mathf.Abs(Vector3.Angle(_savedVelocity, _savedContactNormal) - 90) / 100;
 
-        if (velocityProjectionMagnitude < 6 || velocityProjectionMagnitude < _rigidbody.velocity.magnitude * 0.6f)
+        if (velocityProjectionMagnitude < 5 || velocityProjectionMagnitude < _rigidbody.velocity.magnitude * 0.5f)
             return;
 
         if (_ground) 
             return;
+
         _ground = true;
         _delay = true;
 

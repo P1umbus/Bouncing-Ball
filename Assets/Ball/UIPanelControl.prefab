@@ -89,6 +89,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
-  _forceMagnitudeButtons: 40
-  _forceMagnitudeTouches: 0.4
-  _maxBallSpeed: 20
+  _limiter: {fileID: 0}
+  _forceMagnitudeTouches: 0.5
+  _limitVerticalBoostSpeed: 5

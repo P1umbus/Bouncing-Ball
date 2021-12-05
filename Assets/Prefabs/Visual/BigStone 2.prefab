@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6840711654585342624}
   - component: {fileID: 3431536957564762548}
   - component: {fileID: 7729925451284817532}
-  - component: {fileID: 6985959223289841464}
+  - component: {fileID: 1796003432549820175}
   m_Layer: 0
   m_Name: BigStone 2
   m_TagString: Untagged
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 677605c34bb592e4db39513ae3bd4417, type: 2}
+  - {fileID: 2100000, guid: 6e1d5c048d3ec914aab12aa6d6836cf7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6985959223289841464
-BoxCollider:
+--- !u!135 &1796003432549820175
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1491714, y: 1.4626094, z: 2.2310767}
-  m_Center: {x: -0.06822038, y: 0.008836626, z: -0.10111056}
+  m_Radius: 1.1155385
+  m_Center: {x: -0.06822038, y: 0.008836627, z: -0.10111058}
