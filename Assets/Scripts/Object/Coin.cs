@@ -8,6 +8,5 @@ public class Coin : MonoBehaviour
     {
         GameEvent.TakeCoin?.Invoke();
         this.gameObject.SetActive(false);
-
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CoinManager : MonoBehaviour
 {
     [SerializeField] private Text CoinNumbText;
-    [SerializeField]private AudioSource _CoinSound;
+    [SerializeField] private AudioSource _CoinSound;
     [SerializeField] private int MaxCoinNamber;
     private int CoinNamber;
    
