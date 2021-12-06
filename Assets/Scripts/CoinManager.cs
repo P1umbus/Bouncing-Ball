@@ -5,19 +5,21 @@ using UnityEngine.UI;
 
 public class CoinManager : MonoBehaviour
 {
+    [HideInInspector] public static CoinManager Instance;
+    public List<Coin> _Coin;
     [SerializeField] private Text CoinNumbText;
     [SerializeField]private AudioSource _CoinSound;
-    [SerializeField] private int MaxCoinNamber;
     private int CoinNamber;
-   
+    private float CollectedCoinsPercentage;
 
     private void Awake()
     {
-        _CoinSound= GetComponent<AudioSource>();
+        Instance = this;
+        _CoinSound = GetComponent<AudioSource>();
         GameEvent.TakeCoin += IncreaseCoinNumb;
     }
     private void Start()
-    {
+    { 
         UpdateUI();
     }
     private void IncreaseCoinNumb()
@@ -33,7 +35,7 @@ public class CoinManager : MonoBehaviour
     }
     private void UpdateUI()
     {
-        CoinNumbText.text = CoinNamber.ToString() + "/" + MaxCoinNamber.ToString();
+        CoinNumbText.text = CoinNamber.ToString() + "/" + _Coin.Count;
     }
     private void PlayCoinSound()
     {
@@ -43,6 +45,10 @@ public class CoinManager : MonoBehaviour
     public int GetCoin()
     {
         return CoinNamber;
+    }
+    public float GetCollectedCoinsPercentage()
+    {
+        return (CoinNamber/_Coin.Count);
     }
     private void OnDestroy()
     {
