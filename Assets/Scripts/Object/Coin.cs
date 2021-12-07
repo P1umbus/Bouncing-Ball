@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    private void Awake()
+    private void Start()
     {
         CoinManager.Instance._Coin.Add(this);
     }

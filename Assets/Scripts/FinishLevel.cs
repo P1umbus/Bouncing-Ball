@@ -38,13 +38,14 @@ public class FinishLevel : MonoBehaviour
 
     IEnumerator Finish()
     {
-        if (_CoinManager.GetCollectedCoinsPercentage() <= 20)
+        var a = _CoinManager.GetCollectedCoinsPercentage();
+        if (a < 50 && a > 20)
         {
             Starts[0].SetActive(true);
             PlayerPrefs.SetInt(StarInLvlNamePP, 1);
             _FinishMus.Play();
         }
-        else if (_CoinManager.GetCollectedCoinsPercentage() <= 50)
+        else if (a < 100 && a >= 50)
         {
             Starts[0].SetActive(true);
             _FinishMus.Play();
@@ -53,7 +54,7 @@ public class FinishLevel : MonoBehaviour
             PlayerPrefs.SetInt(StarInLvlNamePP, 2);
             _FinishMus.Play();
         }
-        else if (_CoinManager.GetCollectedCoinsPercentage() == 100)
+        else if (a == 100)
         {
             Starts[0].SetActive(true);
             _FinishMus.Play();
