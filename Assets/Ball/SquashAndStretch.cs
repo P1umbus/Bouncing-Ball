@@ -33,7 +33,8 @@ public class SquashAndStretch : MonoBehaviour
     {
         if (_ground == false)
         {
-            _targetRotation = Quaternion.LookRotation(_rigidbody.velocity, Vector3.forward);
+            if (_rigidbody.velocity.magnitude != 0)
+                _targetRotation = Quaternion.LookRotation(_rigidbody.velocity, Vector3.forward);
             float velocity = _rigidbody.velocity.magnitude;
             _targetScale = 1f + velocity * velocity * StretchMultiplier;
             _targetScale = Mathf.Clamp(_targetScale, 1f, 2f);
