@@ -13,6 +13,7 @@ public class FinishLevel : MonoBehaviour
     [SerializeField] private int NumbLevel;
     private string AccessNamePP;
     private string StarInLvlNamePP;
+    private int StartInLvl;
     private CoinManager _CoinManager;
 
 
@@ -39,10 +40,11 @@ public class FinishLevel : MonoBehaviour
     IEnumerator Finish()
     {
         var a = _CoinManager.GetCollectedCoinsPercentage();
+        var b = PlayerPrefs.GetInt(StarInLvlNamePP);
         if (a < 50 && a > 20)
         {
             Starts[0].SetActive(true);
-            PlayerPrefs.SetInt(StarInLvlNamePP, 1);
+            StartInLvl = 1;
             _FinishMus.Play();
         }
         else if (a < 100 && a >= 50)
@@ -51,7 +53,7 @@ public class FinishLevel : MonoBehaviour
             _FinishMus.Play();
             yield return new WaitForSeconds(1f);
             Starts[1].SetActive(true);
-            PlayerPrefs.SetInt(StarInLvlNamePP, 2);
+            StartInLvl = 2;
             _FinishMus.Play();
         }
         else if (a == 100)
@@ -63,8 +65,12 @@ public class FinishLevel : MonoBehaviour
             _FinishMus.Play();
             yield return new WaitForSeconds(1f);
             Starts[2].SetActive(true);
-            PlayerPrefs.SetInt(StarInLvlNamePP, 3);
+            StartInLvl = 3;
             _FinishMus.Play();
+        }
+        if(b < StartInLvl)
+        {
+            PlayerPrefs.SetInt(StarInLvlNamePP, StartInLvl);
         }
     }
 
