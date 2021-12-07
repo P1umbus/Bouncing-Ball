@@ -10847,6 +10847,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2685038113774690714, guid: 7cfdbef6973d2ed4992318125e97920d, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1322147445}
     - target: {fileID: 2685038113774690789, guid: 7cfdbef6973d2ed4992318125e97920d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -30500,6 +30504,11 @@ PrefabInstance:
       objectReference: {fileID: 1867624648}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0395efcbcf2c8f94f81f275efd59793d, type: 3}
+--- !u!20 &1322147445 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1183332822904725380, guid: 0395efcbcf2c8f94f81f275efd59793d, type: 3}
+  m_PrefabInstance: {fileID: 1322147444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322535220
 GameObject:
   m_ObjectHideFlags: 0
