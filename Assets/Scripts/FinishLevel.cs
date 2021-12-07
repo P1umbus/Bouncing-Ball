@@ -30,21 +30,19 @@ public class FinishLevel : MonoBehaviour
 
     private void OnFinish()
     {
+        SetData();
         ControllCanvas.SetActive(false);
         _Rigidbody.isKinematic = true;
         FinishCanvas.SetActive(true);
-        SetData();
         StartCoroutine(Finish());
     }
 
     IEnumerator Finish()
     {
         var a = _CoinManager.GetCollectedCoinsPercentage();
-        var b = PlayerPrefs.GetInt(StarInLvlNamePP);
         if (a < 50 && a > 20)
         {
             Starts[0].SetActive(true);
-            StartInLvl = 1;
             _FinishMus.Play();
         }
         else if (a < 100 && a >= 50)
@@ -53,7 +51,6 @@ public class FinishLevel : MonoBehaviour
             _FinishMus.Play();
             yield return new WaitForSeconds(1f);
             Starts[1].SetActive(true);
-            StartInLvl = 2;
             _FinishMus.Play();
         }
         else if (a == 100)
@@ -65,19 +62,34 @@ public class FinishLevel : MonoBehaviour
             _FinishMus.Play();
             yield return new WaitForSeconds(1f);
             Starts[2].SetActive(true);
-            StartInLvl = 3;
             _FinishMus.Play();
-        }
-        if(b < StartInLvl)
-        {
-            PlayerPrefs.SetInt(StarInLvlNamePP, StartInLvl);
         }
     }
 
     private void SetData()
     {
         PlayerPrefs.SetInt(AccessNamePP, 1);
+        var a = _CoinManager.GetCollectedCoinsPercentage();
+        var b = PlayerPrefs.GetInt(StarInLvlNamePP);
+        if(a < 50 && a > 20)
+        {
+            StartInLvl = 1;
+        }
+        else if (a < 100 && a >= 50)
+        {
+            StartInLvl = 2;
+        }
+        else if (a == 100)
+        {
+            StartInLvl = 3;
+        }
+        if (b < StartInLvl)
+        {
+            PlayerPrefs.SetInt(StarInLvlNamePP, StartInLvl);
+        }
+
     }
+
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
