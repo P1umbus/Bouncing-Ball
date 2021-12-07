@@ -2,33 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animation))]
 public class Trampoline : MonoBehaviour
 {
-    [Header("AnimationSetting")]
-    [SerializeField] private float _rotationOnCollision;
-    [SerializeField] private float _speedRotation;
+    //[Header("AnimationSetting")]
+    //[SerializeField] private float _rotationOnCollision;
+    //[SerializeField] private float _speedRotation;
+    private Animation _animation;
+      
+    //private float _currentRotation; //
 
-    //[Header("PhysicsSetting")]
-    //[SerializeField] private float _boostSpeed;
-
-    private float _currentRotation; //
-
-    private void Update()
+    private void Awake()
     {
-        if (_currentRotation > 0)
-        {
-            float rotation = _speedRotation;
-
-            _currentRotation -= rotation;
-            transform.Rotate(Vector3.up * rotation);
-        }
+        _animation = GetComponent<Animation>();
     }
+
+    //private void Update()
+    //{
+    //    if (_currentRotation > 0)
+    //    {
+    //        float rotation = _speedRotation;
+
+    //        _currentRotation -= rotation;
+    //        transform.Rotate(Vector3.up * rotation);
+    //    }
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
-        _currentRotation = _rotationOnCollision;
-
-        //if (collision.gameObject.layer == LayerMask.NameToLayer("Ball"))
-        //    collision.rigidbody.velocity += Vector3.up * _boostSpeed;
+        //_currentRotation = _rotationOnCollision;
+        _animation.Play();
     }
 }

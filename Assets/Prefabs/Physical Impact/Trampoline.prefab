@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8227378962284011580}
   - component: {fileID: 6478244240943301764}
   - component: {fileID: 5311270295135040211}
+  - component: {fileID: 4034924341603124096}
   m_Layer: 7
   m_Name: Trampoline
   m_TagString: Untagged
@@ -110,3 +111,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotationOnCollision: 40
   _speedRotation: 4
+  _animation: {fileID: 4034924341603124096}
+--- !u!111 &4034924341603124096
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629883147604619419}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: aee69ca8f26a40b468bbf06819964fda, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: aee69ca8f26a40b468bbf06819964fda, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
