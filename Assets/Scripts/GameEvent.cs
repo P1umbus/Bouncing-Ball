@@ -6,4 +6,10 @@ using UnityEngine;
 public class GameEvent : MonoBehaviour
 {
     public static Action TakeCoin;
+
+    public class SoundEvents
+    {
+        public static Action ChangeSoundÎptions;
+        public static Action <float> ChangeSoundValue;
+    }
 }
