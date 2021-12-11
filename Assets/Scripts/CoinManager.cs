@@ -26,7 +26,6 @@ public class CoinManager : MonoBehaviour
     {
         CoinNamber++;
         OnCoinTake();
-        Debug.Log(CoinNamber);
     }
     private void OnCoinTake()
     {

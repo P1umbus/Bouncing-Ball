@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 3584698451087164508}
   - component: {fileID: 7396699320908357050}
   - component: {fileID: 5069942265949867039}
+  - component: {fileID: 3056489523404426948}
   m_Layer: 6
   m_Name: Ball
   m_TagString: Untagged
@@ -129,6 +130,22 @@ MonoBehaviour:
   _maxBallSpeed: 20
   _maxBallHorizontalSpeed: 10
   IsGround: 0
+--- !u!114 &3056489523404426948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584698451087164510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914c0daf379bde24ba310f17d60ec2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Materials:
+  - {fileID: 2100000, guid: c6c0973a20e300448bf8c47f3d179cfc, type: 2}
+  - {fileID: 2100000, guid: 28eaba80f09dd5f45be4e5509abd7fee, type: 2}
+  Ball: {fileID: 3584698452484104033}
 --- !u!1 &3584698452484104035
 GameObject:
   m_ObjectHideFlags: 0
