@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyScript : MonoBehaviour
+public class ShopScript : MonoBehaviour
 {
     [SerializeField] private int Price;
+    [SerializeField] private int SellPrice;
     [SerializeField] private int SkinNumb;
     [SerializeField] private Text PriceText;
     private int Status;
@@ -37,6 +38,27 @@ public class BuyScript : MonoBehaviour
             StartCoroutine(Select());
         }
     }
+    public void Sell()
+    {
+        if(isPurchased == true)
+        {
+            if(IsSelectedSkin() == true)
+            {
+                PlayerPrefs.SetInt(PPname, 0);
+                isPurchased = false;
+                PriceText.text = Price.ToString();
+                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+                PlayerPrefs.SetInt("SelectedSkin", 0);
+            }
+            else
+            {
+                PlayerPrefs.SetInt(PPname, 0);
+                isPurchased = false;
+                PriceText.text = Price.ToString();
+                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+            }
+        }
+    }
     IEnumerator Select()
     {
         string lastText = PriceText.text;
@@ -56,6 +78,15 @@ public class BuyScript : MonoBehaviour
             PriceText.text = "Bought";
             isPurchased = true;
         }
+    }
+    private bool IsSelectedSkin()
+    {
+        var a = PlayerPrefs.GetInt("SelectedSkin");
+        if(SkinNumb == a)
+        {
+            return true;
+        }
+        return false;
     }
     private void LoadDate()
     {

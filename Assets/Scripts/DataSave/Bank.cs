@@ -58,6 +58,19 @@ public class Bank : MonoBehaviour
         SavaData();
         Debug.Log(CoinNumb);
     }
+    public void PluralIncreaseCoinNumb(int coin)
+    {
+        if (coin >= 0)
+        {
+            CoinNumb += coin;
+            SavaData();
+            GameEvent.ChangeCoinNumb?.Invoke();
+        }
+        else
+        {
+            Debug.LogError("You can't plural increase the number of coins by a negative number ");
+        }
+    }
     public void ReduceCoinNumb(int coin)
     {
         if(coin >= 0)
