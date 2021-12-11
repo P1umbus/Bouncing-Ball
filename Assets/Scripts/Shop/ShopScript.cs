@@ -16,6 +16,7 @@ public class ShopScript : MonoBehaviour
     private void Awake()
     {
         LoadDate();
+        GameEvent.ChangeMaterial += CheckStatus;
     }
 
     void Start()
@@ -25,13 +26,15 @@ public class ShopScript : MonoBehaviour
 
     public void Buy()
     {
+        Debug.Log("TruBuy");
         if (Bank.instance.IsEnough(Price) && isPurchased == false)
         {
+            Debug.Log("TruBuy1");
             PlayerPrefs.SetInt(PPname, 1);
             PlayerPrefs.Save();
             Bank.instance.ReduceCoinNumb(Price);
-            PriceText.text = "Bought";
-            isPurchased = true;
+            UpdateChange();
+            GameEvent.SoundEvents.Shop.Buy?.Invoke();
         }
         else if (isPurchased == true)
         {
@@ -42,41 +45,51 @@ public class ShopScript : MonoBehaviour
     {
         if(isPurchased == true)
         {
-            if(IsSelectedSkin() == true)
+            GameEvent.SoundEvents.Shop.Sell?.Invoke();
+            if (IsSelectedSkin() == true)
             {
                 PlayerPrefs.SetInt(PPname, 0);
-                isPurchased = false;
-                PriceText.text = Price.ToString();
                 Bank.instance.PluralIncreaseCoinNumb(SellPrice);
                 PlayerPrefs.SetInt("SelectedSkin", 0);
+                UpdateChange();
+                GameEvent.ChangeMaterial();
             }
             else
             {
                 PlayerPrefs.SetInt(PPname, 0);
-                isPurchased = false;
+                UpdateChange();
                 PriceText.text = Price.ToString();
                 Bank.instance.PluralIncreaseCoinNumb(SellPrice);
             }
+            
         }
     }
     IEnumerator Select()
     {
-        string lastText = PriceText.text;
-        PriceText.text = "Taken";
         PlayerPrefs.SetInt("SelectedSkin", SkinNumb);
+        GameEvent.ChangeMaterial?.Invoke();
         yield return new WaitForSeconds(1f);
-        PriceText.text = lastText;
     }
     private void CheckStatus()
     {
         if(Status == 0)
         {
             PriceText.text = Price.ToString();
+            isPurchased = false;
         }
         else if(Status == 1)
         {
-            PriceText.text = "Bought";
-            isPurchased = true;
+            if (IsSelectedSkin())
+            {
+                PriceText.text = "Taken";
+                isPurchased = true;
+            }
+            else
+            {
+                PriceText.text = "Bought";
+                isPurchased = true;
+            }
+           
         }
     }
     private bool IsSelectedSkin()
@@ -100,5 +113,10 @@ public class ShopScript : MonoBehaviour
             PlayerPrefs.SetInt(PPname, 0);
             Status = PlayerPrefs.GetInt(PPname);
         }
+    }
+    private void UpdateChange()
+    {
+        LoadDate();
+        CheckStatus();
     }
 }

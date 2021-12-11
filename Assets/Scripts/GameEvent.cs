@@ -7,9 +7,16 @@ public class GameEvent : MonoBehaviour
 {
     public static Action TakeCoin;
     public static Action ChangeCoinNumb;
+    public static Action ChangeMaterial;
     public class SoundEvents
     {
+        public class Shop
+        {
+            public static Action Sell;
+            public static Action Buy;
+        }
         public static Action ChangeSoundÎptions;
         public static Action <float> ChangeSoundValue;
+       
     }
 }
