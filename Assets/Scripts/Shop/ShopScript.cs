@@ -9,6 +9,7 @@ public class ShopScript : MonoBehaviour
     [SerializeField] private int SellPrice;
     [SerializeField] private int SkinNumb;
     [SerializeField] private Text PriceText;
+    [SerializeField] private bool CanSell = true;
     private int Status;
     private bool isPurchased = false;
     private string PPname;
@@ -43,32 +44,46 @@ public class ShopScript : MonoBehaviour
     }
     public void Sell()
     {
-        if(isPurchased == true)
+        if(CanSell == true)
         {
-            GameEvent.SoundEvents.Shop.Sell?.Invoke();
-            if (IsSelectedSkin() == true)
+            if (isPurchased == true)
             {
-                PlayerPrefs.SetInt(PPname, 0);
-                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
-                PlayerPrefs.SetInt("SelectedSkin", 0);
-                UpdateChange();
-                GameEvent.ChangeMaterial();
+                GameEvent.SoundEvents.Shop.Sell?.Invoke();
+                if (IsSelectedSkin() == true)
+                {
+                    PlayerPrefs.SetInt(PPname, 0);
+                    Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+                    PlayerPrefs.SetInt("SelectedSkin", 0);
+                    UpdateChange();
+                    GameEvent.ChangeMaterial();
+                }
+                else
+                {
+                    PlayerPrefs.SetInt(PPname, 0);
+                    UpdateChange();
+                    PriceText.text = Price.ToString();
+                    Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+                }
+
             }
-            else
-            {
-                PlayerPrefs.SetInt(PPname, 0);
-                UpdateChange();
-                PriceText.text = Price.ToString();
-                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
-            }
-            
+
         }
+        
     }
     IEnumerator Select()
     {
         PlayerPrefs.SetInt("SelectedSkin", SkinNumb);
         GameEvent.ChangeMaterial?.Invoke();
         yield return new WaitForSeconds(1f);
+    }
+    private bool IsSelectedSkin()
+    {
+        var a = PlayerPrefs.GetInt("SelectedSkin");
+        if (SkinNumb == a)
+        {
+            return true;
+        }
+        return false;
     }
     private void CheckStatus()
     {
@@ -91,15 +106,6 @@ public class ShopScript : MonoBehaviour
             }
            
         }
-    }
-    private bool IsSelectedSkin()
-    {
-        var a = PlayerPrefs.GetInt("SelectedSkin");
-        if(SkinNumb == a)
-        {
-            return true;
-        }
-        return false;
     }
     private void LoadDate()
     {

@@ -21,7 +21,6 @@ public class Bank : MonoBehaviour
     {
         DataLoad();
         GameEvent.TakeCoin += IncreaseCoinNumb;
-        CoinNumb += 40;
     }
     public int GetCoin()
     {
