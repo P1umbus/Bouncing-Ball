@@ -16,8 +16,10 @@ public class ShopScript : MonoBehaviour
 
     private void Awake()
     {
+
         LoadDate();
         GameEvent.ChangeMaterial += CheckStatus;
+
     }
 
     void Start()
@@ -39,42 +41,52 @@ public class ShopScript : MonoBehaviour
         }
         else if (isPurchased == true)
         {
-            StartCoroutine(Select());
+            Select();
         }
     }
-    public void Sell()
+    public void TrySell()
     {
         if(CanSell == true)
         {
             if (isPurchased == true)
             {
-                GameEvent.SoundEvents.Shop.Sell?.Invoke();
-                if (IsSelectedSkin() == true)
-                {
-                    PlayerPrefs.SetInt(PPname, 0);
-                    Bank.instance.PluralIncreaseCoinNumb(SellPrice);
-                    PlayerPrefs.SetInt("SelectedSkin", 0);
-                    UpdateChange();
-                    GameEvent.ChangeMaterial();
-                }
-                else
-                {
-                    PlayerPrefs.SetInt(PPname, 0);
-                    UpdateChange();
-                    PriceText.text = Price.ToString();
-                    Bank.instance.PluralIncreaseCoinNumb(SellPrice);
-                }
-
+                GameEvent.TrySell?.Invoke(this);
             }
-
         }
         
     }
-    IEnumerator Select()
+    public void Sell()
+    {
+        if (isPurchased == true)
+        {
+            GameEvent.SoundEvents.Shop.Sell?.Invoke();
+            if (IsSelectedSkin() == true)
+            {
+                PlayerPrefs.SetInt(PPname, 0);
+                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+                PlayerPrefs.SetInt("SelectedSkin", 0);
+                UpdateChange();
+                GameEvent.ChangeMaterial();
+            }
+            else
+            {
+                PlayerPrefs.SetInt(PPname, 0);
+                UpdateChange();
+                PriceText.text = Price.ToString();
+                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+            }
+
+        }
+
+    }
+    public int GetSellPrice()
+    {
+        return SellPrice;
+    }
+    private void Select()
     {
         PlayerPrefs.SetInt("SelectedSkin", SkinNumb);
         GameEvent.ChangeMaterial?.Invoke();
-        yield return new WaitForSeconds(1f);
     }
     private bool IsSelectedSkin()
     {
