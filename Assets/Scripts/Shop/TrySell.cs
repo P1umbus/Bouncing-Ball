@@ -6,28 +6,29 @@ using UnityEngine.UI;
 public class TrySell : MonoBehaviour
 {
     [SerializeField] private Text SellInfo;
-    private ShopScript _ShopScript;    
+    private ItemManager _ItemManager;    
 
     private void Awake()
     {
         GameEvent.TrySell += OnTrySell;
         this.gameObject.SetActive(false);
     }
-    private void OnTrySell(ShopScript SS)
+
+    private void OnTrySell(ItemManager IM)
     {
-        _ShopScript = SS;
+        _ItemManager = IM;
         this.gameObject.SetActive(true);
         OutSellInfo();
        
     }
     public void Sell()
     {
-        _ShopScript.Sell();
+        _ItemManager.Sell();
         this.gameObject.SetActive(false);
     }
     private void OutSellInfo()
     {
-        SellInfo.text = "Sell this skin for " + _ShopScript.GetSellPrice() +" coins?";
+        SellInfo.text = "Sell this skin for " + _ItemManager.GetSellPrice() +" coins?";
     }
 
     private void OnDestroy()

@@ -56,7 +56,6 @@ public class Bank : MonoBehaviour
     {
         CoinNumb++;
         SavaData();
-        Debug.Log(CoinNumb);
     }
     public void PluralIncreaseCoinNumb(int coin)
     {

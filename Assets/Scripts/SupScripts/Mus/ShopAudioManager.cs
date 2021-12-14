@@ -20,4 +20,10 @@ public class ShopAudioManager : MonoBehaviour
     {
         BuySourse.Play();
     }
+
+    private void OnDestroy()
+    {
+        GameEvent.SoundEvents.Shop.Sell -= PlaySellMus;
+        GameEvent.SoundEvents.Shop.Buy -= PlayBuyMus;
+    }
 }
