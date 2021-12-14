@@ -5,8 +5,20 @@ using UnityEngine.UI;
 
 public class DropdownHanler : MonoBehaviour
 {
-    public void Test(int value)
+    [SerializeField] private ItemManager[] _itemManagers;
+
+    //public bool _isShop;
+
+    public void Sort(int value)
     {
-        Debug.Log(value);
+        foreach (ItemManager item in _itemManagers)
+        {
+            if (value == 0)
+                item.gameObject.SetActive(true);
+            else if (item.Rarity == value - 1)
+                item.gameObject.SetActive(true);
+            else
+                item.gameObject.SetActive(false);
+        }
     }
 }

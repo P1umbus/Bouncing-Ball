@@ -9,13 +9,17 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private Sprite BallImmage;
     [SerializeField] private Image BgImage;
     [SerializeField] private Image Ball;
-    [SerializeField] private Rarity Rar;
+    //[SerializeField] private Rarity Rar;
     [SerializeField] private Text PriceText;
     [SerializeField] private bool CanSell = true;
     private int SellPrice;
     private int Status;
     private bool isPurchased = false;
     private string PPname;
+
+    //Artem
+    [SerializeField] private Constants.Rarity _rarity;
+    public int Rarity => ((int)_rarity);
 
     private void Awake()
     {
@@ -52,8 +56,7 @@ public class ItemManager : MonoBehaviour
             {
                 GameEvent.TrySell.Invoke(this);
             }
-        }
-        
+        }        
     }
     public void Sell()
     {
@@ -75,9 +78,7 @@ public class ItemManager : MonoBehaviour
                 PriceText.text = Price.ToString();
                 Bank.instance.PluralIncreaseCoinNumb(SellPrice);
             }
-
         }
-
     }
     public int GetSellPrice()
     {
@@ -141,27 +142,27 @@ public class ItemManager : MonoBehaviour
         LoadDate();
         CheckStatus();
     }
-    private enum Rarity
-    {
-        Common,
-        Rare,
-        Mythical
-    }
-    public string GetRarity()
-    {
-        return Rar.ToString();
-    }
+    //private enum Rarity
+    //{
+    //    Common,
+    //    Rare,
+    //    Mythical
+    //}
+    //public string GetRarity()
+    //{
+    //    return Rar.ToString();
+    //}
     private void RarCheck()
     {
-        if (Rar == Rarity.Common)
+        if (_rarity == Constants.Rarity.Common)
         {
             BgImage.color = new Color(0.8396226f, 0.7873442f, 0.7873442f);
         }
-        else if (Rar == Rarity.Rare)
+        else if (_rarity == Constants.Rarity.Rare)
         {
             BgImage.color = new Color(0.2941177f, 0.4117647f, 1f);
         }
-        else if (Rar == Rarity.Mythical)
+        else if (_rarity == Constants.Rarity.Mythical)
         {
             BgImage.color = new Color(0.632f, 0.256f, 1f);
         }
