@@ -8,7 +8,7 @@ public class GameEvent : MonoBehaviour
     public static Action TakeCoin;
     public static Action ChangeCoinNumb;
     public static Action ChangeMaterial;
-    public static Action <ShopScript> TrySell;
+    public static Action <ItemManager> TrySell;
     public class SoundEvents
     {
         public class Shop
