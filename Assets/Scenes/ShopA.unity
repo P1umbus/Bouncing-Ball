@@ -25734,7 +25734,7 @@ PrefabInstance:
     - target: {fileID: 3227688280354019055, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dcc58d72a7219ba47bba21b424743570, type: 2}
+      objectReference: {fileID: 2100000, guid: 80465103a4f36ff4a8231857ee151bf4, type: 2}
     - target: {fileID: 3227688280608820385, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
       propertyPath: m_Name
       value: NoPlayerBall
@@ -25785,6 +25785,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3227688280608820410, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291493583526963488, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0.6901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808283275318296870, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 7920498736885865030, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920498736885865030, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920498736885865030, guid: ff56a04d808740e4e8b7695d8a68ef6e, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
