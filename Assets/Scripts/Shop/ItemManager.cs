@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
 
@@ -9,6 +10,7 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private Sprite BallImmage;
     [SerializeField] private Image BgImage;
     [SerializeField] private Image Ball;
+    [SerializeField] private ParticleSystem SellParticle;
     //[SerializeField] private Rarity Rar;
     [SerializeField] private Text PriceText;
     [SerializeField] private bool CanSell = true;
@@ -27,7 +29,7 @@ public class ItemManager : MonoBehaviour
         GameEvent.ChangeMaterial += CheckStatus;
     }
 
-    void Start()
+    private void Start()
     {
         CheckStatus();
         SellPrice = Price / 3;
@@ -63,6 +65,7 @@ public class ItemManager : MonoBehaviour
         if (isPurchased == true)
         {
             GameEvent.SoundEvents.Shop.Sell?.Invoke();
+            StartCoroutine(ISell());
             if (IsSelectedSkin() == true)
             {
                 PlayerPrefs.SetInt(PPname, 0);
@@ -141,6 +144,12 @@ public class ItemManager : MonoBehaviour
     {
         LoadDate();
         CheckStatus();
+    }
+    IEnumerator ISell()
+    {
+        SellParticle.Play();
+        yield return new WaitForSeconds(1f);
+        SellParticle.Stop();
     }
     //private enum Rarity
     //{

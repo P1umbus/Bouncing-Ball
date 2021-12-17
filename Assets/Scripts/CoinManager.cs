@@ -47,10 +47,7 @@ public class CoinManager : MonoBehaviour
     }
     public float GetCollectedCoinsPercentage()
     {
-        Debug.Log("CoinNamber=" + CoinNamber);
-        Debug.Log("_Coin.Count" + _Coin.Count);
         float a = ((float)CoinNamber /(float)_Coin.Count)*100f;
-        Debug.Log("CollectedCoinsPercentage" + a);
         return a;
     }
     private void OnDestroy()

@@ -96,9 +96,10 @@ MonoBehaviour:
   BallImmage: {fileID: 21300000, guid: c86209f3ece10b44a8c4a830124a71a2, type: 3}
   BgImage: {fileID: 3964906242730145066}
   Ball: {fileID: 3964906243929443894}
-  Rar: 0
+  SellParticle: {fileID: 4235074645406679126, guid: 68100cd75a8c73f458198e227ab8a6fe, type: 3}
   PriceText: {fileID: 3964906244196511061}
   CanSell: 0
+  _rarity: 0
 --- !u!114 &3964906242730145069
 MonoBehaviour:
   m_ObjectHideFlags: 0
