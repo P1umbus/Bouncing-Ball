@@ -8,8 +8,8 @@ public class CoinTake : MonoBehaviour
     [SerializeField] private GameObject CoinUI;
     void Start()
     {
-        LeanTween.move(Coin,CoinUI.transform.position,1f);
-        LeanTween.scale(Coin, new Vector2(0.4f, 0.4f), 1f);
+        LeanTween.move(Coin,CoinUI.transform.position,1.5f);
+        LeanTween.scale(Coin, new Vector2(1f, 1f), 2f);
     }
 
     void Update()

@@ -2209,10 +2209,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Price: 70
-  SellPrice: 25
   SkinNumb: 3
+  BallImmage: {fileID: 0}
+  BgImage: {fileID: 0}
+  Ball: {fileID: 0}
+  SellParticle: {fileID: 0}
   PriceText: {fileID: 16252374}
   CanSell: 1
+  _rarity: 0
 --- !u!114 &938769239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2542,10 +2546,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Price: 45
-  SellPrice: 15
   SkinNumb: 2
+  BallImmage: {fileID: 0}
+  BgImage: {fileID: 0}
+  Ball: {fileID: 0}
+  SellParticle: {fileID: 0}
   PriceText: {fileID: 1575304300}
   CanSell: 1
+  _rarity: 0
 --- !u!114 &1014719074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3114,10 +3122,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Price: 15
-  SellPrice: 5
   SkinNumb: 1
+  BallImmage: {fileID: 0}
+  BgImage: {fileID: 0}
+  Ball: {fileID: 0}
+  SellParticle: {fileID: 0}
   PriceText: {fileID: 357700391}
   CanSell: 1
+  _rarity: 0
 --- !u!114 &1365828017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3675,10 +3687,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Price: 0
-  SellPrice: 0
   SkinNumb: 0
+  BallImmage: {fileID: 0}
+  BgImage: {fileID: 0}
+  Ball: {fileID: 0}
+  SellParticle: {fileID: 0}
   PriceText: {fileID: 1644776677}
   CanSell: 0
+  _rarity: 0
 --- !u!114 &1496193139
 MonoBehaviour:
   m_ObjectHideFlags: 0
