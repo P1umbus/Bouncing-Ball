@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CloudyCrown_Midday
+  m_Name: CloudyCrown_Sunset 1
   m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _SUNDISK_HIGH_QUALITY
   m_LightmapFlags: 5
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: fd76a3d85fa584e42834036916a79b6b, type: 3}
+        m_Texture: {fileID: 2800000, guid: f7e10403bdec03546940f74fa807590c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
-        m_Texture: {fileID: 2800000, guid: b064041c87bd8fb4ba2c21aa4863127e, type: 3}
+        m_Texture: {fileID: 2800000, guid: dd10416b224641b459fe04b5eb7aec37, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -48,11 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 2800000, guid: dffdb4378818bc5469033648c57bd0b1, type: 3}
+        m_Texture: {fileID: 2800000, guid: b54fbb3c65f8824489d51564e6792f74, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 2800000, guid: fd5f7c807ca1ea643b0ae501ff889a70, type: 3}
+        m_Texture: {fileID: 2800000, guid: a53a45831aded7e43a0527c2404885aa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RightTex:
-        m_Texture: {fileID: 2800000, guid: 14877617607f5fb47af48fcd766426ad, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9ebb7ffb6d5e0024b836d85dbf193c37, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tex:
@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
-        m_Texture: {fileID: 2800000, guid: 4e02df907356e0848a5d76021b80192a, type: 3}
+        m_Texture: {fileID: 2800000, guid: dca16dd9db2f45442819a6b7df2a7c19, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -95,7 +95,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Rotation: 11.908904
+    - _Rotation: 0
     - _SrcBlend: 1
     - _SunDisk: 2
     - _SunSize: 0.732
@@ -106,5 +106,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.369, g: 0.349, b: 0.341, a: 1}
     - _SkyTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Tint: {r: 0.754717, g: 0.25916693, b: 0.65845895, a: 0.5}
+    - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
