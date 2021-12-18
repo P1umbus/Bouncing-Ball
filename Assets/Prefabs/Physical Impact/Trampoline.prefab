@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 7715948330150339544, guid: 2fdc1178afcbfac438cbfe885a158a75, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80a46f8de30908a4bbfbdf1b34afd0e7, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a035918c013de344ba7d65af208389e, type: 2}
     - target: {fileID: 7715948330150339545, guid: 2fdc1178afcbfac438cbfe885a158a75, type: 3}
       propertyPath: ShapeModule.type
       value: 10
@@ -171,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7715948330150339545, guid: 2fdc1178afcbfac438cbfe885a158a75, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7715948330150339545, guid: 2fdc1178afcbfac438cbfe885a158a75, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -191,7 +191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7715948330150339545, guid: 2fdc1178afcbfac438cbfe885a158a75, type: 3}
       propertyPath: EmissionModule.rateOverTime.minScalar
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7715948330150339545, guid: 2fdc1178afcbfac438cbfe885a158a75, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
