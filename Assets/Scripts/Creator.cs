@@ -38,7 +38,7 @@ public class Creator : MonoBehaviour
                 instantiate.localPosition += (_offset * i);
 
                 if (_rotation != Vector3.zero)
-                    instantiate.rotation = Quaternion.Euler(_rotation * Random.Range(0, 3));
+                    instantiate.rotation *= Quaternion.Euler(_rotation * Random.Range(0, 3));
             }
         }
         else if (_ount < transform.childCount)

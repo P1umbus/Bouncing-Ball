@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhiteTrail 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7932084857793616505, guid: 64a319a64db57da4999ff42690a96635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a319a64db57da4999ff42690a96635, type: 3}
 --- !u!4 &75394077999721191 stripped
