@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4649831327384059106}
   - component: {fileID: 6558976249631579236}
   - component: {fileID: 818643780678386146}
-  - component: {fileID: 4625486733003444457}
+  - component: {fileID: 1456603955661672885}
+  - component: {fileID: 8147881049905561421}
   m_Layer: 0
   m_Name: Bridge_Start.003
   m_TagString: Untagged
@@ -56,10 +57,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89212d7588c8243408420a6b2664df32, type: 2}
+  - {fileID: 2100000, guid: 017ac9675c63cff45b5e63ebf256f46b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,8 +82,9 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4625486733003444457
-MeshCollider:
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1456603955661672885
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +93,19 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1922008989363125889, guid: 7f48638c4996b254d845545e25da8c2b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.985589, y: 0.16615993, z: 0.88439846}
+  m_Center: {x: -0.018901825, y: -0.042914093, z: 5.2848706}
+--- !u!65 &8147881049905561421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047026081303700950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.0858774, y: 0.16615993, z: 1.0430608}
+  m_Center: {x: 0.031242609, y: -0.042914093, z: 0.46519625}
