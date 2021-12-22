@@ -1,8 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
+
+
 
 public class SliderScripts : MonoBehaviour
 {
+    public Slider slider;
+    public Image fill;
 
     private void Start()
     {
@@ -11,6 +17,6 @@ public class SliderScripts : MonoBehaviour
 
     public void FillSlider()
     {
-        gameObject.transform.GetChild(1).GetChild(0).GetComponent<Image>().fillAmount = gameObject.GetComponent<Slider>().value;
+        fill.fillAmount = slider.value;
     }
 }

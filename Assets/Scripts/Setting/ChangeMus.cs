@@ -8,7 +8,6 @@ public class ChangeMus : MonoBehaviour
     [SerializeField] private Slider Value;
     public void ChangeMusValue()
     {
-        Debug.Log(Value.value);
         GameEvent.SoundEvents.ChangeSoundValue?.Invoke(Value.value);
     }
     public void ChangeMusStatus()

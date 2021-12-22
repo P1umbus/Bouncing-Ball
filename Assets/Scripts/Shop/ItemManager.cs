@@ -10,10 +10,11 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private Sprite BallImmage;
     [SerializeField] private Image BgImage;
     [SerializeField] private Image Ball;
-    [SerializeField] private ParticleSystem SellParticle;
     //[SerializeField] private Rarity Rar;
     [SerializeField] private Text PriceText;
     [SerializeField] private bool CanSell = true;
+    [SerializeField] private CoinTween CoinBuyTween;
+    [SerializeField] private CoinTween CoinSellTween;
     private int SellPrice;
     private int Status;
     private bool isPurchased = false;
@@ -44,6 +45,7 @@ public class ItemManager : MonoBehaviour
             Bank.instance.ReduceCoinNumb(Price);
             UpdateChange();
             GameEvent.SoundEvents.Shop.Buy?.Invoke();
+            CoinBuyTween.OnBuy(this.gameObject);
         }
         else if (isPurchased == true)
         {
@@ -65,7 +67,7 @@ public class ItemManager : MonoBehaviour
         if (isPurchased == true)
         {
             GameEvent.SoundEvents.Shop.Sell?.Invoke();
-            StartCoroutine(ISell());
+            CoinSellTween.OnSell(this.gameObject);
             if (IsSelectedSkin() == true)
             {
                 PlayerPrefs.SetInt(PPname, 0);
@@ -144,12 +146,6 @@ public class ItemManager : MonoBehaviour
     {
         LoadDate();
         CheckStatus();
-    }
-    IEnumerator ISell()
-    {
-        SellParticle.Play();
-        yield return new WaitForSeconds(1f);
-        SellParticle.Stop();
     }
     //private enum Rarity
     //{

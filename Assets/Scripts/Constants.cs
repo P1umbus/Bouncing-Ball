@@ -4,12 +4,11 @@ using UnityEngine;
 
 public static class Constants
 {
+    public static string NumbActiveLevel = "NumbActiveLevel";
     public enum Rarity
     {
         Common,
         Rare,
         Mythical
     }
-
-
 }
