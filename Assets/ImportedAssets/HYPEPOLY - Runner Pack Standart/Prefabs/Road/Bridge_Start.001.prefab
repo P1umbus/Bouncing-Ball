@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 2508107985552610419}
   - component: {fileID: 7021901399311893860}
   - component: {fileID: 8275898382670929462}
-  - component: {fileID: 4359841593991518714}
+  - component: {fileID: 3216070833724612042}
+  - component: {fileID: 5985500667705712450}
+  - component: {fileID: -1292820391848714375}
+  - component: {fileID: 2674027749286851619}
   m_Layer: 0
   m_Name: Bridge_Start.001
   m_TagString: Untagged
@@ -56,10 +59,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89212d7588c8243408420a6b2664df32, type: 2}
+  - {fileID: 2100000, guid: 017ac9675c63cff45b5e63ebf256f46b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,8 +84,9 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4359841593991518714
-MeshCollider:
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3216070833724612042
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +95,45 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8104336088521019763, guid: 7f48638c4996b254d845545e25da8c2b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.9395366, y: 0.11285851, z: 2.9017916}
+  m_Center: {x: 0.029876709, y: -0.016263355, z: 4.488442}
+--- !u!65 &5985500667705712450
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768559911159113626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.9395366, y: 0.11285851, z: 0.8206255}
+  m_Center: {x: 0.029876709, y: -0.016263355, z: 0.39955857}
+--- !u!65 &-1292820391848714375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768559911159113626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44403315, y: 2.2986603, z: 5.850567}
+  m_Center: {x: -2.4903862, y: -1.2414021, z: 3.0747175}
+--- !u!65 &2674027749286851619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6768559911159113626}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5124121, y: 2.1615503, z: 6.0314307}
+  m_Center: {x: 2.5041895, y: -1.1728472, z: 2.9842856}
