@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Trap"))
         {
             GetDamaged();
+            Handheld.Vibrate();
         }
     }
 
@@ -25,7 +26,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-
 
 
         }
