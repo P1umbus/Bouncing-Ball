@@ -8,8 +8,8 @@ public class OutActiveLevel : MonoBehaviour
     private Text ActiveLevelText;
     private void Awake()
     {
-        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 3);
         ActiveLevelText = GetComponent<Text>();
+        PlayerPrefs.SetInt(Constants.NumbActiveLevel, 3);
     }
     void Start()
     {

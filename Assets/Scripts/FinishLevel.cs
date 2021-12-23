@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FinishLevel : MonoBehaviour
 {
@@ -9,12 +10,14 @@ public class FinishLevel : MonoBehaviour
     [SerializeField] private GameObject FinishCanvas;
     [SerializeField] private Rigidbody _Rigidbody;
     [SerializeField] private AudioSource _FinishMus;
+    [SerializeField] private Button NextLevelButton;
     private CoinManager _CoinManager;
     private int NumbLevel;
     private int StartInLvl;
     private void Awake()
     {
         _CoinManager = FindObjectOfType<CoinManager>();
+        NextLevelButton.onClick.AddListener(NextLevel);
         NumbLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel)-2;
     }
     private void OnTriggerEnter(Collider other)
@@ -35,7 +38,7 @@ public class FinishLevel : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(NumbLevel + 1);
+        SceneManager.LoadScene(NumbLevel + 3);
     }
     private void SetData()
     {

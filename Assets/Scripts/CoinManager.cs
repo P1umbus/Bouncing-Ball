@@ -11,7 +11,23 @@ public class CoinManager : MonoBehaviour
     [SerializeField]private AudioSource _CoinSound;
     private int CoinNamber;
     private float CollectedCoinsPercentage;
+    private bool MultiplyAbility = true;
 
+    public int GetCoin()
+    {
+        return CoinNamber;
+    }
+    public void MultiplyCoin(int Multiply)
+    {
+        if(MultiplyAbility == true)
+        {
+            Bank.instance.PluralIncreaseCoinNumb(CoinNamber * (Multiply-1));
+            CoinNamber *= Multiply;
+            GameEvent.MultiplyCoin?.Invoke();
+            MultiplyAbility = false;
+        }
+       
+    }
     private void Awake()
     {
         Instance = this;
@@ -34,21 +50,11 @@ public class CoinManager : MonoBehaviour
     }
     private void UpdateUI()
     {
-        CoinNumbText.text = CoinNamber.ToString() + "/" + _Coin.Count;
+        CoinNumbText.text = CoinNamber.ToString();
     }
     private void PlayCoinSound()
     {
         _CoinSound.Play();
-    }
-
-    public int GetCoin()
-    {
-        return CoinNamber;
-    }
-    public float GetCollectedCoinsPercentage()
-    {
-        float a = ((float)CoinNamber /(float)_Coin.Count)*100f;
-        return a;
     }
     private void OnDestroy()
     {

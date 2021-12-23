@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Coin: {fileID: 286844969}
-  MoveTo: {fileID: 0}
+  MoveTo: {fileID: 1745226583}
   MoveTime: 1.5
   Scale: {x: 2, y: 2}
 --- !u!114 &286844972
@@ -6297,6 +6297,11 @@ PrefabInstance:
 --- !u!224 &1745226582 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3287944601025279165, guid: 5af817de76e002f46815c6edf2655b06, type: 3}
+  m_PrefabInstance: {fileID: 1745226581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1745226583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3287944601058650526, guid: 5af817de76e002f46815c6edf2655b06, type: 3}
   m_PrefabInstance: {fileID: 1745226581}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1924933737

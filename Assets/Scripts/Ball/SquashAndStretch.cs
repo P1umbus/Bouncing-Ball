@@ -24,13 +24,7 @@ public class SquashAndStretch : MonoBehaviour
     private bool _inverted;
 
     private bool _delay = false;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Coin coin) == true)
-        {
-            coin.ContactWithBall();
-        }
-    }
+   
     private void LateUpdate()
     {
         if (_ground == false)

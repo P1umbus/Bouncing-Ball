@@ -9,6 +9,7 @@ public class OutReward : MonoBehaviour
     private void Awake()
     {
         NumbText = GetComponent<Text>();
+        GameEvent.MultiplyCoin += OutRewardInText;
     }
     private void Start()
     {
@@ -17,6 +18,10 @@ public class OutReward : MonoBehaviour
     private void OutRewardInText()
     {
         NumbText.text = CoinManager.Instance.GetCoin().ToString();
+    }
+    private void OnDestroy()
+    {
+        GameEvent.MultiplyCoin -= OutRewardInText;
     }
 
 
