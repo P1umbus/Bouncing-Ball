@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 3227688280608820388}
   - component: {fileID: 3227688280608820391}
   - component: {fileID: 3227688280608820390}
+  - component: {fileID: 6203273135325138731}
   m_Layer: 6
   m_Name: NoPlayerBall
   m_TagString: Untagged
@@ -226,6 +227,25 @@ MonoBehaviour:
   _maxBallSpeed: 6
   _maxBallHorizontalSpeed: 0
   IsGround: 0
+--- !u!95 &6203273135325138731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227688280608820385}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e4c19db28ab35d94e991befaa7072444, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3227688280661393808
 GameObject:
   m_ObjectHideFlags: 0

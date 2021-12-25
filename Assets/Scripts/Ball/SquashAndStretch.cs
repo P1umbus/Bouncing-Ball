@@ -20,14 +20,14 @@ public class SquashAndStretch : MonoBehaviour
     private float _targetScale = 1f;
     private Vector3 _savedVelocity;
     private Vector3 _savedContactNormal;
-    private bool _ground = false;
+    private bool _isGround = false;
     private bool _inverted;
 
     private bool _delay = false;
    
     private void LateUpdate()
     {
-        if (_ground == false)
+        if (_isGround == false)
         {
             if (_rigidbody.velocity.magnitude != 0)
                 _targetRotation = Quaternion.LookRotation(_rigidbody.velocity, Vector3.forward);
@@ -82,10 +82,10 @@ public class SquashAndStretch : MonoBehaviour
         if (velocityProjectionMagnitude < 5 || velocityProjectionMagnitude < _rigidbody.velocity.magnitude * 0.5f)
             return;
 
-        if (_ground) 
+        if (_isGround) 
             return;
 
-        _ground = true;
+        _isGround = true;
         _delay = true;
 
         _rigidbody.useGravity = false;
@@ -121,8 +121,8 @@ public class SquashAndStretch : MonoBehaviour
 
     private void ExitSaveMode()
     {
-        _ground = false;
         _rigidbody.velocity = _savedVelocity;
+        _isGround = false;
     }
 
     private void StretchEnable()

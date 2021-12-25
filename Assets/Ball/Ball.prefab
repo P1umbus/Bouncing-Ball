@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 5069942265949867039}
   - component: {fileID: 2228282392150765281}
   - component: {fileID: 3056489523404426948}
-  - component: {fileID: 6076894722518793899}
   - component: {fileID: 5502378530584054697}
   m_Layer: 6
   m_Name: Ball
@@ -106,6 +105,7 @@ MonoBehaviour:
   DelayMultiplier: 0.01
   ScaleChangeRate: 20
   _isPlayer: 1
+  _animator: {fileID: 0}
 --- !u!135 &7396699320908357050
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -146,7 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98ec730520bb3349ab299998d9e25f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _redPanel: {fileID: 0}
+  _animDuration: 0.3
+  _maxAlpha: 0.7
   _maxHealth: 3
+  _immunityTime: 0
 --- !u!114 &3056489523404426948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,25 +183,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ff3e77341739ce44a904b51f3ed7cb41, type: 2}
   - {fileID: 2100000, guid: bbbc25a37036cf144a9fd909f6e6de63, type: 2}
   Ball: {fileID: 3584698452484104033}
---- !u!95 &6076894722518793899
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584698451087164510}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4c19db28ab35d94e991befaa7072444, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5502378530584054697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccb5fd89c5ccc340a5de7f3ca260cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
 --- !u!1 &3584698452484104035
 GameObject:
   m_ObjectHideFlags: 0
