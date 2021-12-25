@@ -145,6 +145,7 @@ MonoBehaviour:
   FinishCanvas: {fileID: 0}
   _Rigidbody: {fileID: 0}
   _FinishMus: {fileID: 3878718707178278702}
+  NextLevelButton: {fileID: 0}
 --- !u!65 &8371660488483486635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10642,7 +10643,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.17
+      value: 0.1
       mode: 0
       spread: 0
       speed:
