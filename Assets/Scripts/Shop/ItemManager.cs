@@ -9,12 +9,17 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private int SkinNumb;
     [SerializeField] private Sprite BallImmage;
     [SerializeField] private Image BgImage;
+    [SerializeField] private Image BgButtonImage;
+    [SerializeField] private Image BgButtonImage2;
     [SerializeField] private Image Ball;
     //[SerializeField] private Rarity Rar;
     [SerializeField] private Text PriceText;
     [SerializeField] private bool CanSell = true;
     [SerializeField] private CoinTween CoinBuyTween;
     [SerializeField] private CoinTween CoinSellTween;
+    [SerializeField] private Color CommonColor;
+    [SerializeField] private Color RareColor;
+    [SerializeField] private Color MythicalColor;
     private int SellPrice;
     private int Status;
     private bool isPurchased = false;
@@ -73,6 +78,7 @@ public class ItemManager : MonoBehaviour
                 PlayerPrefs.SetInt(PPname, 0);
                 Bank.instance.PluralIncreaseCoinNumb(SellPrice);
                 PlayerPrefs.SetInt("SelectedSkin", 0);
+                GameEvent.SkinsUpdate?.Invoke();
                 UpdateChange();
                 GameEvent.ChangeMaterial();
             }
@@ -97,6 +103,7 @@ public class ItemManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("SelectedSkin", SkinNumb);
         GameEvent.ChangeMaterial?.Invoke();
+        GameEvent.SkinsUpdate?.Invoke();
     }
     private bool IsSelectedSkin()
     {
@@ -161,15 +168,21 @@ public class ItemManager : MonoBehaviour
     {
         if (_rarity == Constants.Rarity.Common)
         {
-            BgImage.color = new Color(0.8396226f, 0.7873442f, 0.7873442f);
+            BgImage.color = CommonColor;
+            BgButtonImage.color = CommonColor;
+            BgButtonImage2.color = CommonColor;
         }
         else if (_rarity == Constants.Rarity.Rare)
         {
-            BgImage.color = new Color(0.2941177f, 0.4117647f, 1f);
+            BgImage.color =  RareColor;
+            BgButtonImage.color = RareColor;
+            BgButtonImage2.color = RareColor;
         }
         else if (_rarity == Constants.Rarity.Mythical)
         {
-            BgImage.color = new Color(0.632f, 0.256f, 1f);
+            BgImage.color = MythicalColor;
+            BgButtonImage.color = MythicalColor;
+            BgButtonImage2.color = MythicalColor;
         }
     }
     private void OnDestroy()
@@ -180,6 +193,8 @@ public class ItemManager : MonoBehaviour
     private void UpdateUI()
     {
         Undo.RecordObject(BgImage, "test");
+        Undo.RecordObject(BgButtonImage, "test");
+        Undo.RecordObject(BgButtonImage2, "test");
         Undo.RecordObject(PriceText, "test");
         PriceText.text = Price.ToString();
         Ball.sprite = BallImmage;

@@ -10,6 +10,7 @@ public class GameEvent : MonoBehaviour
     public static Action ChangeMaterial;
     public static Action <ItemManager> TrySell;
     public static Action MultiplyCoin;
+    public static Action SkinsUpdate;
     public class SoundEvents
     {
         public class Shop
