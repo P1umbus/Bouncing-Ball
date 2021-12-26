@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class OutActiveLevel : MonoBehaviour
     private void Awake()
     {
         ActiveLevelText = GetComponent<Text>();
-        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 3);
+        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 2);
     }
     void Start()
     {
@@ -18,7 +19,15 @@ public class OutActiveLevel : MonoBehaviour
 
     private void OutActiveLevelInText()
     {
-        ActiveLevelText.text = "Level  " + (PlayerPrefs.GetInt(Constants.NumbActiveLevel) - 2);
+        var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
+        if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+        {
+            ActiveLevelText.text = "Level " + (PlayerPrefs.GetInt(Constants.NumbActiveLevel));
+        }
+        else
+        {
+            ActiveLevelText.text = "Max Level";
+        }
     }
 
 }

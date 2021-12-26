@@ -6,10 +6,9 @@ public class SetDeffaultData : MonoBehaviour
 {
     private void Awake()
     {
-        PlayerPrefs.SetInt("IsAccessLvl1", 1);
         if (PlayerPrefs.HasKey(Constants.NumbActiveLevel) == false)
         {
-            PlayerPrefs.SetInt(Constants.NumbActiveLevel, 3);
+            PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
         }
        
     }

@@ -11,12 +11,9 @@ public static class Constants
         Rare,
         Mythical
     }
-    public enum Level
+    public enum GameLevelList
     {
-        Preloader,
-        Menu,
-        Shop,
-        Level1,
+        Level1 = 1,
         Level2,
         Level3,
         Level4,
@@ -26,6 +23,12 @@ public static class Constants
         Level8,
         Level9,
         Level10,
+    }
+    public enum MainLevelList
+    {
+        Preloader,
+        Menu,
+        Shop,
     }
 
 }

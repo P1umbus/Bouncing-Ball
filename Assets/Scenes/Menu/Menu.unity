@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f89bed2df8aef94ea877d1394291777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumbLoadScene: 2
+  _gameLevelList: 2
 --- !u!114 &395568622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,8 +1366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 13.6022, y: -553.0447}
-  m_SizeDelta: {x: 993.4996, y: 400.8184}
+  m_AnchoredPosition: {x: 8.0251, y: -553.0447}
+  m_SizeDelta: {x: 1111.6147, y: 400.8184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901407445
 MonoBehaviour:
@@ -3099,6 +3099,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3584698451087164510, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
   m_PrefabInstance: {fileID: 1610379071}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1610379079 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3584698451087164511, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+  m_PrefabInstance: {fileID: 1610379071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1610379081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4798,7 +4803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e19dc7408952e14f877199e5b73034d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 1610379072}
+  Ball: {fileID: 1610379079}
   Portal: {fileID: 2142040665}
 --- !u!1001 &1573169634686034149
 PrefabInstance:

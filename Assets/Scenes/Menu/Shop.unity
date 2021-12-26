@@ -1872,7 +1872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f89bed2df8aef94ea877d1394291777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumbLoadScene: 1
+  _gameLevelList: 1
 --- !u!224 &260809252 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3964906242730145071, guid: 1dadb54390d593c42bd2c30ef750ef0b, type: 3}

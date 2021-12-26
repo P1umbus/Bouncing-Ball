@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StartButton : MonoBehaviour
@@ -15,10 +16,14 @@ public class StartButton : MonoBehaviour
 
     public void OnClick()
     {
-        if (_isGround == false)
-            _ballRB.velocity += Vector3.right * _force;
-        else
-            Invoke(nameof(OnClick), Time.deltaTime);
+        var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
+        if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+        {
+            if (_isGround == false)
+                _ballRB.velocity += Vector3.right * _force;
+            else
+                Invoke(nameof(OnClick), Time.deltaTime);
+        } 
     }
 
     private void OnCollisionEnter(Collision collision)

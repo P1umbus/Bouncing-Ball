@@ -53,11 +53,13 @@ public class Fader : MonoBehaviour
         isFading = true;
         _faderEndCallBack = faderEndCallBack;
         animator.SetBool("faded", false);
+        SpecialSceneLoader.instace.ChangeProgress -= UpdateLoadingPercent;
+        SpecialSceneLoader.instace.ChangeProgress -= UpdateLoadingProgressBar;
 
     }
     public void UpdateLoadingPercent(float p)
     {
-        LoadingPercent.text = (int)((p/0.9)*100) + "%";
+        LoadingPercent.text = "Loading" + (int)((p/0.9)*100) + "%";
     }
     public void UpdateLoadingProgressBar(float p)
     {

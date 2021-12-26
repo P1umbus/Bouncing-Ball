@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private int NumbLoadScene;
+    [SerializeField] private Constants.MainLevelList _gameLevelList;
     
     public void LoadScene()
     {
-        SceneManager.LoadScene(NumbLoadScene);
+        SpecialSceneLoader.instace.LoadScene(_gameLevelList.ToString());
     }
 }

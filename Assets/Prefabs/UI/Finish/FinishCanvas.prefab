@@ -615,7 +615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2685038113774690789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 5389879944425306208}
   - component: {fileID: 2542411095808190904}
   - component: {fileID: 4336243397454521650}
-  - component: {fileID: 1942683955309683923}
+  - component: {fileID: 2562431610035228812}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -825,9 +825,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1942683955309683923}
-        m_TargetAssemblyTypeName: TT_2, Assembly-CSharp
-        m_MethodName: Test
+      - m_Target: {fileID: 2562431610035228812}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -837,7 +837,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1942683955309683923
+--- !u!114 &2562431610035228812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -846,10 +846,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3224941452569629032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a5c8a7669254546b8ed023a29e8354, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f89bed2df8aef94ea877d1394291777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Level: 1
+  _gameLevelList: 1
 --- !u!1 &4999311098941678117
 GameObject:
   m_ObjectHideFlags: 0

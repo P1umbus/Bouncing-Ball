@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class FinishLevel : MonoBehaviour
     {
         _CoinManager = FindObjectOfType<CoinManager>();
         NextLevelButton.onClick.AddListener(NextLevel);
-        NumbLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel)-2;
+        NumbLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -38,16 +39,19 @@ public class FinishLevel : MonoBehaviour
     }
     public void NextLevel()
     {
-        SceneManager.LoadScene(NumbLevel + 3);
+        if (Enum.IsDefined(typeof(Constants.GameLevelList), NumbLevel+1))
+        {
+            SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)(NumbLevel+1)).ToString());
+        }   
     }
     private void SetData()
     {
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel, (NumbLevel + 3));
+        PlayerPrefs.SetInt(Constants.NumbActiveLevel,NumbLevel+1);
         PlayerPrefs.Save();
     }
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
+        SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)NumbLevel).ToString()); 
     }
 }
