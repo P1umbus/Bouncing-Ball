@@ -18803,6 +18803,26 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5051268435945788151, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
   m_PrefabInstance: {fileID: 743526249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &743526251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2494783675137603826, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 743526249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &743526252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943491589082808847, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 743526249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &743526253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5303521006439341044, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 743526249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &743526254 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8668801281313504962, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 743526249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &754276979
 GameObject:
   m_ObjectHideFlags: 0
@@ -32374,6 +32394,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _redPanel
+      value: 
+      objectReference: {fileID: 743526254}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 743526253}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 743526252}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 743526251}
     - target: {fileID: 3584698451087164508, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: _isPlayer
       value: 1

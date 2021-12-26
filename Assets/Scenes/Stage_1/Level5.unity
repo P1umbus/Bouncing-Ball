@@ -8219,15 +8219,31 @@ PrefabInstance:
     - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: _redPanel
       value: 
-      objectReference: {fileID: 1445735392}
+      objectReference: {fileID: 1013123866}
     - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: _maxHealth
-      value: 300
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: _immunityTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1013123865}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1013123864}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1013123863}
     - target: {fileID: 3584698451087164509, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -19380,7 +19396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5051268435945788137, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051268435945788137, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: m_Color.b
@@ -19504,6 +19520,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+--- !u!1 &1013123863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2494783675137603826, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 1013123862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1013123864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943491589082808847, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 1013123862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1013123865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5303521006439341044, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 1013123862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1013123866 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8668801281313504962, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 1013123862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1017355412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27882,23 +27918,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443879485}
   m_Mesh: {fileID: -6607781809826680392, guid: 65ee16ee7413b524cbebe2fb52bfbd1c, type: 3}
---- !u!1 &1445735387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5051268435945788148, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
-  m_PrefabInstance: {fileID: 1013123862}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &1445735392
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445735387}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1001 &1446944957
 PrefabInstance:
   m_ObjectHideFlags: 0

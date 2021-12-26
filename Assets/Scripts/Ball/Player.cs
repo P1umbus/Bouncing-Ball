@@ -60,6 +60,9 @@ public class Player : MonoBehaviour
 
     private void ShowHearts()
     {
+        if (_hearts == null || _hearts.Length == 0)
+            return;
+
         int heartsCount = _currentHealth;
 
         for (int i = 0; i < 3; i++)
@@ -73,7 +76,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Death()
+    private void Death() //#######################################
     {
         Debug.Log("Death");
     }
