@@ -5,6 +5,7 @@ public class BallControl : MonoBehaviour, IDragHandler
 {
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Limiter _limiter;
+    [Range(0.5f, 1.5f)]
     [SerializeField] private float _forceMagnitudeTouches;
 
     [SerializeField] private float _limitVerticalBoostSpeed;

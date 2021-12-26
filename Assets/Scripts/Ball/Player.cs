@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [Header("Anim Settings")]
-    [SerializeField] private CanvasGroup _redPanel;
+    [Header("Visual Settings")]
     [SerializeField] private float _animDuration = 0.3f;
     [Range(0, 1)]
     [SerializeField] private float _maxAlpha = 0.7f;
+    [SerializeField] private CanvasGroup _redPanel;
+    [SerializeField] private GameObject[] _hearts;
 
-    [Header("Other")]
+    [Header("Parameters")]
     [SerializeField] private int _maxHealth;
     private int _currentHealth;
 
     [SerializeField] private float _immunityTime;
     private float _currentImmunityTime;
 
+
     private void Awake()
     {
         _currentHealth = _maxHealth;
+        ShowHearts();
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Trap"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Trap") && _currentImmunityTime >= _immunityTime)
         {
             GetDamaged();
             Handheld.Vibrate();
@@ -40,13 +40,11 @@ public class Player : MonoBehaviour
 
     private void GetDamaged()
     {
-        _currentHealth--;
-
         if (_currentHealth <= 0)
         {
             Death();
         }
-        else if(_currentImmunityTime >= _immunityTime)
+        else
         {
             LeanTween.alphaCanvas(_redPanel, _maxAlpha, _animDuration);
             LeanTween.alphaCanvas(_redPanel, 0, _animDuration).setDelay(_animDuration);
@@ -56,7 +54,23 @@ public class Player : MonoBehaviour
             _currentImmunityTime = 0;
         }
 
+        _currentHealth--;
+        ShowHearts();
+    }
 
+    private void ShowHearts()
+    {
+        int heartsCount = _currentHealth;
+
+        for (int i = 0; i < 3; i++)
+        {
+            if (heartsCount > 0)
+                _hearts[i].SetActive(true);
+            else
+                _hearts[i].SetActive(false);
+
+            heartsCount--;
+        }
     }
 
     private void Death()
