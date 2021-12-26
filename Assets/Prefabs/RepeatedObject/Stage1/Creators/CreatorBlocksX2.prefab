@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &208897433987089377
 Transform:
@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundBlock_X2 1
       objectReference: {fileID: 0}
+    - target: {fileID: 827928336039076985, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 1255862658543323767, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -98,6 +102,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e1d5c048d3ec914aab12aa6d6836cf7, type: 2}
+    - target: {fileID: 2752430679133113712, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021387934307728275, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5286457889782576958, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340801913893747963, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5692164922928798212, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -141,6 +161,14 @@ PrefabInstance:
     - target: {fileID: 5692164922928798212, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757430075159046785, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386398299207025117, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8661122784481162526, guid: 34038e0aa29a805498cf761bc5ad3716, type: 3}
       propertyPath: m_RootOrder

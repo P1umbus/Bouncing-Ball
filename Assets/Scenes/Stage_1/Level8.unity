@@ -6443,6 +6443,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5011000548567438112, guid: e8d2ccbee098ec94a954a38c4f953c91, type: 3}
   m_PrefabInstance: {fileID: 1697239210}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &246533171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2494783675137603826, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 424265538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246786901
 GameObject:
   m_ObjectHideFlags: 0
@@ -8840,6 +8845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547be674d6795614c99992680f362dcd, type: 3}
+--- !u!1 &354168606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5303521006439341044, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 424265538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &358258962
 GameObject:
   m_ObjectHideFlags: 0
@@ -19485,6 +19495,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775743015}
   m_Mesh: {fileID: -6607781809826680392, guid: 65ee16ee7413b524cbebe2fb52bfbd1c, type: 3}
+--- !u!1 &785421786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6943491589082808847, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 424265538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &788997456
 GameObject:
   m_ObjectHideFlags: 0
@@ -24295,6 +24310,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _redPanel
+      value: 
+      objectReference: {fileID: 1935949524}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 354168606}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 785421786}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: _hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 246533171}
     - target: {fileID: 3584698451087164509, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -49412,6 +49447,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935948422}
   m_Mesh: {fileID: -6866460942388245347, guid: 65ee16ee7413b524cbebe2fb52bfbd1c, type: 3}
+--- !u!225 &1935949524 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8668801281313504962, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
+  m_PrefabInstance: {fileID: 424265538}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1937374703
 GameObject:
   m_ObjectHideFlags: 0

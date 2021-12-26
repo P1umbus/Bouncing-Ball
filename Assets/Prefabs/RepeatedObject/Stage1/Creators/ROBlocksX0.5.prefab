@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6027319839486940079
 Transform:
@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e1d5c048d3ec914aab12aa6d6836cf7, type: 2}
+    - target: {fileID: 1605156068292593497, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2693475183663758946, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -137,6 +141,18 @@ PrefabInstance:
     - target: {fileID: 6981389560740659231, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}
       propertyPath: m_Name
       value: GroundBlock_X1_2 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981389560740659231, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099666156879875104, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417767888916876973, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f17cfca6514fa48869bf9a2fef0cdd, type: 3}

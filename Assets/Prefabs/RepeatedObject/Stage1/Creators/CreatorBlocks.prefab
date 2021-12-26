@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4078938387317728007
 Transform:
@@ -90,10 +90,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundBlock_X1 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1423558444631830797, guid: f9531a177160473469b0a75e9c8115d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1851842812244413659, guid: f9531a177160473469b0a75e9c8115d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2762600914224991380, guid: f9531a177160473469b0a75e9c8115d4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e1d5c048d3ec914aab12aa6d6836cf7, type: 2}
+    - target: {fileID: 2920512628543065221, guid: f9531a177160473469b0a75e9c8115d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222076734779768681, guid: f9531a177160473469b0a75e9c8115d4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6215736479705157488, guid: f9531a177160473469b0a75e9c8115d4, type: 3}
       propertyPath: m_RootOrder
       value: 0

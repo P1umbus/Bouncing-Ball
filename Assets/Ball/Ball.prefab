@@ -105,7 +105,6 @@ MonoBehaviour:
   DelayMultiplier: 0.01
   ScaleChangeRate: 20
   _isPlayer: 1
-  _animator: {fileID: 0}
 --- !u!135 &7396699320908357050
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -150,7 +149,8 @@ MonoBehaviour:
   _animDuration: 0.3
   _maxAlpha: 0.7
   _maxHealth: 3
-  _immunityTime: 0
+  _immunityTime: 2
+  _hearts: []
 --- !u!114 &3056489523404426948
 MonoBehaviour:
   m_ObjectHideFlags: 0
