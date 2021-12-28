@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class CoinManager : MonoBehaviour
 {
@@ -13,6 +14,16 @@ public class CoinManager : MonoBehaviour
     private float CollectedCoinsPercentage;
     private bool MultiplyAbility = true;
 
+    private void Awake()
+    {
+        Instance = this;
+        _CoinSound = GetComponent<AudioSource>();
+        GameEvent.TakeCoin += IncreaseCoinNumb;
+    }
+    private void Start()
+    {
+        Invoke("UpdateUI", 0.05f);
+    }
     public int GetCoin()
     {
         return CoinNamber;
@@ -25,18 +36,7 @@ public class CoinManager : MonoBehaviour
             CoinNamber *= Multiply;
             GameEvent.MultiplyCoin?.Invoke();
             MultiplyAbility = false;
-        }
-       
-    }
-    private void Awake()
-    {
-        Instance = this;
-        _CoinSound = GetComponent<AudioSource>();
-        GameEvent.TakeCoin += IncreaseCoinNumb;
-    }
-    private void Start()
-    {
-        Invoke("UpdateUI", 0.05f);
+        }      
     }
     private void IncreaseCoinNumb()
     {

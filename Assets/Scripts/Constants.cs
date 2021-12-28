@@ -4,7 +4,10 @@ using UnityEngine;
 
 public static class Constants
 {
+    public const string ControlSensivity = "ControlSensivity";
+
     public static string NumbActiveLevel = "NumbActiveLevel";
+
     public enum Rarity
     {
         Common,
