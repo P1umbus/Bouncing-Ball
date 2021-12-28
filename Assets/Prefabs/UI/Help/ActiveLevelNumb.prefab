@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29, y: 998}
-  m_SizeDelta: {x: 1312.0593, y: 527.4952}
+  m_AnchoredPosition: {x: 53, y: 1154}
+  m_SizeDelta: {x: 972.7676, y: 420.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1581305417339104825
 CanvasRenderer:
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.48993126, g: 0.082352914, b: 0.8509804, a: 1}
+  m_Color: {r: 0.45259193, g: 0.082352914, b: 0.8509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
-    m_FontSize: 300
+    m_FontSize: 244
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4684f55dc567ebe40b44c432912b49e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeactivationTime: 4
+  DeactivationTime: 7
 --- !u!114 &1581305417339104827
 MonoBehaviour:
   m_ObjectHideFlags: 0

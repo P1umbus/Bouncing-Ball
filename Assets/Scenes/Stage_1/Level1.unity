@@ -26551,9 +26551,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2051979942}
     m_Modifications:
+    - target: {fileID: 2475861938927095375, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861938927095375, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756969, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 672.2609
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756969, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 850
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_Text
+      value: "\r  Scroll to add\n   ball force"
+      objectReference: {fileID: 0}
     - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.36205056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.36205056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 1bb3c0b880131cc4fba43d69966e837e, type: 3}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3020656620657179057, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
       propertyPath: m_Name

@@ -25,31 +25,39 @@ public class TrainingLevel : MonoBehaviour
         Cursor.SetActive(false);
         Clue.text = "";
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        StartCoroutine(TrainTwo());
-    }
     IEnumerator TrainOne()
     {
-        Clue.text = "Scroll right and increase ball horizontal force";
         Anim.Play("Base Layer.ScrolRight");
-        yield return new WaitForSeconds(4f);
-        Clue.text = "Scroll left and reduce ball horizontal force";
+        yield return new WaitForSeconds(3f);
         Anim.Play("Base Layer.ScrolLeft");
-        yield return new WaitForSeconds(4f);
-        CloseTrain();
-        StartCoroutine(TrainTwo());
-    }
-    IEnumerator TrainTwo()
-    {
-        Cursor.SetActive(true);
-        Clue.text = "Scroll up and increase ball vertical force";
+        yield return new WaitForSeconds(3f);
         Anim.Play("Base Layer.ScrolUp");
-        yield return new WaitForSeconds(4f);
-        Clue.text = "Scroll down and reduce ball vertical force";
+        yield return new WaitForSeconds(3f);
         Anim.Play("Base Layer.ScrolDown");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         CloseTrain();
     }
+    //IEnumerator TrainOne()
+    //{
+    //    Clue.text = "Scroll right and increase ball horizontal force";
+    //    Anim.Play("Base Layer.ScrolRight");
+    //    yield return new WaitForSeconds(4f);
+    //    Clue.text = "Scroll left and reduce ball horizontal force";
+    //    Anim.Play("Base Layer.ScrolLeft");
+    //    yield return new WaitForSeconds(4f);
+    //    CloseTrain();
+    //    StartCoroutine(TrainTwo());
+    //}
+    //IEnumerator TrainTwo()
+    //{
+    //    Cursor.SetActive(true);
+    //    Clue.text = "Scroll up and increase ball vertical force";
+    //    Anim.Play("Base Layer.ScrolUp");
+    //    yield return new WaitForSeconds(4f);
+    //    Clue.text = "Scroll down and reduce ball vertical force";
+    //    Anim.Play("Base Layer.ScrolDown");
+    //    yield return new WaitForSeconds(4f);
+    //    CloseTrain();
+    //}
 
 }
