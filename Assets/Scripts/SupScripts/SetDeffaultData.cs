@@ -10,6 +10,10 @@ public class SetDeffaultData : MonoBehaviour
         {
             PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
         }
+        if (PlayerPrefs.HasKey(Constants.ControlSensivity) == false)
+        {
+            PlayerPrefs.SetFloat(Constants.ControlSensivity, 0.8f);
+        }
        
     }
 }

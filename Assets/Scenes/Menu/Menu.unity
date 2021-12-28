@@ -2252,6 +2252,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1039985808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039985810}
+  - component: {fileID: 1039985809}
+  m_Layer: 0
+  m_Name: AdsInit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1039985809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039985808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714e2f7fef31b6e4b94d2c9e186bca88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _androidGameId: 
+  _iOSGameId: 
+  _testMode: 0
+--- !u!4 &1039985810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039985808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1040149204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3231,18 +3277,18 @@ PrefabInstance:
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1262227312}
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeMusValue
+      value: ChangeSensivity
       objectReference: {fileID: 0}
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChangeMus, Assembly-CSharp
+      value: ControlSensitivitySettings, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3368,6 +3414,35 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6742055173920869799, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
   m_PrefabInstance: {fileID: 1262227308}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1262227310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6742055173920869798, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
+  m_PrefabInstance: {fileID: 1262227308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1262227311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
+  m_PrefabInstance: {fileID: 1262227308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262227310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1262227312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262227310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa58dfaece98674fa9bf48c72724a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: {fileID: 1262227311}
 --- !u!1 &1266643725
 GameObject:
   m_ObjectHideFlags: 0
