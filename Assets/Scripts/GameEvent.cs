@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameEvent : MonoBehaviour
 {
-    public static Action TakeCoin;
+    //public static Action TakeCoin;
     public static Action ChangeCoinNumb;
     public static Action ChangeMaterial;
     public static Action <ItemManager> TrySell;

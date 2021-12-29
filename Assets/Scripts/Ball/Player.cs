@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxAlpha = 0.7f;
     [SerializeField] private CanvasGroup _redPanel;
     [SerializeField] private GameObject[] _hearts;
+    [SerializeField] private Canvas DeadSceen;
+    private AudioSource _audioSource;
+
 
     [Header("Parameters")]
     [SerializeField] private int _maxHealth;
@@ -20,6 +23,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _currentHealth = _maxHealth;
+        _audioSource = GetComponent<AudioSource>();
         ShowHearts();
     }
 
@@ -40,12 +44,14 @@ public class Player : MonoBehaviour
 
     private void GetDamaged()
     {
+        _currentHealth--;
         if (_currentHealth <= 0)
         {
             Death();
         }
         else
         {
+            _audioSource.Play();
             LeanTween.alphaCanvas(_redPanel, _maxAlpha, _animDuration);
             LeanTween.alphaCanvas(_redPanel, 0, _animDuration).setDelay(_animDuration);
 
@@ -53,8 +59,6 @@ public class Player : MonoBehaviour
 
             _currentImmunityTime = 0;
         }
-
-        _currentHealth--;
         ShowHearts();
     }
 
@@ -78,6 +82,7 @@ public class Player : MonoBehaviour
 
     private void Death() //#######################################
     {
+        DeadSceen.gameObject.SetActive(true);
         Debug.Log("Death");
     }
 }

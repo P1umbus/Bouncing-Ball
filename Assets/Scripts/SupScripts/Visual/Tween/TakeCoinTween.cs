@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class TakeCoinTween : MonoBehaviour
 {
+    [HideInInspector] public static TakeCoinTween Instance;
     [SerializeField] private GameObject MoveTo;
     [SerializeField] private float MoveTime;
     [SerializeField] private Camera _camera;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     public void Move(Vector3 objectPosition)
     {
         this.transform.position = _camera.WorldToScreenPoint(objectPosition);

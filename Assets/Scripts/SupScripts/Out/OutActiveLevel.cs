@@ -10,7 +10,8 @@ public class OutActiveLevel : MonoBehaviour
     private void Awake()
     {
         ActiveLevelText = GetComponent<Text>();
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel, 2);
+        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 3);
+        //Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
     }
     void Start()
     {
@@ -22,6 +23,7 @@ public class OutActiveLevel : MonoBehaviour
         var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
         if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
         {
+            Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
             ActiveLevelText.text = "Level " + (PlayerPrefs.GetInt(Constants.NumbActiveLevel));
         }
         else

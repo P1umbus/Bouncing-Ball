@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class BallСontant : MonoBehaviour
 {
-    private TakeCoinTween _takeCoinTween;
-    private void Awake()
-    {
-        _takeCoinTween = FindObjectOfType<TakeCoinTween>();
-    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Coin coin) == true)
+        if (other.TryGetComponent(out IPickable _object) == true)
         {
-            coin.ContactWithBall();
-            _takeCoinTween.Move(coin.transform.position);
+            _object.OnTake();
         }
     }
 }

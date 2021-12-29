@@ -18,7 +18,6 @@ public class CoinManager : MonoBehaviour
     {
         Instance = this;
         _CoinSound = GetComponent<AudioSource>();
-        GameEvent.TakeCoin += IncreaseCoinNumb;
     }
     private void Start()
     {
@@ -38,9 +37,17 @@ public class CoinManager : MonoBehaviour
             MultiplyAbility = false;
         }      
     }
-    private void IncreaseCoinNumb()
+    public void IncreaseCoinNumb(int Numb)
     {
-        CoinNamber++;
+        if (Numb >= 0)
+        {
+            CoinNamber += Numb;
+            OnCoinTake();
+        }
+        else
+        {
+            Debug.LogError("Negative number of coins");
+        }
         OnCoinTake();
     }
     private void OnCoinTake()
@@ -55,9 +62,5 @@ public class CoinManager : MonoBehaviour
     private void PlayCoinSound()
     {
         _CoinSound.Play();
-    }
-    private void OnDestroy()
-    {
-        GameEvent.TakeCoin -= IncreaseCoinNumb;
     }
 }

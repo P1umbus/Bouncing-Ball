@@ -6462,6 +6462,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish1
       objectReference: {fileID: 0}
+    - target: {fileID: 2511954140317040177, guid: dd00f3c126ce91b4da5f5e568656e69a, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511954140317040177, guid: dd00f3c126ce91b4da5f5e568656e69a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511954140317040177, guid: dd00f3c126ce91b4da5f5e568656e69a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5847875
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511954140317040177, guid: dd00f3c126ce91b4da5f5e568656e69a, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6214585542903815469, guid: dd00f3c126ce91b4da5f5e568656e69a, type: 3}
       propertyPath: m_Enabled
       value: 0

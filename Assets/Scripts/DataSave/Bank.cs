@@ -20,7 +20,6 @@ public class Bank : MonoBehaviour
     private void Start()
     {
         DataLoad();
-        GameEvent.TakeCoin += IncreaseCoinNumb;
     }
     public int GetCoin()
     {
@@ -33,29 +32,6 @@ public class Bank : MonoBehaviour
             return true;
         }
         return false;
-    }
-    private void DataLoad()
-    {
-        PPCoinName = "CoinNumb";
-        if (PlayerPrefs.HasKey(PPCoinName))
-        {
-            CoinNumb = PlayerPrefs.GetInt(PPCoinName);
-        }
-        else
-        {
-            PlayerPrefs.SetInt(PPCoinName, 0);
-            CoinNumb = PlayerPrefs.GetInt(PPCoinName);
-        }
-    }
-    private void SavaData()
-    {
-        PlayerPrefs.SetInt(PPCoinName,CoinNumb);
-    }
-
-    private void IncreaseCoinNumb()
-    {
-        CoinNumb++;
-        SavaData();
     }
     public void PluralIncreaseCoinNumb(int coin)
     {
@@ -83,9 +59,21 @@ public class Bank : MonoBehaviour
             Debug.LogError("You can't reduction the number of coins by a negative number ");
         }
     }
-    private void OnDestroy()
+    private void DataLoad()
     {
-        GameEvent.TakeCoin -= IncreaseCoinNumb;
+        PPCoinName = "CoinNumb";
+        if (PlayerPrefs.HasKey(PPCoinName))
+        {
+            CoinNumb = PlayerPrefs.GetInt(PPCoinName);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(PPCoinName, 0);
+            CoinNumb = PlayerPrefs.GetInt(PPCoinName);
+        }
     }
-
+    private void SavaData()
+    {
+        PlayerPrefs.SetInt(PPCoinName,CoinNumb);
+    }
 }

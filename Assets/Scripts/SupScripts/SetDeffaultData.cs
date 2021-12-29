@@ -8,6 +8,7 @@ public class SetDeffaultData : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(Constants.NumbActiveLevel) == false)
         {
+            Debug.Log("2");
             PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
         }
         if (PlayerPrefs.HasKey(Constants.ControlSensivity) == false)

@@ -4643,7 +4643,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5359626353230884474, guid: 96dbf3564c2c8ac418dcee1346dd1658, type: 3}
   m_PrefabInstance: {fileID: 268426339}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910920426}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c90b53a110c592448d571961706b7ad, type: 3}
@@ -7341,17 +7341,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419370996}
   m_Mesh: {fileID: -6607781809826680392, guid: 65ee16ee7413b524cbebe2fb52bfbd1c, type: 3}
---- !u!114 &424272597 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6561577703740681785, guid: c67edf9321c32d644aed1305ea1df08e, type: 3}
-  m_PrefabInstance: {fileID: 1651066598}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &427688580
 GameObject:
   m_ObjectHideFlags: 0
@@ -30918,41 +30907,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b7263067debc3e40ba862752d02fe4d, type: 3}
---- !u!1 &1910920426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5359626353230884469, guid: 96dbf3564c2c8ac418dcee1346dd1658, type: 3}
-  m_PrefabInstance: {fileID: 268426339}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1910920428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910920426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448cdb75f861a4646b5d5f2059b2262d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showAdButton: {fileID: 424272597}
-  _androidAdUnitId: Rewarded_Android
-  _iOSAdUnitId: Rewarded_iOS
-  AdsShowComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 268426340}
-        m_TargetAssemblyTypeName: CoinManager, Assembly-CSharp
-        m_MethodName: MultiplyCoin
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1921341791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4705134003227826158, guid: e8ef785b7b64117448a96bb948329292, type: 3}
