@@ -9,6 +9,6 @@ public class BallСontant : MonoBehaviour
         if (other.TryGetComponent(out IPickable _object) == true)
         {
             _object.OnTake();
-        }
+        }        
     }
 }
