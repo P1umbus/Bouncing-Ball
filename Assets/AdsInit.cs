@@ -14,7 +14,7 @@ public class AdsInit : MonoBehaviour, IUnityAdsInitializationListener
     void Awake()
     {
         InitializeAds();
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
+        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 5);
     }
 
     public void InitializeAds()
