@@ -1,16 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    [Header("Visual Settings")]
-    [SerializeField] private float _animDuration = 0.3f;
+    public static Player Instance;
+
+    [HideInInspector] public Rigidbody RB;
+    public bool IsGround;
+
+    [Header("Damage Settings")]
+    [SerializeField] private float _rednessDuration = 0.3f;
     [Range(0, 1)]
-    [SerializeField] private float _maxAlpha = 0.7f;
+    [SerializeField] private float _rednessMaxAlpha = 0.7f;
     [SerializeField] private CanvasGroup _redPanel;
     [SerializeField] private GameObject[] _hearts;
     [SerializeField] private Canvas DeadSceen;
     private AudioSource _audioSource;
-
 
     [Header("Parameters")]
     [SerializeField] private int _maxHealth;
@@ -19,18 +25,31 @@ public class Player : MonoBehaviour
     [SerializeField] private float _immunityTime;
     private float _currentImmunityTime;
 
+    [SerializeField] private float _maxBallSpeed;
+    [SerializeField] private float _maxBallHorizontalSpeed;
+
+    [SerializeField] private bool _isPlayer;
 
     private void Awake()
     {
+        if (_isPlayer == true)
+            Instance = this;
+
         _currentHealth = _maxHealth;
         _audioSource = GetComponent<AudioSource>();
+
         ShowHearts();
+
+        StartCoroutine(nameof(ImmunityTimer));
     }
 
     private void Update()
     {
-        if (_currentImmunityTime < _immunityTime)
-            _currentImmunityTime += Time.deltaTime;
+        if (RB.velocity.magnitude > _maxBallSpeed)
+            RB.velocity = Vector3.ClampMagnitude(RB.velocity, _maxBallSpeed);
+
+        if (RB.velocity.x > _maxBallHorizontalSpeed || RB.velocity.x < -_maxBallHorizontalSpeed)
+            RB.velocity = new Vector3(Mathf.Clamp(RB.velocity.x, -_maxBallHorizontalSpeed, _maxBallHorizontalSpeed), RB.velocity.y, RB.velocity.z);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,6 +59,13 @@ public class Player : MonoBehaviour
             GetDamaged();
             Handheld.Vibrate();
         }
+
+        IsGround = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        IsGround = false;
     }
 
     private void GetDamaged()
@@ -52,14 +78,25 @@ public class Player : MonoBehaviour
         else
         {
             _audioSource.Play();
-            LeanTween.alphaCanvas(_redPanel, _maxAlpha, _animDuration);
-            LeanTween.alphaCanvas(_redPanel, 0, _animDuration).setDelay(_animDuration);
+            LeanTween.alphaCanvas(_redPanel, _rednessMaxAlpha, _rednessDuration);
+            LeanTween.alphaCanvas(_redPanel, 0, _rednessDuration).setDelay(_rednessDuration);
 
             Debug.Log(_currentHealth);
 
             _currentImmunityTime = 0;
+
+            StartCoroutine(nameof(ImmunityTimer));
         }
         ShowHearts();
+    }
+
+    private IEnumerator ImmunityTimer()
+    {
+        while(_currentImmunityTime < _immunityTime)
+        {
+            _currentImmunityTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private void ShowHearts()
