@@ -1,20 +1,24 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     public static Player Instance;
+    public Action Touch;
 
+    [HideInInspector] public CanvasGroup RedPanel;
+    [HideInInspector] public GameObject[] Hearts;
+    [HideInInspector] public SquashAndStretch SqAndStr;
     [HideInInspector] public Rigidbody RB;
-    public bool IsGround;
+    //public bool IsGround;
 
     [Header("Damage Settings")]
     [SerializeField] private float _rednessDuration = 0.3f;
     [Range(0, 1)]
     [SerializeField] private float _rednessMaxAlpha = 0.7f;
-    [SerializeField] private CanvasGroup _redPanel;
-    [SerializeField] private GameObject[] _hearts;
     [SerializeField] private Canvas DeadSceen;
     private AudioSource _audioSource;
 
@@ -38,6 +42,10 @@ public class Player : MonoBehaviour
         _currentHealth = _maxHealth;
         _audioSource = GetComponent<AudioSource>();
 
+        RB = GetComponent<Rigidbody>();
+
+        TryGetComponent<SquashAndStretch>(out SqAndStr);
+
         ShowHearts();
 
         StartCoroutine(nameof(ImmunityTimer));
@@ -60,33 +68,32 @@ public class Player : MonoBehaviour
             Handheld.Vibrate();
         }
 
-        IsGround = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        IsGround = false;
+        Touch?.Invoke();
     }
 
     private void GetDamaged()
     {
         _currentHealth--;
-        if (_currentHealth <= 0)
+
+        if (_currentHealth < 0)
         {
             Death();
         }
         else
         {
             _audioSource.Play();
-            LeanTween.alphaCanvas(_redPanel, _rednessMaxAlpha, _rednessDuration);
-            LeanTween.alphaCanvas(_redPanel, 0, _rednessDuration).setDelay(_rednessDuration);
 
-            Debug.Log(_currentHealth);
+            if (RedPanel != null)
+            {
+                LeanTween.alphaCanvas(RedPanel, _rednessMaxAlpha, _rednessDuration);
+                LeanTween.alphaCanvas(RedPanel, 0, _rednessDuration).setDelay(_rednessDuration);
+            }
 
             _currentImmunityTime = 0;
 
             StartCoroutine(nameof(ImmunityTimer));
         }
+
         ShowHearts();
     }
 
@@ -101,7 +108,7 @@ public class Player : MonoBehaviour
 
     private void ShowHearts()
     {
-        if (_hearts == null || _hearts.Length == 0)
+        if (Hearts == null || Hearts.Length == 0)
             return;
 
         int heartsCount = _currentHealth;
@@ -109,9 +116,9 @@ public class Player : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             if (heartsCount > 0)
-                _hearts[i].SetActive(true);
+                Hearts[i].SetActive(true);
             else
-                _hearts[i].SetActive(false);
+                Hearts[i].SetActive(false);
 
             heartsCount--;
         }

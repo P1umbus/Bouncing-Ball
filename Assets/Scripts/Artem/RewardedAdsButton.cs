@@ -57,7 +57,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void ShowAd()
     {
         // Disable the button: 
-        _showAdButton.interactable = false;
+        //_showAdButton.interactable = false;
+        _showAdButton.gameObject.SetActive(false);
         // Then show the ad:
         Advertisement.Show(_adUnitId, this);
     }
@@ -70,9 +71,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
             AdsShowComplete.Invoke();
-
-            // Load another ad:
-            Advertisement.Load(_adUnitId, this); //#############33333333333333#####################################################################################
         }
     }
 
