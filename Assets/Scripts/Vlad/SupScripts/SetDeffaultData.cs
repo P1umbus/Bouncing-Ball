@@ -15,6 +15,6 @@ public class SetDeffaultData : MonoBehaviour
         {
             PlayerPrefs.SetFloat(Constants.ControlSensivity, 0.8f);
         }
-       
+        PlayerPrefs.SetInt("Material0", 1);
     }
 }

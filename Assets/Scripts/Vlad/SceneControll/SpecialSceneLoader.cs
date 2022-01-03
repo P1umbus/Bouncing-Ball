@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SpecialSceneLoader : MonoBehaviour
 {
-    private bool isLoading;
+    private bool isLoading = false;
 
     public static SpecialSceneLoader instace;
     public Action<float> ChangeProgress;
@@ -23,12 +23,11 @@ public class SpecialSceneLoader : MonoBehaviour
    
     public void LoadScene(string sceneName)
     {
-        if (isLoading)
+        if (Fader.instanse.isFading)
         {
             return;
         }
-        StartCoroutine(ILoadScene(sceneName));
-
+        StartCoroutine(ILoadScene(sceneName));     
     }
 
     private IEnumerator ILoadScene(string sceneName)
@@ -52,7 +51,6 @@ public class SpecialSceneLoader : MonoBehaviour
         }
 
         asyns.allowSceneActivation = true;
-
         Fader.instanse.FadeEnd(() => waitFading = false);
 
         while (waitFading)
