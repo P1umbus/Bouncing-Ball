@@ -189,6 +189,8 @@ public class ItemManager : MonoBehaviour
     {
         GameEvent.ChangeMaterial -= CheckStatus;
     }
+
+    #if UNITY_EDITOR
     [ContextMenu("UpdateUI")]
     private void UpdateUI()
     {
@@ -200,4 +202,5 @@ public class ItemManager : MonoBehaviour
         Ball.sprite = BallImmage;
         RarCheck();
     }
+    #endif
 }

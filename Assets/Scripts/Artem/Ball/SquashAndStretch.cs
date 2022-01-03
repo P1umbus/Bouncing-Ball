@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SquashAndStretch : MonoBehaviour
 {
+    [HideInInspector] public bool IsGround = false;
+    [HideInInspector] public Vector3 SavedVelocity;
+
     [Header("Settings")]
     [SerializeField] private float _stretchMultiplier = 0.005f;
     [SerializeField] private float _squashMultiplier = 0.06f;
+    [Range(0, 0.2f)]
     [SerializeField] private float _delayMultiplier = 0.2f;
     [SerializeField] private float _scaleChangeRate = 20f;
 
@@ -24,13 +29,11 @@ public class SquashAndStretch : MonoBehaviour
 
     private float _currentScale = 1f;
     private float _targetScale = 1f;
-    private Vector3 _savedVelocity;
     private Vector3 _savedContactNormal;
-    private bool _isGround = false;
     private bool _inverted;
 
     private bool _isSquashDelay = false;
-
+    
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -38,7 +41,7 @@ public class SquashAndStretch : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (_isGround == false) 
+        if (IsGround == false) 
         {
             if (_rb.velocity.magnitude != 0) //get the direction of movement
                 _targetRotation = Quaternion.LookRotation(_rb.velocity, Vector3.forward);
@@ -67,31 +70,34 @@ public class SquashAndStretch : MonoBehaviour
         if (_isSquashDelay == true)
             return;
 
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Trampoline"))
+        {
+            if (collision.gameObject.TryGetComponent(out ITouching _object) == true)
+                _object.OnTouch(_rb);
+        }
+
         _savedContactNormal = collision.contacts[0].normal;
-        _savedVelocity = _rb.velocity;
 
         if (_isPlayer == false)
-        {
-            _savedVelocity *= 1.7F;
-            _rb.velocity = _savedVelocity;
-        }
+            _rb.velocity *= 1.5f;
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Trampoline")) //Trampoline
-        {
-            _savedVelocity *= 2;
-            _rb.velocity = _savedVelocity;
-        }
+        SavedVelocity = _rb.velocity;
 
-        float velocityProjectionMagnitude = Vector3.Project(_savedVelocity, -_savedContactNormal).magnitude;
-        float angleMultiplier = Mathf.Abs(Vector3.Angle(_savedVelocity, _savedContactNormal) - 90) / 100;
+        CalculationToStretch(collision);
+    }
+
+    private void CalculationToStretch(Collision collision)
+    {
+        float velocityProjectionMagnitude = Vector3.Project(SavedVelocity, -_savedContactNormal).magnitude;
+        float angleMultiplier = Mathf.Abs(Vector3.Angle(SavedVelocity, _savedContactNormal) - 90) / 100;
 
         if (velocityProjectionMagnitude < 5 || velocityProjectionMagnitude < _rb.velocity.magnitude * 0.5f)
             return;
 
-        if (_isGround) 
+        if (IsGround)
             return;
 
-        _isGround = true;
+        IsGround = true;
         _isSquashDelay = true;
 
         _rb.useGravity = false;
@@ -99,22 +105,19 @@ public class SquashAndStretch : MonoBehaviour
 
         _targetRotation = Quaternion.LookRotation(-collision.contacts[0].normal, Vector3.forward);
 
-        _targetScale = Mathf.Lerp(1f, 0.3f, _savedVelocity.magnitude * _squashMultiplier);
+        _targetScale = Mathf.Lerp(1f, 0.3f, SavedVelocity.magnitude * _squashMultiplier);
 
-        float groundedTime = velocityProjectionMagnitude * _delayMultiplier;
-        groundedTime = Mathf.Clamp(groundedTime, 0f, 0.15f);
+        transform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.5f;
 
-        transform.position = collision.contacts[0].point + collision.contacts[0].normal * 0.5f;               
-
-        Invoke(nameof(StartToStretch), groundedTime * angleMultiplier);
-        Invoke(nameof(DisableIsKinematic), groundedTime * 1.5f * angleMultiplier);
+        Invoke(nameof(StartToStretch), _delayMultiplier * angleMultiplier);
+        Invoke(nameof(DisableIsKinematic), _delayMultiplier * 1.5f * angleMultiplier);
 
         Invoke(nameof(SquashEnable), _delayBetweenSquash);
     }
 
     private void StartToStretch()
     {
-        _targetScale = Mathf.Lerp(0.5f, 1f, 1f + _savedVelocity.magnitude * _stretchMultiplier);
+        _targetScale = Mathf.Lerp(0.5f, 1f, 1f + SavedVelocity.magnitude * _stretchMultiplier);
         _inverted = false;
     }
 
@@ -127,8 +130,8 @@ public class SquashAndStretch : MonoBehaviour
 
     private void ExitSaveMode()
     {
-        _rb.velocity = _savedVelocity;
-        _isGround = false;
+        _rb.velocity = SavedVelocity;
+        IsGround = false;
     }
 
     private void SquashEnable()

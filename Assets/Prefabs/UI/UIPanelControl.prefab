@@ -255,10 +255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feec95514b505ca4cab5f5e56e1babb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 0}
-  _limiter: {fileID: 0}
-  _forceMagnitudeTouches: 0.8
-  _limitVerticalBoostSpeed: 7
+  _controlSensivity: 0.8
+  _limitVerticalBoostSpeed: 6
+  _redPanel: {fileID: 8668801281313504962}
+  _hearts:
+  - {fileID: 5303521006439341044}
+  - {fileID: 6943491589082808847}
+  - {fileID: 2494783675137603826}
 --- !u!1 &5303521006439341044
 GameObject:
   m_ObjectHideFlags: 0

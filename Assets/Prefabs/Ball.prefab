@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3584698451087164511}
   - component: {fileID: 3584698451087164508}
   - component: {fileID: 7396699320908357050}
-  - component: {fileID: 5069942265949867039}
   - component: {fileID: 2228282392150765281}
   - component: {fileID: 3056489523404426948}
   - component: {fileID: 5502378530584054697}
@@ -98,14 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f86f2e32554748b65eb166dc07005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 3584698451087164511}
+  IsGround: 0
+  Is: 0
+  _stretchMultiplier: 0.003
+  _squashMultiplier: 0.06
+  _delayMultiplier: 0.099
+  _scaleChangeRate: 20
+  _delayBetweenSquash: 0.4
+  _isPlayer: 1
   _rotatableTransform: {fileID: 7373848885219825279}
   _scalableTransform: {fileID: 3584698450606065405}
-  StretchMultiplier: 0.002
-  SquashMultiplier: 0.04
-  DelayMultiplier: 0.01
-  ScaleChangeRate: 20
-  _isPlayer: 1
 --- !u!135 &7396699320908357050
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -119,21 +120,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5069942265949867039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3584698451087164510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57145b750ba4502448954f2de07dd8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxBallSpeed: 20
-  _maxBallHorizontalSpeed: 10
-  IsGround: 0
 --- !u!114 &2228282392150765281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,13 +132,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98ec730520bb3349ab299998d9e25f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animDuration: 0.3
-  _maxAlpha: 0.7
+  SqAndStr: {fileID: 0}
+  RB: {fileID: 0}
+  _rednessDuration: 0.3
+  _rednessMaxAlpha: 0.7
   _redPanel: {fileID: 0}
   _hearts: []
   DeadSceen: {fileID: 0}
   _maxHealth: 3
   _immunityTime: 2
+  _maxBallSpeed: 20
+  _maxBallHorizontalSpeed: 10
+  _isPlayer: 1
 --- !u!114 &3056489523404426948
 MonoBehaviour:
   m_ObjectHideFlags: 0

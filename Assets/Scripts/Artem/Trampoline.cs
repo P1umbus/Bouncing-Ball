@@ -3,34 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animation))]
-public class Trampoline : MonoBehaviour
+public class Trampoline : MonoBehaviour, ITouching
 {
-    //[Header("AnimationSetting")]
-    //[SerializeField] private float _rotationOnCollision;
-    //[SerializeField] private float _speedRotation;
+    [SerializeField] private float _speedMultiplier;
+
     private Animation _animation;
-      
-    //private float _currentRotation; //
+
+    public void OnTouch(Rigidbody rb)
+    {
+        rb.velocity *= _speedMultiplier;
+        _animation.Play();
+    }
 
     private void Awake()
     {
         _animation = GetComponent<Animation>();
-    }
-
-    //private void Update()
-    //{
-    //    if (_currentRotation > 0)
-    //    {
-    //        float rotation = _speedRotation;
-
-    //        _currentRotation -= rotation;
-    //        transform.Rotate(Vector3.up * rotation);
-    //    }
-    //}
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //_currentRotation = _rotationOnCollision;
-        _animation.Play();
     }
 }
