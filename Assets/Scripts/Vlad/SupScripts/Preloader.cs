@@ -1,47 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Preloader : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup Fade;
-    [SerializeField] private int SceneToLoad;
-    [SerializeField] private float MinLoadTime;
-    private float LoadTime;
+    private AsyncOperation operation;
+    [SerializeField] private Animator _anim;
+    [SerializeField] private Text LoadingPercent;
+    [SerializeField] private Image LoadingProgressBar;
     private void Start()
     {
-        Fade.alpha = 1f;
-        CheckTimeLoad();
+
     }
-    private void Update()
+    private void LevelLoad()
     {
-        Load();
+        StartCoroutine(Loader());
     }
-    private void Load()
+
+    IEnumerator Loader()
     {
-        if (Time.time < MinLoadTime)
+        operation = SceneManager.LoadSceneAsync(Constants.MainLevelList.Menu.ToString());
+        operation.allowSceneActivation = false;
+        while (operation.progress < 0.89)
         {
-            Fade.alpha = 1 - Time.time;
+            LoaderUI(operation.progress);
+            yield return null;
         }
-        if (Time.time > MinLoadTime && LoadTime != 0)
-        {
-            Fade.alpha = Time.time - MinLoadTime;
-            if (Fade.alpha >= 1)
-            {
-                SceneManager.LoadScene(SceneToLoad);
-            }
-        }
+        _anim.SetTrigger("FadeEnd");
+        LoaderUI(operation.progress);
     }
-    private void CheckTimeLoad()
+
+    private void LoaderUI(float progress)
     {
-        if (Time.time < MinLoadTime)
-        {
-            LoadTime = MinLoadTime;
-        }
-        else
-        {
-            LoadTime = Time.time;
-        }
+        LoadingPercent.text = "Loading" + (int)((progress / 0.9) * 100) + "%";
+        LoadingProgressBar.fillAmount = progress / 0.9f;
+    }
+    private void FadeStartAnimationOver()
+    {
+        LevelLoad();
+    }
+    private void FadeEndtAnimationOver()
+    {
+        operation.allowSceneActivation = true;
     }
 }
