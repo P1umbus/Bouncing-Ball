@@ -156,9 +156,9 @@ Canvas:
   m_GameObject: {fileID: 4668272267690926551}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 4226692535913929275}
+  m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -304,6 +304,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 5811053137325986677}
+    - target: {fileID: 2685038113774690714, guid: c67edf9321c32d644aed1305ea1df08e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685038113774690714, guid: c67edf9321c32d644aed1305ea1df08e, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2685038113774690789, guid: c67edf9321c32d644aed1305ea1df08e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -848,17 +856,6 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3584698451087164511, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
   m_PrefabInstance: {fileID: 4668272267245085647}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &474291132526571472 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5069942265949867039, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
-  m_PrefabInstance: {fileID: 4668272267245085647}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57145b750ba4502448954f2de07dd8a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4668272267246319618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -877,7 +874,7 @@ PrefabInstance:
     - target: {fileID: 5051268435945788150, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: _limiter
       value: 
-      objectReference: {fileID: 474291132526571472}
+      objectReference: {fileID: 0}
     - target: {fileID: 5051268435945788150, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: _maxBallSpeed
       value: 17
@@ -1008,6 +1005,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4668272267690926547}
     m_Modifications:
+    - target: {fileID: 263403100012094012, guid: 974f38d8ba4fcbb44bf4c8f2d13db57b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -171.18579
+      objectReference: {fileID: 0}
     - target: {fileID: 556286133574530058, guid: 974f38d8ba4fcbb44bf4c8f2d13db57b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1313,15 +1314,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7482800974166376947, guid: 83795b47fff75e74aae6df54603383df, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482800974166376947, guid: 83795b47fff75e74aae6df54603383df, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482800974166376947, guid: 83795b47fff75e74aae6df54603383df, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7482800974166376947, guid: 83795b47fff75e74aae6df54603383df, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1342,6 +1343,22 @@ PrefabInstance:
     - target: {fileID: 7482800974166376947, guid: 83795b47fff75e74aae6df54603383df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482800974166376948, guid: 83795b47fff75e74aae6df54603383df, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 4226692535913929275}
+    - target: {fileID: 7482800974166376948, guid: 83795b47fff75e74aae6df54603383df, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482800974166376948, guid: 83795b47fff75e74aae6df54603383df, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482800974166376948, guid: 83795b47fff75e74aae6df54603383df, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7482800974166376951, guid: 83795b47fff75e74aae6df54603383df, type: 3}
       propertyPath: m_Name
