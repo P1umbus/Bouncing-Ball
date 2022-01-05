@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _rednessDuration = 0.3f;
     [Range(0, 1)]
     [SerializeField] private float _rednessMaxAlpha = 0.7f;
-    [SerializeField] private Canvas DeadSceen;
+    [SerializeField] private Canvas DeadScreen;
+    [SerializeField] private Canvas MaineScreen;
     private AudioSource _audioSource;
 
     [Header("Parameters")]
@@ -126,7 +127,8 @@ public class Player : MonoBehaviour
 
     private void Death() //#######################################
     {
-        DeadSceen.gameObject.SetActive(true);
+        MaineScreen.gameObject.SetActive(false);
+        DeadScreen.gameObject.SetActive(true);
         Debug.Log("Death");
     }
 }

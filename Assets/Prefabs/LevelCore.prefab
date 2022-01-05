@@ -777,6 +777,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4072604481209124544}
     - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: DeadScreen
+      value: 
+      objectReference: {fileID: 2815091938522549629}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
+      propertyPath: MaineScreen
+      value: 
+      objectReference: {fileID: 4668272267690926544}
+    - target: {fileID: 2228282392150765281, guid: b69555ce48f3e8142abc2432a740bf88, type: 3}
       propertyPath: _hearts.Array.size
       value: 3
       objectReference: {fileID: 0}

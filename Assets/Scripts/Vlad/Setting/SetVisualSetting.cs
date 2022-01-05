@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SetDataMus : MonoBehaviour
+public class SetVisualSetting : MonoBehaviour
 {
     [SerializeField] private GameObject MusOn;
     [SerializeField] private GameObject MusOff;
     [SerializeField] private Slider MusValue;
+    [SerializeField] private Slider SensValue;
     private SoundOptions _SoundOptions;
 
     private void Awake()
@@ -18,6 +19,7 @@ public class SetDataMus : MonoBehaviour
     {
         SetActiveMusStatus();
         SetMusValue();
+        SetSensValue();
     }
 
     private void SetActiveMusStatus()
@@ -36,5 +38,9 @@ public class SetDataMus : MonoBehaviour
     private void SetMusValue()
     {
         MusValue.value = _SoundOptions.GetMusValue();
+    }
+    private void SetSensValue()
+    {
+        SensValue.value = PlayerPrefs.GetFloat(Constants.ControlSensivity);
     }
 }

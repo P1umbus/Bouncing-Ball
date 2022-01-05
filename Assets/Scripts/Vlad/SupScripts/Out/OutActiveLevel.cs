@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class OutActiveLevel : MonoBehaviour
 {
     private Text ActiveLevelText;
+    [SerializeField] private Button ResetButton;
     private void Awake()
     {
         ActiveLevelText = GetComponent<Text>();
-        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
+        PlayerPrefs.SetInt(Constants.NumbActiveLevel, 11);
     }
     void Start()
     {
@@ -27,7 +28,12 @@ public class OutActiveLevel : MonoBehaviour
         else
         {
             ActiveLevelText.text = "Max Level";
+            ResetButton.gameObject.SetActive(true);
         }
     }
-
+    public void GameReset()
+    {
+        PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
+        OutActiveLevelInText();
+    }
 }
