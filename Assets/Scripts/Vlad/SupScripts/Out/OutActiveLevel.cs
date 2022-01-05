@@ -11,7 +11,7 @@ public class OutActiveLevel : MonoBehaviour
     private void Awake()
     {
         ActiveLevelText = GetComponent<Text>();
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel, 11);
+        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 11);
     }
     void Start()
     {
