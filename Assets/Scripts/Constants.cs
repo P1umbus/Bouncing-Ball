@@ -17,6 +17,7 @@ public static class Constants
     public enum GameLevelList
     {
         Level1 = 1,
+        Level1_1,
         Level2,
         Level3,
         Level4,
@@ -25,7 +26,11 @@ public static class Constants
         Level7,
         Level8,
         Level9,
+        Level9_1,
         Level10,
+        Level11,
+        Level12,
+        Level13,
     }
     public enum MainLevelList
     {
