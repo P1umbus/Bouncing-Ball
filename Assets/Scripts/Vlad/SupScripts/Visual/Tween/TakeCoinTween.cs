@@ -15,9 +15,10 @@ public class TakeCoinTween : MonoBehaviour
     }
     public void Move(Vector3 objectPosition)
     {
-        this.transform.position = _camera.WorldToScreenPoint(objectPosition);
+        //this.transform.position = _camera.WorldToScreenPoint(objectPosition);
+        transform.position = objectPosition;
         this.gameObject.SetActive(true);
-        LeanTween.move(this.gameObject, MoveTo.transform.position, MoveTime).setOnComplete(OnEnd);
+        LeanTween.move(this.gameObject, MoveTo.transform.localPosition, MoveTime).setOnComplete(OnEnd);
     }
     private void OnEnd()
     {

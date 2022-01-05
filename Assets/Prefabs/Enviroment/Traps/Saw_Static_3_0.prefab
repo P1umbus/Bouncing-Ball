@@ -56,7 +56,8 @@ GameObject:
   - component: {fileID: 4918900130517029353}
   - component: {fileID: 5380628435766898100}
   - component: {fileID: 5256913268561849771}
-  - component: {fileID: 6357159451008615201}
+  - component: {fileID: 6535762306944673555}
+  - component: {fileID: 8763167512078211866}
   m_Layer: 0
   m_Name: Saw.002
   m_TagString: Untagged
@@ -101,6 +102,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -125,8 +127,9 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6357159451008615201
-MeshCollider:
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6535762306944673555
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,10 +138,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1028022196212891806, guid: 7f48638c4996b254d845545e25da8c2b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.961571, z: 0.095317066}
+  m_Center: {x: 0.00000065565115, y: 0.00000032782557, z: 0}
+--- !u!65 &8763167512078211866
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091138289924245894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9615704, y: 1, z: 0.095317066}
+  m_Center: {x: 0.00000065565115, y: 0.00000032782557, z: 0}
 --- !u!1 &8797274877373136502
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 8797274877373136502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1402587434022759131}
   m_Father: {fileID: 0}
@@ -196,6 +211,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -220,6 +236,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &8797274877373136503
 BoxCollider:
   m_ObjectHideFlags: 0
