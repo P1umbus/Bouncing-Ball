@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour , IPickable
 {
-    private int value = 10;
+    private int value = 1;
     private void Start()
     {
         CoinManager.Instance._Coin.Add(this);
