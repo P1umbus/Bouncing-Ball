@@ -4,6 +4,7 @@ using UnityEngine;
 public class StartButton : MonoBehaviour
 {
     [SerializeField] private float _force;
+    [SerializeField] private GameObject ResetPanel;
 
     private Rigidbody _ballRB;
 
@@ -23,7 +24,11 @@ public class StartButton : MonoBehaviour
                 _ballRB.velocity += Vector3.right * _force;
             else
                 Invoke(nameof(OnClick), Time.deltaTime);
-        } 
+        }
+        else
+        {
+            ResetPanel.SetActive(true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

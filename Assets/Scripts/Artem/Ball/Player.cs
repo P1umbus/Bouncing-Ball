@@ -129,6 +129,7 @@ public class Player : MonoBehaviour
     {
         MaineScreen.gameObject.SetActive(false);
         DeadScreen.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
         Debug.Log("Death");
     }
 }
