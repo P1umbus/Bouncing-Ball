@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using Lean.Localization;
 
 public class TrySell : MonoBehaviour
 {
-    [SerializeField] private Text SellInfo;
+    private LeanLocalToken SellInfo;
     private ItemManager _ItemManager;    
 
     private void Awake()
     {
         GameEvent.TrySell += OnTrySell;
+        SellInfo = GetComponentInChildren<LeanLocalToken>();
         this.gameObject.SetActive(false);
     }
 
@@ -28,7 +29,7 @@ public class TrySell : MonoBehaviour
     }
     private void OutSellInfo()
     {
-        SellInfo.text = "Sell this skin for " + _ItemManager.GetSellPrice() +" coins?";
+        SellInfo.SetValue(_ItemManager.GetSellPrice());
     }
 
     private void OnDestroy()

@@ -1,3 +1,4 @@
+using Lean.Localization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,10 +7,10 @@ using UnityEngine.UI;
 
 public class OutActiveLevel : MonoBehaviour
 {
-    private Text ActiveLevelText;
+    private LeanLocalToken LevelNumb;
     private void Awake()
     {
-        ActiveLevelText = GetComponent<Text>();
+        LevelNumb = GetComponentInChildren<LeanLocalToken>();
     }
     void Start()
     {
@@ -21,11 +22,11 @@ public class OutActiveLevel : MonoBehaviour
         var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
         if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
         {
-            ActiveLevelText.text = "Level " + (PlayerPrefs.GetInt(Constants.NumbActiveLevel));
+            LevelNumb.SetValue(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
         }
         else
         {
-            ActiveLevelText.text = "Max Level";
+            //ActiveLevelText.text = "Max Level";
         }
     }
 }

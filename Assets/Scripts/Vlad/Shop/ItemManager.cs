@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEditor;
+using Lean.Localization;
 
 public class ItemManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class ItemManager : MonoBehaviour
     [SerializeField] private Image Ball;
     //[SerializeField] private Rarity Rar;
     [SerializeField] private Text PriceText;
+    [SerializeField] private Text TakenText;
+    [SerializeField] private Text BoughtText;
+    [SerializeField] private LeanLocalToken PriceToken;
     [SerializeField] private bool CanSell = true;
     [SerializeField] private CoinTween CoinBuyTween;
     [SerializeField] private CoinTween CoinSellTween;
@@ -24,6 +28,7 @@ public class ItemManager : MonoBehaviour
     private int Status;
     private bool isPurchased = false;
     private string PPname;
+  
 
     //Artem
     [SerializeField] private Constants.Rarity _rarity;
@@ -118,19 +123,26 @@ public class ItemManager : MonoBehaviour
     {
         if(Status == 0)
         {
-            PriceText.text = Price.ToString();
+            PriceText.gameObject.SetActive(true);
+            TakenText.gameObject.SetActive(false);
+            BoughtText.gameObject.SetActive(false);
+            PriceToken.SetValue(Price);
             isPurchased = false;
         }
         else if(Status == 1)
         {
             if (IsSelectedSkin())
             {
-                PriceText.text = "Taken";
+                PriceText.gameObject.SetActive(false);
+                TakenText.gameObject.SetActive(true);
+                BoughtText.gameObject.SetActive(false);
                 isPurchased = true;
             }
             else
             {
-                PriceText.text = "Bought";
+                PriceText.gameObject.SetActive(false);
+                TakenText.gameObject.SetActive(false);
+                BoughtText.gameObject.SetActive(true);
                 isPurchased = true;
             }
            
