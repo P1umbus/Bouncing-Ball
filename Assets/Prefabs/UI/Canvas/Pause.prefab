@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 8489687145346406663}
   - component: {fileID: 7342176618669273128}
   - component: {fileID: 6337466786949927147}
+  - component: {fileID: 7204347851980382130}
   m_Layer: 5
   m_Name: ActiveLevelNumb
   m_TagString: Untagged
@@ -463,7 +464,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     m_FontSize: 244
     m_FontStyle: 0
     m_BestFit: 0
@@ -475,7 +476,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level X
+  m_Text: "\u7EA7\u522B 0"
 --- !u!95 &4248288583292182512
 Animator:
   serializedVersion: 3
@@ -534,6 +535,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: Menu/Level
   FallbackText: Level X
+--- !u!114 &7204347851980382130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3199777908744403906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &4681909625457295138
 GameObject:
   m_ObjectHideFlags: 0

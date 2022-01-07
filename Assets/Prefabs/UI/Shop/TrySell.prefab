@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2380856322445491816}
   - component: {fileID: 2380856322445491817}
   - component: {fileID: 2066547227904214682}
+  - component: {fileID: 9217531456629364245}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -95,6 +96,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: Shop/TrySell
   FallbackText: Sell this skin for 5 coins ?
+--- !u!114 &9217531456629364245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380856322445491819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &2380856323222528049
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +304,7 @@ RectTransform:
   m_GameObject: {fileID: 2380856324257366882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37564114, y: 0.37564114, z: 0.37564114}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 2380856324393334484}
   m_Father: {fileID: 2380856323434116462}
@@ -297,8 +312,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: -20}
-  m_SizeDelta: {x: 120, y: 126}
+  m_AnchoredPosition: {x: -50, y: -25.6}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2380856324257366887
 CanvasRenderer:
@@ -497,7 +512,7 @@ RectTransform:
   m_GameObject: {fileID: 2380856324444307432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.37564114, y: 0.37564114, z: 0.37564114}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 2380856323222528048}
   m_Father: {fileID: 2380856323434116462}
@@ -505,8 +520,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -20}
-  m_SizeDelta: {x: 120, y: 126}
+  m_AnchoredPosition: {x: 50, y: -24.6}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2380856324444307437
 CanvasRenderer:

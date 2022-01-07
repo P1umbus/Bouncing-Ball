@@ -678,6 +678,7 @@ GameObject:
   - component: {fileID: 7482800974832616494}
   - component: {fileID: 7482800974832616495}
   - component: {fileID: 731883172971886984}
+  - component: {fileID: 5220369163826653349}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -760,6 +761,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: DeadScreen/Restart
   FallbackText: RESTART
+--- !u!114 &5220369163826653349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482800974832616497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &7482800975062158426
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +787,7 @@ GameObject:
   - component: {fileID: 7482800975062158423}
   - component: {fileID: 7482800975062158424}
   - component: {fileID: 7736156445754322028}
+  - component: {fileID: 6794760211634196728}
   m_Layer: 5
   m_Name: You Dead
   m_TagString: Untagged
@@ -854,6 +870,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: DeadScreen/You Dead
   FallbackText: '   You Dead'
+--- !u!114 &6794760211634196728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7482800975062158426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &7482800975199763830
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +959,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2247293568627509747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249871105262755569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &8432962203076623723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,8 +1060,12 @@ PrefabInstance:
       value: HOME
       objectReference: {fileID: 0}
     - target: {fileID: 75312603113333681, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    - target: {fileID: 75312603113333681, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_FontData.m_Alignment
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1109388572938468207, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1041,11 +1089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267511131889088829, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 899.8419
+      value: 1061.4738
       objectReference: {fileID: 0}
     - target: {fileID: 2267511131889088829, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15.007905
+      value: -6.9264
       objectReference: {fileID: 0}
     - target: {fileID: 2267511131889088829, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1176,5 +1224,10 @@ PrefabInstance:
 --- !u!224 &8656639295416711458 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2304347966949900409, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
+  m_PrefabInstance: {fileID: 7482800974884600155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8249871105262755569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1559742834897282986, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
   m_PrefabInstance: {fileID: 7482800974884600155}
   m_PrefabAsset: {fileID: 0}

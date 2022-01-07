@@ -162,6 +162,60 @@ MonoBehaviour:
   - Language: Chinese
     Text: "\u91C7\u53D6"
     Object: {fileID: 0}
+--- !u!1 &1982364699560459955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700871759587485089}
+  - component: {fileID: 7705179839634182517}
+  m_Layer: 0
+  m_Name: Shop/Material/Sell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700871759587485089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982364699560459955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6005877903433719349}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7705179839634182517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982364699560459955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: English
+    Text: Sell
+    Object: {fileID: 0}
+  - Language: Russian
+    Text: "\u041F\u0440\u043E\u0434\u0430\u0442\u044C"
+    Object: {fileID: 0}
+  - Language: Chinese
+    Text: "\u5356"
+    Object: {fileID: 0}
 --- !u!1 &2584229312851593084
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +299,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8323687770985680221
 MonoBehaviour:
@@ -299,7 +353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4099350269216759669
 MonoBehaviour:
@@ -407,7 +461,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4295111218778017904
 MonoBehaviour:
@@ -461,7 +515,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3159785972698393273
 MonoBehaviour:
@@ -515,7 +569,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4717276767387063303
 MonoBehaviour:
@@ -754,10 +808,10 @@ MonoBehaviour:
     Object: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
   - Language: Russian
     Text: 
-    Object: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    Object: {fileID: 12800000, guid: 5e54b67ac2de0da448f14ae6e7f6bb5d, type: 3}
   - Language: Chinese
     Text: 
-    Object: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    Object: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
 --- !u!1 &6005877902220826294
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,17 +855,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: 2
+  data: 0
   entries:
   - Language: English
-    Text: 
-    Object: {fileID: 21300000, guid: 84f285397e58bd6469fd3c0c1a5ae405, type: 3}
+    Text: Setting
+    Object: {fileID: 0}
   - Language: Russian
-    Text: 
-    Object: {fileID: 21300000, guid: 333577eebe3cf2649a6c7f3d299dceba, type: 3}
+    Text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+    Object: {fileID: 0}
   - Language: Chinese
-    Text: 
-    Object: {fileID: 21300000, guid: cfba19cc91fa2034e9f341a44621ac47, type: 3}
+    Text: "\u73AF\u5883"
+    Object: {fileID: 0}
 --- !u!1 &6005877902737618928
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,10 +916,10 @@ MonoBehaviour:
     Object: {fileID: 21300000, guid: 97cb159e195b31149a619d83879bd3d9, type: 3}
   - Language: Russian
     Text: 
-    Object: {fileID: 21300000, guid: 9bbea2f49a47ee841a5b36e3b714c87d, type: 3}
+    Object: {fileID: 21300000, guid: 56a5fcba5e3b99d4798bce107f402dc5, type: 3}
   - Language: Chinese
     Text: 
-    Object: {fileID: 21300000, guid: 97450a34d6fd01948b47424fda6512b2, type: 3}
+    Object: {fileID: 21300000, guid: 0947088158c51c84a9bcf7e79e8795ea, type: 3}
 --- !u!1 &6005877902769316237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1072,7 @@ Transform:
   - {fileID: 7099569233360453571}
   - {fileID: 3056001908101095907}
   - {fileID: 834851488951282083}
+  - {fileID: 700871759587485089}
   - {fileID: 3804290670554623712}
   - {fileID: 2347215513909652452}
   - {fileID: 1500366166168550663}
@@ -1042,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Chinese
+  currentLanguage: Russian
   detectLanguage: 1
   defaultLanguage: English
   saveLoad: 1
@@ -1193,7 +1248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2676959231916657363
 MonoBehaviour:
@@ -1247,7 +1302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3183981226580440701
 MonoBehaviour:
@@ -1301,7 +1356,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &524343930043723278
 MonoBehaviour:
@@ -1355,7 +1410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6005877903433719349}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3291547122570372184
 MonoBehaviour:

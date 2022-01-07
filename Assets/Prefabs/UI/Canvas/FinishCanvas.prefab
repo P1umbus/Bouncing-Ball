@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 508340636464287599}
   - component: {fileID: 6102039191680861303}
   - component: {fileID: 1874527714688190530}
+  - component: {fileID: 5441465704094312176}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -234,7 +235,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     m_FontSize: 222
     m_FontStyle: 0
     m_BestFit: 0
@@ -261,6 +262,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: FinishCanvas/Button/Multiply
   FallbackText: Multiply
+--- !u!114 &5441465704094312176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680776938098756647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &682030703088768972
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +438,7 @@ GameObject:
   - component: {fileID: 8514317818239896188}
   - component: {fileID: 6830928548170309173}
   - component: {fileID: 5587849076825900007}
+  - component: {fileID: 7853459788813213677}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -478,7 +494,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -505,6 +521,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: FinishCanvas/Complated
   FallbackText: Complated
+--- !u!114 &7853459788813213677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681005220922920895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &2433496005705627245
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +774,7 @@ GameObject:
   - component: {fileID: 408755257894776103}
   - component: {fileID: 6701465817349376439}
   - component: {fileID: 3115089179578372633}
+  - component: {fileID: 1070008452118270843}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -800,7 +831,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -827,6 +858,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: FinishCanvas/Level
   FallbackText: Level
+--- !u!114 &1070008452118270843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4999311098941678117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &5920043260357999462
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,6 +999,7 @@ GameObject:
   - component: {fileID: 1287250803059186389}
   - component: {fileID: 4791012045969132652}
   - component: {fileID: 4585095110335272236}
+  - component: {fileID: 1839225770921286311}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1009,7 +1055,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     m_FontSize: 166
     m_FontStyle: 0
     m_BestFit: 0
@@ -1036,6 +1082,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: FinishCanvas/Reward
   FallbackText: REWARD
+--- !u!114 &1839225770921286311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496068421119449008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &7667123346807344572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1173,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6915649414188626763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8201432735135304252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &8389694580003217809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1320,7 @@ GameObject:
   - component: {fileID: 7048927430270716497}
   - component: {fileID: 1537038661846886275}
   - component: {fileID: 7893831634674448680}
+  - component: {fileID: 952101745172460394}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1301,7 +1376,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     m_FontSize: 222
     m_FontStyle: 0
     m_BestFit: 0
@@ -1328,6 +1403,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: FinishCanvas/Button/Next
   FallbackText: HEXT
+--- !u!114 &952101745172460394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8870423044715601113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1001 &2685038112768421258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1413,6 +1502,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u5BB6"
       objectReference: {fileID: 0}
+    - target: {fileID: 75312603113333681, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: add471796210e504888d1d5063f64e16, type: 3}
     - target: {fileID: 2304347966949900409, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1506,6 +1599,11 @@ PrefabInstance:
 --- !u!224 &8903253637039533551 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2304347966949900409, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
+  m_PrefabInstance: {fileID: 7238417401828830614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8201432735135304252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1559742834897282986, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
   m_PrefabInstance: {fileID: 7238417401828830614}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8581234368122241803
