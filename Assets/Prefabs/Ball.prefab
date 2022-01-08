@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsGround: 0
-  Is: 0
+  SavedVelocity: {x: 0, y: 0, z: 0}
   _stretchMultiplier: 0.003
   _squashMultiplier: 0.06
   _delayMultiplier: 0.099
@@ -132,13 +132,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98ec730520bb3349ab299998d9e25f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RedPanel: {fileID: 0}
+  Hearts: []
   SqAndStr: {fileID: 0}
   RB: {fileID: 0}
   _rednessDuration: 0.3
   _rednessMaxAlpha: 0.7
-  _redPanel: {fileID: 0}
-  _hearts: []
-  DeadSceen: {fileID: 0}
+  DeadScreen: {fileID: 0}
+  MaineScreen: {fileID: 0}
   _maxHealth: 3
   _immunityTime: 2
   _maxBallSpeed: 20
@@ -164,7 +165,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f403b7471785eab45b5df2d9f2ed5272, type: 2}
   - {fileID: 2100000, guid: 80465103a4f36ff4a8231857ee151bf4, type: 2}
   - {fileID: 2100000, guid: 6cc468af7083d7d45a5c9adacbf4e8c1, type: 2}
-  - {fileID: 2100000, guid: 462b80f553010074d946bd77daec05a7, type: 2}
+  - {fileID: 2100000, guid: 2f50e5996e74ad0479cca242ec491501, type: 2}
   - {fileID: 2100000, guid: 33636c50e54ebf24baa06d35a8cd1a40, type: 2}
   - {fileID: 2100000, guid: dcc58d72a7219ba47bba21b424743570, type: 2}
   - {fileID: 2100000, guid: 1ebfc7ad1df606944b5a32c262d698cb, type: 2}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9160186246258116528}
   - component: {fileID: 75312603113333681}
   - component: {fileID: 2584974050315586847}
+  - component: {fileID: 6915649414188626763}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -67,8 +68,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
-    m_FontSize: 222
+    m_Font: {fileID: 12800000, guid: 5e54b67ac2de0da448f14ae6e7f6bb5d, type: 3}
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -79,7 +80,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HOME
+  m_Text: "\u0414\u041E\u041C\u041E\u0419"
 --- !u!114 &2584974050315586847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +95,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationName: FinishCanvas/Button/Home
   FallbackText: HOME
+--- !u!114 &6915649414188626763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559742834897282986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce53ba05f9c84246b062afd12f4619f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Fonts
+  FallbackFont: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
 --- !u!1 &4394480128503669971
 GameObject:
   m_ObjectHideFlags: 0

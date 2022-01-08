@@ -34,6 +34,8 @@ public class FinishLevel : MonoBehaviour
         SetData();
         ControllCanvas.SetActive(false);
         _Rigidbody.isKinematic = true;
+        Bank.instance.PluralIncreaseCoinNumb(10);
+        CoinManager.Instance.IncreaseCoinNumb(10);
         FinishCanvas.SetActive(true);
         _FinishMus.Play();
     }
