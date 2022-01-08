@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eca7ab22ee33b64eb7baf525dd185d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: {x: 0, y: 0, z: -2.5}
+  rotationSpeed: {x: 0, y: 0, z: -3}
 --- !u!1 &3091138289924245894
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5256913268561849771}
   - component: {fileID: 6535762306944673555}
   - component: {fileID: 8763167512078211866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Saw.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,8 +139,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.961571, z: 0.095317066}
-  m_Center: {x: 0.00000065565115, y: 0.00000032782557, z: 0}
+  m_Size: {x: 1, y: 1.65, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &8763167512078211866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,8 +152,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9615704, y: 1, z: 0.095317066}
-  m_Center: {x: 0.00000065565115, y: 0.00000032782557, z: 0}
+  m_Size: {x: 1.65, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8797274877373136502
 GameObject:
   m_ObjectHideFlags: 0

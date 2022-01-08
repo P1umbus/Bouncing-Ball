@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public GameObject[] Hearts;
     [HideInInspector] public SquashAndStretch SqAndStr;
     [HideInInspector] public Rigidbody RB;
-    //public bool IsGround;
+    /*[HideInInspector]*/ public bool IsGround;
 
     [Header("Damage Settings")]
     [SerializeField] private float _rednessDuration = 0.3f;
@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float _rednessMaxAlpha = 0.7f;
     [SerializeField] private Canvas DeadScreen;
     [SerializeField] private Canvas MaineScreen;
+    [SerializeField] private MeshRenderer _immunitySphere;
     private AudioSource _audioSource;
+    private float _currentImmunitySphereAmount;
 
     [Header("Parameters")]
     [SerializeField] private int _maxHealth;
@@ -69,7 +71,14 @@ public class Player : MonoBehaviour
             Handheld.Vibrate();
         }
 
+        IsGround = true;
+
         Touch?.Invoke();
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        IsGround = false;
     }
 
     private void GetDamaged()
@@ -92,6 +101,9 @@ public class Player : MonoBehaviour
 
             _currentImmunityTime = 0;
 
+            _currentImmunitySphereAmount = 0;
+            _immunitySphere.material.SetFloat(Constants.ImmunitySphereAmount, _currentImmunitySphereAmount);
+
             StartCoroutine(nameof(ImmunityTimer));
         }
 
@@ -103,7 +115,17 @@ public class Player : MonoBehaviour
         while(_currentImmunityTime < _immunityTime)
         {
             _currentImmunityTime += Time.deltaTime;
+
+            _currentImmunitySphereAmount = Mathf.Lerp(_currentImmunitySphereAmount, 1, Time.deltaTime / _immunityTime);
+            _immunitySphere.material.SetFloat(Constants.ImmunitySphereAmount, _currentImmunitySphereAmount);
+
             yield return new WaitForEndOfFrame();
+        }
+
+        if (_currentImmunityTime > _immunityTime)
+        {
+            _currentImmunitySphereAmount = 1;
+            _immunitySphere.material.SetFloat(Constants.ImmunitySphereAmount, _currentImmunitySphereAmount);
         }
     }
 

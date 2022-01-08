@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1461819552635909424}
   - component: {fileID: 5377276790109672322}
   - component: {fileID: 6174996932968700220}
+  - component: {fileID: 2543879545120810725}
   m_Layer: 8
   m_Name: Hang_Saw.001
   m_TagString: Untagged
@@ -94,8 +95,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4166553, y: 1.0755125, z: 0.15600032}
-  m_Center: {x: 0.00000017881443, y: -0.5377562, z: -0.0000030808146}
+  m_Size: {x: 2.1, y: 0.5332622, z: 0.1}
+  m_Center: {x: 0, y: -0.37, z: 0}
+--- !u!65 &2543879545120810725
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061402761967642221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1, z: 0.1}
+  m_Center: {x: 0, y: -0.59, z: 0}
 --- !u!1 &2324807204686406094
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +284,7 @@ GameObject:
   - component: {fileID: 2766290389357487306}
   - component: {fileID: 2766290389357487305}
   - component: {fileID: 3410827115591560607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StraightPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,8 +662,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.015945, y: 1.0312827, z: 1.390226}
-  m_Center: {x: -2.5024126, y: -0.009829879, z: 0.40920466}
+  m_Size: {x: 6.015945, y: 1.0312827, z: 0.5642028}
+  m_Center: {x: -2.5024126, y: -0.009829879, z: 0.39537674}
 --- !u!1 &6813321023631786166
 GameObject:
   m_ObjectHideFlags: 0
