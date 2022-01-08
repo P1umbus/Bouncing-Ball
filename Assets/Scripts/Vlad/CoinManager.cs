@@ -41,7 +41,9 @@ public class CoinManager : MonoBehaviour
     {
         if (Numb >= 0)
         {
+           
             CoinNamber += Numb;
+            Debug.Log(CoinNamber);
             OnCoinTake();
         }
         else

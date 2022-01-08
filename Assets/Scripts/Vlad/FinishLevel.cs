@@ -15,6 +15,7 @@ public class FinishLevel : MonoBehaviour
     private CoinManager _CoinManager;
     private int NumbLevel;
     private int StartInLvl;
+    private bool Finished = false;
     private void Awake()
     {
         _CoinManager = FindObjectOfType<CoinManager>();
@@ -31,13 +32,17 @@ public class FinishLevel : MonoBehaviour
 
     private void OnFinish()
     {
-        SetData();
-        ControllCanvas.SetActive(false);
-        _Rigidbody.isKinematic = true;
-        Bank.instance.PluralIncreaseCoinNumb(10);
-        CoinManager.Instance.IncreaseCoinNumb(10);
-        FinishCanvas.SetActive(true);
-        _FinishMus.Play();
+        if(Finished == false)
+        {
+            SetData();
+            ControllCanvas.SetActive(false);
+            _Rigidbody.isKinematic = true;
+            Bank.instance.PluralIncreaseCoinNumb(10);
+            CoinManager.Instance.IncreaseCoinNumb(10);
+            FinishCanvas.SetActive(true);
+            _FinishMus.Play();
+            Finished = true;
+        }
     }
     public void NextLevel()
     {
