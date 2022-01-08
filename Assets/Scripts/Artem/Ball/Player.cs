@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
         ShowHearts();
 
-        StartCoroutine(nameof(ImmunityTimer));
+        _currentImmunityTime = _immunityTime;
     }
 
     private void Update()
