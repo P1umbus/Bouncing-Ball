@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Lean.Localization;
 
 public class Fader : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private Text LoadingPercent;
+    [SerializeField] private LeanLocalToken LoadingPercent;
     [SerializeField] private Image LoadingProgressBar;
     private static Fader _instanse;
     private const string FADER_PATH = "Fader";
@@ -59,7 +60,7 @@ public class Fader : MonoBehaviour
     }
     public void UpdateLoadingPercent(float p)
     {
-        LoadingPercent.text = "Loading" + (int)((p/0.9)*100) + "%";
+        LoadingPercent.SetValue((int)((p/0.9)*100));
     }
     public void UpdateLoadingProgressBar(float p)
     {

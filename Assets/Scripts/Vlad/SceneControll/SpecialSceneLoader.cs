@@ -47,9 +47,10 @@ public class SpecialSceneLoader : MonoBehaviour
         while(asyns.progress < 0.9f)
         {
             ChangeProgress.Invoke(asyns.progress);
+            Debug.Log(asyns.progress);
             yield return null;
         }
-
+        //ChangeProgress.Invoke(asyns.progress);
         asyns.allowSceneActivation = true;
         Fader.instanse.FadeEnd(() => waitFading = false);
 
