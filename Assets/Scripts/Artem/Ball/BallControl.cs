@@ -67,7 +67,8 @@ public class BallControl : MonoBehaviour, IDragHandler
                 vector.y /= 2;
         }
 
-        _verticalBoostSpeed += Mathf.Abs(vector.y);
+        if (_player.IsGround == false)
+            _verticalBoostSpeed += Mathf.Abs(vector.y);
 
         if (_sqAndStr?.IsGround == false)
             _rb.velocity += vector;

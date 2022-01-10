@@ -7,6 +7,7 @@ public static class Constants
     public const string ControlSensivity = "ControlSensivity";
 
     public static string NumbActiveLevel = "NumbActiveLevel";
+    public static string ImmunitySphereAmount = "_Amount";
 
     public enum Rarity
     {
@@ -31,6 +32,9 @@ public static class Constants
         Level11,
         Level12,
         Level13,
+        Level14,
+        Level15,
+        Level16,
     }
     public enum MainLevelList
     {
