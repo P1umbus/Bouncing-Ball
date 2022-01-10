@@ -43,7 +43,6 @@ public class CoinManager : MonoBehaviour
         {
            
             CoinNamber += Numb;
-            Debug.Log(CoinNamber);
             OnCoinTake();
         }
         else

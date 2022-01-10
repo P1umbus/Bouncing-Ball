@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SpecialSceneLoader : MonoBehaviour
 {
-    private bool isLoading = false;
-
     public static SpecialSceneLoader instace;
     public Action<float> ChangeProgress;
+
     private void Awake()
     {
         if(instace != null)
@@ -32,7 +31,6 @@ public class SpecialSceneLoader : MonoBehaviour
 
     private IEnumerator ILoadScene(string sceneName)
     {
-        isLoading = true;
         var waitFading = true;
         Fader.instanse.FadeStart(() => waitFading = false);
 
@@ -47,7 +45,6 @@ public class SpecialSceneLoader : MonoBehaviour
         while(asyns.progress < 0.9f)
         {
             ChangeProgress.Invoke(asyns.progress);
-            Debug.Log(asyns.progress);
             yield return null;
         }
         //ChangeProgress.Invoke(asyns.progress);
@@ -58,8 +55,5 @@ public class SpecialSceneLoader : MonoBehaviour
         {
             yield return null;
         }
-
-        isLoading = false;
     }
-
 }

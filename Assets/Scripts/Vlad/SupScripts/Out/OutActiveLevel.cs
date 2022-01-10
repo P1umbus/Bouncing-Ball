@@ -14,7 +14,6 @@ public class OutActiveLevel : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log("wad");
         OutActiveLevelInText();
     }
 

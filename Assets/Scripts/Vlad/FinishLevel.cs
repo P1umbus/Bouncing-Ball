@@ -54,7 +54,6 @@ public class FinishLevel : MonoBehaviour
     private void SetData()
     {
         PlayerPrefs.SetInt(Constants.NumbActiveLevel,NumbLevel+1);
-        Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
         PlayerPrefs.Save();
     }
 

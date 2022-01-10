@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
             _currentImmunitySphereAmount = 0;
             _immunitySphere.material.SetFloat(Constants.ImmunitySphereAmount, _currentImmunitySphereAmount);
 
-            StartCoroutine(nameof(ImmunityTimer));
+            StartCoroutine(nameof(ImmunityTimer));            
         }
 
         ShowHearts();
