@@ -12,7 +12,7 @@ public class OutCoinInText : MonoBehaviour
     }
     void Start()
     {
-        Invoke("OutCoinNumber", 0.02f);
+        Invoke(nameof(OutCoinNumber), 0.02f);
     }
     private void OutCoinNumber()
     {

@@ -13,14 +13,11 @@ public class FinishLevel : MonoBehaviour
     [SerializeField] private AudioSource _FinishMus;
     [SerializeField] private Button NextLevelButton;
     [SerializeField] private ParticleSystem Confetti;
-    private CoinManager _CoinManager;
     private int NumbLevel;
-    private int StartInLvl;
     private int _finishReward = 10;
     private bool Finished = false;
     private void Awake()
     {
-        _CoinManager = FindObjectOfType<CoinManager>();
         NextLevelButton.onClick.AddListener(NextLevel);
         NumbLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
     }

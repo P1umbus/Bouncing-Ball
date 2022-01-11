@@ -15,26 +15,11 @@ public class SoundOptions : MonoBehaviour
         GameEvent.SoundEvents.ChangeSoundÎptions += ChangeMusStatus;
         GameEvent.SoundEvents.ChangeSoundValue += ChangeMusValue;
     }
+
     private void Start()
     { 
         LoadMusStatus();
         LoadValue();
-        ChangeMusVolueInScene();
-    }
-    private void MusicOn()
-    {
-        AudioListener.volume = MusValue;
-
-    }
-    private void MusicOff()
-    {
-        AudioListener.volume = 0;
-    }
-    private void ChangeMusValue(float Value)
-    {
-        Debug.Log("ChangeMusValue");
-        MusValue = Value;
-        SaveMusValue();
         ChangeMusVolueInScene();
     }
     public void ChangeMusStatus()
@@ -52,6 +37,34 @@ public class SoundOptions : MonoBehaviour
             ChangeMusVolueInScene();
         }
     }
+    public bool GetIsMusOn()
+    {
+        return IsMusOn;
+    }
+    public float GetMusValue()
+    {
+        return MusValue;
+    }
+    private void MusicOn()
+    {
+        AudioListener.volume = MusValue;
+
+    }
+
+    private void MusicOff()
+    {
+        AudioListener.volume = 0;
+    }
+
+    private void ChangeMusValue(float Value)
+    {
+        MusValue = Value;
+        SaveMusValue();
+        ChangeMusVolueInScene();
+    }
+
+    
+
     private void ChangeMusVolueInScene()
     {
         if (IsMusOn == true)
@@ -63,11 +76,11 @@ public class SoundOptions : MonoBehaviour
             MusicOff();
         }
     }
+
     private void LoadMusStatus()
     {
         if (PlayerPrefs.HasKey(PPMusStatusName))
         {
-
             CheckLoadMusStatus();
         }
         else
@@ -77,6 +90,7 @@ public class SoundOptions : MonoBehaviour
 
         }
     }
+
     private void LoadValue()
     {
         if (PlayerPrefs.HasKey(PPMusValueName))
@@ -121,13 +135,6 @@ public class SoundOptions : MonoBehaviour
     {
         GameEvent.SoundEvents.ChangeSoundÎptions -= ChangeMusStatus;
     }
-    public bool GetIsMusOn()
-    {
-        return IsMusOn;
-    }
-    public float GetMusValue()
-    {
-        return MusValue;
-    }
+ 
 }
 

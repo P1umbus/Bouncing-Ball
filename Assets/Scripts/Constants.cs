@@ -4,10 +4,14 @@ using UnityEngine;
 
 public static class Constants
 {
+    public class PPname
+    {
+        public const string CoinNumb = "CoinNumb";
+    }
     public const string ControlSensivity = "ControlSensivity";
 
-    public static string NumbActiveLevel = "NumbActiveLevel";
-    public static string ImmunitySphereAmount = "_Amount";
+    public const string NumbActiveLevel = "NumbActiveLevel";
+    public const string ImmunitySphereAmount = "_Amount";
 
     public enum Rarity
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bank : MonoBehaviour
 {
     public static Bank instance;
-    private string PPCoinName;
+    private string PPCoinName = Constants.PPname.CoinNumb;
     private int CoinNumb;
     private void Awake()
     {
@@ -48,20 +48,27 @@ public class Bank : MonoBehaviour
     }
     public void ReduceCoinNumb(int coin)
     {
-        if(coin >= 0)
+        if (IsEnough(coin) == true)
         {
-            CoinNumb -= coin;
-            SavaData();
-            GameEvent.ChangeCoinNumb?.Invoke();
+            if (coin >= 0) 
+            {
+                CoinNumb -= coin;
+                SavaData();
+                GameEvent.ChangeCoinNumb?.Invoke();
+            }
+            else
+            {
+                Debug.LogError("You can't reduction the number of coins by a negative number ");
+            }
+
         }
         else
         {
-            Debug.LogError("You can't reduction the number of coins by a negative number ");
+            Debug.LogError("You can't reduction coins , not enough coins");
         }
     }
     private void DataLoad()
     {
-        PPCoinName = "CoinNumb";
         if (PlayerPrefs.HasKey(PPCoinName))
         {
             CoinNumb = PlayerPrefs.GetInt(PPCoinName);

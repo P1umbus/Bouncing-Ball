@@ -9,7 +9,7 @@ public class BallRotation : MonoBehaviour
     {
        _transform = GetComponent<Transform>();
     }
-    void Update()
+    private void FixedUpdate()
     {
         _transform.Rotate(new Vector3(0, 45, 0) * Time.deltaTime);
     }

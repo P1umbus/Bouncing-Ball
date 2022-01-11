@@ -8,17 +8,9 @@ public class ItemManager : MonoBehaviour
 {
     [SerializeField] private int Price;
     [SerializeField] private int SkinNumb;
-    [SerializeField] private Sprite BallImmage;
-    [SerializeField] private Image BgImage;
-    [SerializeField] private Image BgButtonImage;
-    [SerializeField] private Image BgButtonImage2;
-    [SerializeField] private Image Ball;
-    //[SerializeField] private Rarity Rar;
-    [SerializeField] private Text PriceText;
-    [SerializeField] private Text TakenText;
-    [SerializeField] private Text BoughtText;
+    [SerializeField] private Image[] RarBg;
+    [SerializeField] private Text[] StatusText;
     [SerializeField] private LeanLocalToken PriceToken;
-    [SerializeField] private bool CanSell = true;
     [SerializeField] private CoinTween CoinBuyTween;
     [SerializeField] private CoinTween CoinSellTween;
     [SerializeField] private Color CommonColor;
@@ -37,7 +29,6 @@ public class ItemManager : MonoBehaviour
     private void Awake()
     {
         LoadDate();
-        GameEvent.ChangeMaterial += CheckStatus;
     }
 
     private void Start()
@@ -55,7 +46,7 @@ public class ItemManager : MonoBehaviour
             Bank.instance.ReduceCoinNumb(Price);
             UpdateChange();
             GameEvent.SoundEvents.Shop.Buy?.Invoke();
-            CoinBuyTween.OnBuy(this.gameObject);
+            CoinBuyTween.OnBuy(this.gameObject.transform);
         }
         else if (isPurchased == true)
         {
@@ -64,20 +55,17 @@ public class ItemManager : MonoBehaviour
     }
     public void TrySell()
     {
-        if(CanSell == true)
+        if (isPurchased == true)
         {
-            if (isPurchased == true)
-            {
-                GameEvent.TrySell.Invoke(this);
-            }
-        }        
+            GameEvent.TrySell?.Invoke(this);
+        }      
     }
     public void Sell()
     {
         if (isPurchased == true)
         {
             GameEvent.SoundEvents.Shop.Sell?.Invoke();
-            CoinSellTween.OnSell(this.gameObject);
+            CoinSellTween.OnSell(this.gameObject.transform);
             if (IsSelectedSkin() == true)
             {
                 PlayerPrefs.SetInt(PPname, 0);
@@ -85,13 +73,13 @@ public class ItemManager : MonoBehaviour
                 PlayerPrefs.SetInt("SelectedSkin", 0);
                 GameEvent.SkinsUpdate?.Invoke();
                 UpdateChange();
-                GameEvent.ChangeMaterial();
+                CheckStatus();
             }
             else
             {
                 PlayerPrefs.SetInt(PPname, 0);
                 UpdateChange();
-                PriceText.text = Price.ToString();
+                StatusText[0].text = Price.ToString();
                 Bank.instance.PluralIncreaseCoinNumb(SellPrice);
             }
         }
@@ -107,7 +95,7 @@ public class ItemManager : MonoBehaviour
     private void Select()
     {
         PlayerPrefs.SetInt("SelectedSkin", SkinNumb);
-        GameEvent.ChangeMaterial?.Invoke();
+        CheckStatus();
         GameEvent.SkinsUpdate?.Invoke();
     }
     private bool IsSelectedSkin()
@@ -123,9 +111,7 @@ public class ItemManager : MonoBehaviour
     {
         if(Status == 0)
         {
-            PriceText.gameObject.SetActive(true);
-            TakenText.gameObject.SetActive(false);
-            BoughtText.gameObject.SetActive(false);
+            UpdateStatus(0);
             PriceToken.SetValue(Price);
             isPurchased = false;
         }
@@ -133,19 +119,30 @@ public class ItemManager : MonoBehaviour
         {
             if (IsSelectedSkin())
             {
-                PriceText.gameObject.SetActive(false);
-                TakenText.gameObject.SetActive(true);
-                BoughtText.gameObject.SetActive(false);
-                isPurchased = true;
+                UpdateStatus(1);
             }
             else
             {
-                PriceText.gameObject.SetActive(false);
-                TakenText.gameObject.SetActive(false);
-                BoughtText.gameObject.SetActive(true);
-                isPurchased = true;
+                UpdateStatus(2);
             }
-           
+
+            isPurchased = true;
+
+        }
+    }
+    private void UpdateStatus(int activeText)
+    {
+
+        for (int i = 0; i < StatusText.Length; i++)
+        {
+            if(i != activeText)
+            {
+                StatusText[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                StatusText[i].gameObject.SetActive(true);
+            }
         }
     }
     private void LoadDate()
@@ -166,52 +163,38 @@ public class ItemManager : MonoBehaviour
         LoadDate();
         CheckStatus();
     }
-    //private enum Rarity
-    //{
-    //    Common,
-    //    Rare,
-    //    Mythical
-    //}
-    //public string GetRarity()
-    //{
-    //    return Rar.ToString();
-    //}
     private void RarCheck()
     {
         if (_rarity == Constants.Rarity.Common)
         {
-            BgImage.color = CommonColor;
-            BgButtonImage.color = CommonColor;
-            BgButtonImage2.color = CommonColor;
+            UpdateBgColor(CommonColor);
         }
         else if (_rarity == Constants.Rarity.Rare)
         {
-            BgImage.color =  RareColor;
-            BgButtonImage.color = RareColor;
-            BgButtonImage2.color = RareColor;
+            UpdateBgColor(RareColor);
         }
         else if (_rarity == Constants.Rarity.Mythical)
         {
-            BgImage.color = MythicalColor;
-            BgButtonImage.color = MythicalColor;
-            BgButtonImage2.color = MythicalColor;
+            UpdateBgColor(MythicalColor);
         }
     }
-    private void OnDestroy()
+    private void UpdateBgColor(Color activeColor)
     {
-        GameEvent.ChangeMaterial -= CheckStatus;
+        foreach (Image bg in RarBg)
+        {
+            bg.color = activeColor;
+        }
     }
-
     #if UNITY_EDITOR
     [ContextMenu("UpdateUI")]
     private void UpdateUI()
     {
-        Undo.RecordObject(BgImage, "test");
-        Undo.RecordObject(BgButtonImage, "test");
-        Undo.RecordObject(BgButtonImage2, "test");
-        Undo.RecordObject(PriceText, "test");
-        PriceText.text = Price.ToString();
-        Ball.sprite = BallImmage;
+        foreach (Image bg in RarBg)
+        {
+            Undo.RecordObject(bg, "test");
+        }
+        Undo.RecordObject(StatusText[0], "test");
+        StatusText[0].text = Price.ToString();
         RarCheck();
     }
     #endif
