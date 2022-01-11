@@ -12,6 +12,7 @@ public class FinishLevel : MonoBehaviour
     [SerializeField] private Rigidbody _Rigidbody;
     [SerializeField] private AudioSource _FinishMus;
     [SerializeField] private Button NextLevelButton;
+    [SerializeField] private ParticleSystem Confetti;
     private CoinManager _CoinManager;
     private int NumbLevel;
     private int StartInLvl;
@@ -36,6 +37,7 @@ public class FinishLevel : MonoBehaviour
         if(Finished == false)
         {
             SetData();
+            Confetti.gameObject.SetActive(true);
             ControllCanvas.SetActive(false);
             _Rigidbody.isKinematic = true;
             FinishCanvas.SetActive(true);
@@ -64,7 +66,7 @@ public class FinishLevel : MonoBehaviour
     {
         Bank.instance.PluralIncreaseCoinNumb(reward);
         CoinManager.Instance.IncreaseCoinNumb(reward);
-        //TakePluralCoinTween.Instance.Move(this.transform.position, reward);
+        TakePluralCoinTween.Instance.Move(this.transform.position, reward);
     }
 
 }
