@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class OutActiveLevel : MonoBehaviour
 {
     private LeanLocalToken LevelNumb;
+    [SerializeField] private Text _maxlevel;
     private void Awake()
     {
         LevelNumb = GetComponentInChildren<LeanLocalToken>();
@@ -26,7 +27,8 @@ public class OutActiveLevel : MonoBehaviour
         }
         else
         {
-            //ActiveLevelText.text = "Max Level";
+            _maxlevel.gameObject.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 }
