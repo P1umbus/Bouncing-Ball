@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 3964906242730145067}
   - component: {fileID: 3964906242730145066}
   - component: {fileID: 3964906242730145068}
-  - component: {fileID: 3964906242730145069}
   m_Layer: 5
   m_Name: Material
   m_TagString: Untagged
@@ -326,9 +325,6 @@ MonoBehaviour:
   - {fileID: 3964906244196511061}
   - {fileID: 6496191094005342018}
   - {fileID: 614782924763913958}
-  PriceText: {fileID: 3964906244196511061}
-  TakenText: {fileID: 6496191094005342018}
-  BoughtText: {fileID: 614782924763913958}
   PriceToken: {fileID: 4419953715009886663}
   CoinBuyTween: {fileID: 0}
   CoinSellTween: {fileID: 0}
@@ -336,18 +332,6 @@ MonoBehaviour:
   RareColor: {r: 0.32620147, g: 0.4259225, b: 0.9245283, a: 1}
   MythicalColor: {r: 0.6156751, g: 0.36769313, b: 0.8584906, a: 1}
   _rarity: 0
---- !u!114 &3964906242730145069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964906242730145070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14dd1f4a82e6cbd4ab319d71963eb804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3964906243212354779
 GameObject:
   m_ObjectHideFlags: 0
