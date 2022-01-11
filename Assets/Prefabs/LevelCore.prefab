@@ -297,6 +297,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4668272267296112822}
     m_Modifications:
+    - target: {fileID: 1397433776979775146, guid: c67edf9321c32d644aed1305ea1df08e, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 4226692535913929275}
     - target: {fileID: 2685038113774690713, guid: c67edf9321c32d644aed1305ea1df08e, type: 3}
       propertyPath: m_Name
       value: FinishCanvas
@@ -633,6 +637,10 @@ PrefabInstance:
     - target: {fileID: 1581305417339104806, guid: 5fb1385e7f4d5724b98ebf373a750ff4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581305417339104824, guid: 5fb1385e7f4d5724b98ebf373a750ff4, type: 3}
+      propertyPath: m_Text
+      value: Level 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb1385e7f4d5724b98ebf373a750ff4, type: 3}
@@ -1513,6 +1521,10 @@ PrefabInstance:
     - target: {fileID: 6005877903433719307, guid: ba4da5e2d15cf824b8cf14169de51951, type: 3}
       propertyPath: m_Name
       value: LeanLocalization
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005877903433719348, guid: ba4da5e2d15cf824b8cf14169de51951, type: 3}
+      propertyPath: currentLanguage
+      value: English
       objectReference: {fileID: 0}
     - target: {fileID: 6005877903433719349, guid: ba4da5e2d15cf824b8cf14169de51951, type: 3}
       propertyPath: m_RootOrder

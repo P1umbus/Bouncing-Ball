@@ -15,6 +15,7 @@ public class FinishLevel : MonoBehaviour
     private CoinManager _CoinManager;
     private int NumbLevel;
     private int StartInLvl;
+    private int _finishReward = 10;
     private bool Finished = false;
     private void Awake()
     {
@@ -37,9 +38,8 @@ public class FinishLevel : MonoBehaviour
             SetData();
             ControllCanvas.SetActive(false);
             _Rigidbody.isKinematic = true;
-            Bank.instance.PluralIncreaseCoinNumb(10);
-            CoinManager.Instance.IncreaseCoinNumb(10);
             FinishCanvas.SetActive(true);
+            AddFinishReward(_finishReward);
             _FinishMus.Play();
             Finished = true;
         }
@@ -51,14 +51,20 @@ public class FinishLevel : MonoBehaviour
             SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)(NumbLevel+1)).ToString());
         }   
     }
-    private void SetData()
-    {
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel,NumbLevel+1);
-        PlayerPrefs.Save();
-    }
-
     public void RestartButton()
     {
         SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)NumbLevel).ToString()); 
     }
+    private void SetData()
+    {
+        PlayerPrefs.SetInt(Constants.NumbActiveLevel, NumbLevel + 1);
+        PlayerPrefs.Save();
+    }
+    private void AddFinishReward(int reward)
+    {
+        Bank.instance.PluralIncreaseCoinNumb(reward);
+        CoinManager.Instance.IncreaseCoinNumb(reward);
+        //TakePluralCoinTween.Instance.Move(this.transform.position, reward);
+    }
+
 }
