@@ -102,6 +102,8 @@ public class Player : MonoBehaviour
             _currentImmunityTime = 0;
 
             _currentImmunitySphereAmount = 0;
+
+            _immunitySphere.gameObject.SetActive(true);
             _immunitySphere.material.SetFloat(Constants.ImmunitySphereAmount, _currentImmunitySphereAmount);
 
             StartCoroutine(nameof(ImmunityTimer));            
@@ -126,6 +128,7 @@ public class Player : MonoBehaviour
         {
             _currentImmunitySphereAmount = 1;
             _immunitySphere.material.SetFloat(Constants.ImmunitySphereAmount, _currentImmunitySphereAmount);
+            _immunitySphere.gameObject.SetActive(false);
         }
     }
 
