@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DropdownHanler : MonoBehaviour
 {
     [SerializeField] private ItemManager[] _itemManagers;
-
-    //public bool _isShop;
 
     public void Sort(int value)
     {

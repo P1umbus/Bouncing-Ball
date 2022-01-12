@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FollowPosition : MonoBehaviour 
 {    
     [SerializeField] private Transform _target;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _minY;
-    [SerializeField] private float _yIgnor;//забыл слово которым лучше назвать это поле(
+    [SerializeField] private float _yIgnor;
 
     void FixedUpdate() 
     {

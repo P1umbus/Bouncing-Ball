@@ -1,10 +1,9 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 using UnityEngine.Advertisements;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
+public class RewardedAdsButton :  MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] private Button _showAdButton;
 
@@ -57,8 +56,8 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void ShowAd()
     {
         // Disable the button: 
-        //_showAdButton.interactable = false;
         _showAdButton.gameObject.SetActive(false);
+        
         // Then show the ad:
         Advertisement.Show(_adUnitId, this);
     }

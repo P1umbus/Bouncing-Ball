@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -14,7 +12,6 @@ public class AdsInit : MonoBehaviour, IUnityAdsInitializationListener
     void Awake()
     {
         InitializeAds();
-        //PlayerPrefs.SetInt(Constants.NumbActiveLevel, 16);
     }
 
     public void InitializeAds()
