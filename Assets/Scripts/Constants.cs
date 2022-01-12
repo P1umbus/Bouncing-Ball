@@ -19,6 +19,7 @@ public static class Constants
         Rare,
         Mythical
     }
+
     public enum GameLevelList
     {
         Level1 = 1,
@@ -46,5 +47,4 @@ public static class Constants
         Menu,
         Shop,
     }
-
 }

@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class CopyRotation : MonoBehaviour {
-
+public class CopyRotation : MonoBehaviour 
+{
     public Transform CopyFrom;
 
-    void LateUpdate() {
+    void LateUpdate() 
+    {
         transform.rotation = CopyFrom.rotation;
     }
-
 }

@@ -7707,7 +7707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4668272267296112822, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4668272267296112822, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7765,6 +7765,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
+    - target: {fileID: 8175828667520444306, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
 --- !u!4 &457209871 stripped
