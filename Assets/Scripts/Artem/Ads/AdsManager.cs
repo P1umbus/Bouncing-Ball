@@ -1,25 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.Events;
 
-public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
+public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener
 {
     public static AdsManager Instance { get; private set; }
 
-    public UnityEvent<string> AdLoaded;
+    public static bool RewardedAdIsLoad { get; private set; } = false;
+
+    public static UnityEvent<string> AdLoadChange = new UnityEvent<string>();
 
     [Header("AdsInit")]
     [SerializeField] private string _androidGameId;
     [SerializeField] private bool _testMode;
 
-    [Header("RewardedAds")]
+    [Header("AdsSettings")]
     [SerializeField] private List<string> _adsUsed = new List<string>{ "Rewarded_Android" };
-    public bool RewardedAdIsLoad = false;
 
     private string _adUnitId;
 
+    public static void AdIncluded(string placementId)
+    {
+        if (placementId == "Rewarded_Android")
+            RewardedAdIsLoad = false;
+
+        Instance.LoadAd(placementId);
+
+        AdLoadChange.Invoke(placementId);
+    }
 
     private void Awake()
     {
@@ -47,7 +56,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
         }
     }
 
-    public void LoadAd(string adName)
+    private void LoadAd(string adName)
     {
         // IMPORTANT! Only load content AFTER initialization.
         Debug.Log("Loading Ad: " + adName);
@@ -69,34 +78,22 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
         if (placementId == "Rewarded_Android")
             RewardedAdIsLoad = true;
 
-        AdLoaded.Invoke(placementId);
+        AdLoadChange.Invoke(placementId);
         Debug.Log("Ad Loaded: " + placementId);
     }
 
-    public void ShowAd(string placementId)
-    {
-        if (placementId == "Rewarded_Android")
-            RewardedAdIsLoad = false;
+    //public void ShowAd(string placementId)
+    //{
+    //    if (placementId == "Rewarded_Android")
+    //        RewardedAdIsLoad = false;
 
-        Advertisement.Show(placementId, this);
-    }
+    //    Advertisement.Show(placementId, this);
+    //    AdLoadChange.Invoke(placementId);
+    //}
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
     {
-        throw new System.NotImplementedException();
+        Debug.Log($"Error loading Ad Unit {placementId}: {error.ToString()} - {message}");
     }
-
-    public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnUnityAdsShowStart(string placementId) {}
-
     public void OnUnityAdsShowClick(string placementId) {}
 }

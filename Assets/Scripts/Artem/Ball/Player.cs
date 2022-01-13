@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Rigidbody), typeof(AudioSource))]
 public class Player : MonoBehaviour
 {
     public static Player Instance;
