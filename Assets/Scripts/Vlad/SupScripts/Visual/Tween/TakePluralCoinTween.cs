@@ -17,15 +17,32 @@ public class TakePluralCoinTween : MonoBehaviour
         _textCoinNumb = GetComponentInChildren<Text>();
         this.gameObject.SetActive(false);
     }
-    public void Move(Vector3 objectPosition, int numb)
+    public void WorldMove(Vector3 objectPosition, int numb)
     {
         this.transform.position = _camera.WorldToScreenPoint(objectPosition);
         this.gameObject.SetActive(true);
         _textCoinNumb.text = numb.ToString();
+        LeanTween.move(this.gameObject, MoveTo.transform.position, MoveTime).setOnComplete(OnEnd);
+        //CoinMove();
+    }
+    public void ScreenMove(Vector3 objectPosition, int numb)
+    {
+        this.transform.position = objectPosition;
+        this.gameObject.SetActive(true);
+        _textCoinNumb.text = numb.ToString();
+        LeanTween.move(this.gameObject, MoveTo.transform.position, MoveTime).setOnComplete(OnEnd);
+        //CoinMove();
+    }
+    private void CoinMove()
+    {
         LeanTween.move(this.gameObject, MoveTo.transform.position, MoveTime).setOnComplete(OnEnd);
     }
     private void OnEnd()
     {
         this.gameObject.SetActive(false);
     }
+    //private void OnDestroy()
+    //{
+    //    LeanTween.cancelAll();
+    //}
 }

@@ -10,10 +10,13 @@ public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
     [SerializeField] private string _placementId = "Rewarded_Android";
 
     private Button _button;
+    private Vector3 _pos;
 
     private void Awake()
     {
         _button = GetComponent<Button>();
+
+        _pos = transform.position;
 
         _button.interactable = false;
     }
@@ -55,9 +58,10 @@ public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
+        
         if (placementId.Equals(_placementId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            CoinManager.Instance.MultiplyCoin(_coinMultiplier);
+            CoinManager.Instance.MultiplyCoin(_pos, _coinMultiplier);
             Debug.Log("Unity Ads Rewarded Ad Completed1");
         }
     }

@@ -27,11 +27,13 @@ public class CoinManager : MonoBehaviour
     {
         return CoinNamber;
     }
-    public void MultiplyCoin(int Multiply)
+    public void MultiplyCoin(Vector3 pos,int Multiply)
     {
         if(MultiplyAbility == true)
         {
-            Bank.instance.PluralIncreaseCoinNumb(CoinNamber * (Multiply-1));
+            int MultiplyNumb = CoinNamber * (Multiply - 1);
+            Bank.instance.PluralIncreaseCoinNumb(MultiplyNumb);
+            TakePluralCoinTween.Instance.ScreenMove(pos, MultiplyNumb);
             CoinNamber *= Multiply;
             GameEvent.MultiplyCoin?.Invoke();
             MultiplyAbility = false;

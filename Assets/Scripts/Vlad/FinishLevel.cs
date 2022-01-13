@@ -63,7 +63,7 @@ public class FinishLevel : MonoBehaviour
     {
         Bank.instance.PluralIncreaseCoinNumb(reward);
         CoinManager.Instance.IncreaseCoinNumb(reward);
-        TakePluralCoinTween.Instance.Move(this.transform.position, reward);
+        TakePluralCoinTween.Instance.WorldMove(this.transform.position, reward);
     }
 
 }
