@@ -9,7 +9,7 @@ public class FirebaseController : MonoBehaviour
     private void Start()
     {
         InitFB();
-        Invoke(nameof(Crash), 10);
+        //Invoke(nameof(Crash), 10);
     }
 
     private void InitFB()
@@ -33,9 +33,8 @@ public class FirebaseController : MonoBehaviour
         });
     }
 
-    private void Crash()
-    {
-        //throw new System.Exception("CRASH");
-        //Debug.Log("crash)");
-    }
+    //public void Crash()
+    //{
+    //    throw new System.Exception("CRASH");
+    //}
 }
