@@ -35,7 +35,7 @@ public class FirebaseController : MonoBehaviour
 
     private void Crash()
     {
-        throw new System.Exception("CRASH");
-        Debug.Log("crash)");
+        //throw new System.Exception("CRASH");
+        //Debug.Log("crash)");
     }
 }
