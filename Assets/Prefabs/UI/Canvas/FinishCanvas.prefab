@@ -235,7 +235,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
     m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Multiply
+  m_Text: "\u4E58"
 --- !u!114 &1874527714688190530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -676,7 +676,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Complated
+  m_Text: "\u7F16\u8BD1"
 --- !u!114 &5587849076825900007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1000,7 +1000,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
     m_FontSize: 300
     m_FontStyle: 0
     m_BestFit: 0
@@ -1012,7 +1012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level
+  m_Text: "\u7B49\u7EA7"
 --- !u!114 &3115089179578372633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,7 +1224,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
     m_FontSize: 166
     m_FontStyle: 0
     m_BestFit: 0
@@ -1236,7 +1236,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REWARD
+  m_Text: "\u62A5\u916C"
 --- !u!114 &4585095110335272236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,7 +1607,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+    m_Font: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
     m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NEXT
+  m_Text: "\u4E0B\u4E00\u4E2A"
 --- !u!114 &7893831634674448680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,12 +1657,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 75312603113333681, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_Text
-      value: HOME
+      value: "\u5BB6"
       objectReference: {fileID: 0}
     - target: {fileID: 75312603113333681, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
+      objectReference: {fileID: 12800000, guid: e629bb9acee4b41479525ec7e0da7ade, type: 3}
     - target: {fileID: 2304347966949900409, guid: b7e10ad58c26bf441a36baac6322a68a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
