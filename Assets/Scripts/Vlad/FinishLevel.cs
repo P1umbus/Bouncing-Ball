@@ -16,6 +16,9 @@ public class FinishLevel : MonoBehaviour
     private int NumbLevel;
     private int _finishReward = 10;
     private bool Finished = false;
+
+    private float _timeCompleteLevel;
+
     private void Awake()
     {
         NextLevelButton.onClick.AddListener(NextLevel);
@@ -40,6 +43,9 @@ public class FinishLevel : MonoBehaviour
             FinishCanvas.SetActive(true);
             AddFinishReward(_finishReward);
             _FinishMus.Play();
+
+            _timeCompleteLevel = Time.timeSinceLevelLoad;
+
             Finished = true;
         }
     }
@@ -66,4 +72,11 @@ public class FinishLevel : MonoBehaviour
         TakePluralCoinTween.Instance.WorldMove(this.transform.position, reward);
     }
 
+    private void OnDestroy()
+    {
+        if (Finished == true)
+        {
+            FirebaseManager.Instance.EndLevel(_timeCompleteLevel);
+        }
+    }
 }
