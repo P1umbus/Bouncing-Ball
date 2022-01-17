@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Analytics;
+using Firebase;
+using Firebase.Extensions;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -22,10 +24,19 @@ public class FirebaseManager : MonoBehaviour
             return;
         }
 
-        InitFB();
+        InitFBCrashlitic();
+        //InitFBAnalitic();        
     }
 
-    private void InitFB()
+    private void InitFBAnalitic()
+    {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        {
+            FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+        });
+    }
+
+    private void InitFBCrashlitic()
     {
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
@@ -46,14 +57,8 @@ public class FirebaseManager : MonoBehaviour
         });
     }
 
-    private void GetLevelNumber()
-    {
-        Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
-    }
-
     public void StartLevel()
     {
-        Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
 
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelStart,
             new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.NumbActiveLevel)));
