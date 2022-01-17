@@ -22446,17 +22446,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 491100190866352885, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -109
+      objectReference: {fileID: 0}
     - target: {fileID: 3837471736124895073, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: currentLanguage
       value: Russian
-      objectReference: {fileID: 0}
-    - target: {fileID: 4226692535298950115, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 54.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4226692535298950115, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.2
       objectReference: {fileID: 0}
     - target: {fileID: 4668272267296112822, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: m_RootOrder
