@@ -41,6 +41,8 @@ public class BallControl : MonoBehaviour, IDragHandler
         {
             Debug.LogWarning("Can't find a player");
         }
+
+        FirebaseManager.Instance?.StartLevel();
     }
 
     private void OnTouch()
