@@ -5706,18 +5706,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4668272267690926547}
     m_Modifications:
-    - target: {fileID: 669227957228345066, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 206
-      objectReference: {fileID: 0}
-    - target: {fileID: 1590647166522865144, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 206
-      objectReference: {fileID: 0}
-    - target: {fileID: 3301536269815237413, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 206
-      objectReference: {fileID: 0}
     - target: {fileID: 5051268435945788148, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: m_Name
       value: UIPanelControl
@@ -5808,11 +5796,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5051268435945788151, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051268435945788151, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -109.00012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051268435945788151, guid: 859108aa7843af54b8cc5ac98608b55d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -92,7 +92,6 @@ MonoBehaviour:
   MoveTo: {fileID: 0}
   MoveTime: 1.5
   _camera: {fileID: 0}
-  _coinNumb: 10
 --- !u!1 &3720901569103653641
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +167,7 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 10
