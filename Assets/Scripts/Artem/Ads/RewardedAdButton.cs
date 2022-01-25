@@ -6,33 +6,32 @@ using UnityEngine.UI;
 public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
 {
     [SerializeField] private int _coinMultiplier = 2;
-
     [SerializeField] private string _placementId = "Rewarded_Android";
 
     private Button _button;
     private Vector3 _pos;
 
+    private AdsManager _adsManager;
+
     private void Awake()
     {
         _button = GetComponent<Button>();
-
         _pos = transform.position;
-
         _button.interactable = false;
     }
 
     private void Start()
     {
+        _adsManager = DataLoadSystem.GetLoader<AdsManager>("0");
         AdsManager.AdLoadChange.AddListener(AdLoaded);
-
         AdLoaded(_placementId);
     }
 
     private void AdLoaded(string placementId)
-    {
-        if (placementId == _placementId)
+    {        
+        if (_placementId.Equals(placementId))
         {
-            if (AdsManager.RewardedAdIsLoad == true)
+            if (AdsManager.RewardedAdIsLoad)
             {
                 _button.interactable = true;
                 _button.onClick.AddListener(ShowAd);
@@ -42,8 +41,7 @@ public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
     private void ShowAd()
     {
         Advertisement.Show(_placementId, this);
-
-        AdsManager.AdIncluded(_placementId);
+        _adsManager.AdIncluded(_placementId);
         _button.gameObject.SetActive(false);
     }
 
@@ -64,5 +62,11 @@ public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
             CoinManager.Instance.MultiplyCoin(_pos, _coinMultiplier);
             Debug.Log("Unity Ads Rewarded Ad Completed1");
         }
+    }
+
+    private void OnDestroy()
+    {
+        AdsManager.AdLoadChange.RemoveListener(AdLoaded);
+        _button.onClick.RemoveListener(ShowAd);
     }
 }

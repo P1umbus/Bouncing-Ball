@@ -3543,7 +3543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -3770,7 +3770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa58dfaece98674fa9bf48c72724a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: {fileID: 1265630163}
 --- !u!114 &1265630163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6742055173920869797, guid: 3d100a23fd895ec4ba09c34596565287, type: 3}
@@ -4627,7 +4626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+  m_Text: Setting
 --- !u!222 &1405715983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6877,7 +6876,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5e54b67ac2de0da448f14ae6e7f6bb5d, type: 3}
+    m_Font: {fileID: 12800000, guid: 00acf26d62cf3f84286ea290a7c6c0a0, type: 3}
     m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
@@ -6889,7 +6888,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u0433\u0440\u043E\u0432\u0430\u044F \u043F\u043E\u043B\u0438\u0442\u0438\u043A\u0430 "
+  m_Text: Privacy Policy
 --- !u!222 &1974497203
 CanvasRenderer:
   m_ObjectHideFlags: 0

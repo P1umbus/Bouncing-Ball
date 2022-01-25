@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f86f2e32554748b65eb166dc07005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGround: 0
+  IsGrounded: 0
   SavedVelocity: {x: 0, y: 0, z: 0}
   _stretchMultiplier: 0.003
   _squashMultiplier: 0.06
@@ -139,11 +139,11 @@ MonoBehaviour:
   Hearts: []
   SqAndStr: {fileID: 0}
   RB: {fileID: 0}
-  IsGround: 0
+  IsGrounded: 0
   _rednessDuration: 0.3
   _rednessMaxAlpha: 0.7
-  DeadScreen: {fileID: 0}
-  MaineScreen: {fileID: 0}
+  _deadScreen: {fileID: 0}
+  _maineScreen: {fileID: 0}
   _immunitySphere: {fileID: 2114767831287713965}
   _maxHealth: 3
   _immunityTime: 4
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1b098745307c64785b96688bb2c53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CopyFrom: {fileID: 3584698451087164509}
+  _copyFrom: {fileID: 3584698451087164509}
 --- !u!1 &6845932543277818988
 GameObject:
   m_ObjectHideFlags: 0
