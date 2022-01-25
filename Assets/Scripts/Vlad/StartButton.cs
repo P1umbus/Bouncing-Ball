@@ -4,7 +4,7 @@ using UnityEngine;
 public class StartButton : MonoBehaviour
 {
     [SerializeField] private float _force;
-    [SerializeField] private GameObject ResetPanel;
+    [SerializeField] private GameObject _resetPanel;
 
     private Rigidbody _ballRB;
 
@@ -27,7 +27,7 @@ public class StartButton : MonoBehaviour
         }
         else
         {
-            ResetPanel.SetActive(true);
+            _resetPanel.SetActive(true);
         }
     }
 

@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 public class CoinTween : MonoBehaviour
 {
-    [FormerlySerializedAs("Coin")] [SerializeField] private GameObject _coin;
-    [FormerlySerializedAs("MoveTo")] [SerializeField] private GameObject _moveTo;
-    [FormerlySerializedAs("MoveTime")] [SerializeField] private float _moveTime;
-    [FormerlySerializedAs("Scale")] [SerializeField] private Vector2 _scale;
+    [SerializeField] private GameObject _coin;
+    [SerializeField] private GameObject _moveTo;
+    [SerializeField] private float _moveTime;
+    [SerializeField] private Vector2 _scale;
     private RectTransform _rectTransform;
     private Vector2 StartScale;
     private Vector3 StartPos;

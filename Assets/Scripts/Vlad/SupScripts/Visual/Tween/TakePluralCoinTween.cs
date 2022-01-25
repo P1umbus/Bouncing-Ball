@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TakePluralCoinTween : MonoBehaviour
 {
     public static TakePluralCoinTween Instance;
-    [SerializeField] private GameObject MoveTo;
-    [SerializeField] private float MoveTime;
+    [SerializeField] private GameObject _moveTo;
+    [SerializeField] private float _moveTime;
     [SerializeField] private Camera _camera;
     private Text _textCoinNumb;
 
@@ -22,14 +20,14 @@ public class TakePluralCoinTween : MonoBehaviour
         this.transform.position = _camera.WorldToScreenPoint(objectPosition);
         this.gameObject.SetActive(true);
         _textCoinNumb.text = numb.ToString();
-        LeanTween.move(this.gameObject, MoveTo.transform.position, MoveTime).setOnComplete(OnEnd);
+        LeanTween.move(this.gameObject, _moveTo.transform.position, _moveTime).setOnComplete(OnEnd);
     }
     public void ScreenMove(Vector3 objectPosition, int numb)
     {
         this.transform.position = objectPosition;
         this.gameObject.SetActive(true);
         _textCoinNumb.text = numb.ToString();
-        LeanTween.move(this.gameObject, MoveTo.transform.position, MoveTime).setOnComplete(OnEnd);
+        LeanTween.move(this.gameObject, _moveTo.transform.position, _moveTime).setOnComplete(OnEnd);
     }
     private void OnEnd()
     {

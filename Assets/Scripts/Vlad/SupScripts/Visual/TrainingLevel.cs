@@ -7,42 +7,42 @@ using UnityEngine.UI;
 
 public class TrainingLevel : MonoBehaviour
 {
-    [SerializeField] private GameObject Cursor;
-    private Text Clue;
-    private Animator Anim;
+    [SerializeField] private GameObject _cursor;
+    private Text _clue;
+    private Animator _anim;
     private const string SCROL_RIGHT = "Base Layer.ScrolRight";
     private const string SCROL_LEFT = "Base Layer.ScrolLeft";
     private const string SCROL_UP = "Base Layer.ScrolUp";
     private const string SCROL_DOWN = "Base Layer.ScrolDown";
     private void Awake()
     {
-        Clue = GetComponentInChildren<Text>();
+        _clue = GetComponentInChildren<Text>();
     }
     private void Start()
     {
-        Anim = Cursor.GetComponent<Animator>();
+        _anim = _cursor.GetComponent<Animator>();
         StartCoroutine(TrainOne());
     }
 
     public void CloseTrain()
     {
-        Cursor.SetActive(false);
-        Clue.text = "";
+        _cursor.SetActive(false);
+        _clue.text = "";
     }
     IEnumerator TrainOne()
     {
         var waitTime = new WaitForSeconds(3f);
 
-        Anim.Play(SCROL_RIGHT);
+        _anim.Play(SCROL_RIGHT);
         yield return waitTime;
 
-        Anim.Play(SCROL_LEFT);
+        _anim.Play(SCROL_LEFT);
         yield return waitTime;
 
-        Anim.Play(SCROL_UP);
+        _anim.Play(SCROL_UP);
         yield return waitTime;
 
-        Anim.Play(SCROL_DOWN);
+        _anim.Play(SCROL_DOWN);
         yield return waitTime;
         CloseTrain();
     }

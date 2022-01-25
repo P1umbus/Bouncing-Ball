@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a42d182de51e9c45a9751660cbd65b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CoinNubmerText: {fileID: 815184482289742169}
+  _coinNubmerText: {fileID: 815184482289742169}
 --- !u!1 &1235185568411466374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1867,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7703077939764591729, guid: d2959509da748f04f88a7ec97933b2ae, type: 3}
       propertyPath: MoveTo
+      value: 
+      objectReference: {fileID: 8199548711358685417}
+    - target: {fileID: 7703077939764591729, guid: d2959509da748f04f88a7ec97933b2ae, type: 3}
+      propertyPath: _moveTo
       value: 
       objectReference: {fileID: 8199548711358685417}
     m_RemovedComponents: []

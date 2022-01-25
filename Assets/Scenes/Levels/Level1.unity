@@ -15204,10 +15204,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3837471736124895073, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: currentLanguage
-      value: Russian
+      value: English
       objectReference: {fileID: 0}
     - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: ExtraElements.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: _extraElements.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
@@ -15223,7 +15227,27 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: _extraElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 2096896110}
+    - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: _extraElements.Array.data[1]
+      value: 
+      objectReference: {fileID: 2096896109}
+    - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: _extraElementsText.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
       propertyPath: ExtraElementsText.Array.data[1]
+      value: 
+      objectReference: {fileID: 2096896108}
+    - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: _extraElementsText.Array.data[0]
+      value: 
+      objectReference: {fileID: 1279731630}
+    - target: {fileID: 4568826316791509426, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+      propertyPath: _extraElementsText.Array.data[1]
       value: 
       objectReference: {fileID: 2096896108}
     - target: {fileID: 4668272267296112822, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
@@ -15309,6 +15333,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4668272267690926547, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
   m_PrefabInstance: {fileID: 1279731628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1279731630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6140908791350618577, guid: 0999d00a19355ad4eb0fd1b765732cf2, type: 3}
+  m_PrefabInstance: {fileID: 1279731628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1287111533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25552,6 +25587,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1279731629}
     m_Modifications:
+    - target: {fileID: 1218435206, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+      propertyPath: _cursor
+      value: 
+      objectReference: {fileID: 2096896111}
     - target: {fileID: 2475861939171756970, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
       propertyPath: m_Text
       value: "\u041F\u0440\u043E\u0442\u044F\u043D\u0438\u0442\u0435, \u0447\u0442\u043E\u0431\u044B 
@@ -25678,12 +25717,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2475861938927095409, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
   m_PrefabInstance: {fileID: 2096896107}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2096896111}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2096896111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2475861938927095374, guid: d4de8e64f61d921458c376c20e71598e, type: 3}
+  m_PrefabInstance: {fileID: 2096896107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2097175920
 GameObject:
   m_ObjectHideFlags: 0

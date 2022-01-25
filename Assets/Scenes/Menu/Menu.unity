@@ -5009,7 +5009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 5
-  ResetPanel: {fileID: 536645031}
+  _resetPanel: {fileID: 536645031}
 --- !u!4 &1625506131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3818283013740339593, guid: 7b7263067debc3e40ba862752d02fe4d, type: 3}
@@ -5737,8 +5737,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e19dc7408952e14f877199e5b73034d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 1610379072}
-  Portal: {fileID: 1764451899}
+  _ball: {fileID: 0}
+  _portal: {fileID: 0}
 --- !u!4 &1789236660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8250593785596600116, guid: b84103262dbd8cd48a0d67046bee6366, type: 3}
@@ -7883,8 +7883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e19dc7408952e14f877199e5b73034d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ball: {fileID: 1610379079}
-  Portal: {fileID: 2142040665}
+  _ball: {fileID: 1610379079}
+  _portal: {fileID: 2142040665}
 --- !u!1001 &253006489114947158
 PrefabInstance:
   m_ObjectHideFlags: 0

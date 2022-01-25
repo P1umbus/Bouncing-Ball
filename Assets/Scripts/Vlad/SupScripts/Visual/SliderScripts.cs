@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class SliderScripts : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
-    [SerializeField] private Image fill;
+    [SerializeField] private Slider _slider;
+    [SerializeField] private Image _fill;
 
     private void Start()
     {
@@ -15,6 +16,6 @@ public class SliderScripts : MonoBehaviour
 
     public void FillSlider()
     {
-        fill.fillAmount = slider.value;
+        _fill.fillAmount = _slider.value;
     }
 }
