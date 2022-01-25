@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TakeCoinTween : MonoBehaviour
 {
-    [HideInInspector] public static TakeCoinTween Instance;
+    public static TakeCoinTween Instance;
     [SerializeField] private GameObject MoveTo;
     [SerializeField] private float MoveTime;
 
@@ -22,6 +22,8 @@ public class TakeCoinTween : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-
-    
+    private void OnDestroy()
+    {
+        LeanTween.cancel(MoveTo);
+    }
 }

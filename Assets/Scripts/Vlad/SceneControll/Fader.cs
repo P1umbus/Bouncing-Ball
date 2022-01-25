@@ -10,22 +10,23 @@ public class Fader : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private LeanLocalToken LoadingPercent;
     [SerializeField] private Image LoadingProgressBar;
-    private static Fader _instanse;
+    private static Fader _instance;
     private const string FADER_PATH = "Fader";
+    private const string FADER_ANIM_NAME = "faded";
 
     public bool isFading { get; private set;}
 
-    public static Fader instanse
+    public static Fader instance
     {
         get
         {
-            if(_instanse == null)
+            if(_instance == null)
             {
                 var prefab = Resources.Load<Fader>(FADER_PATH);
-                _instanse = Instantiate(prefab);
-                DontDestroyOnLoad(_instanse.gameObject);
+                _instance = Instantiate(prefab);
+                DontDestroyOnLoad(_instance.gameObject);
             }
-            return _instanse;
+            return _instance;
         }
     }
 
@@ -42,7 +43,7 @@ public class Fader : MonoBehaviour
         SpecialSceneLoader.instace.ChangeProgress += UpdateLoadingProgressBar;
         isFading = true;
         _faderStartCallBack = faderStartCallBack;
-        animator.SetBool("faded", true);
+        animator.SetBool(FADER_ANIM_NAME, true);
 
     }
     public void FadeEnd(Action faderEndCallBack)
@@ -53,16 +54,16 @@ public class Fader : MonoBehaviour
         }
         isFading = true;
         _faderEndCallBack = faderEndCallBack;
-        animator.SetBool("faded", false);
+        animator.SetBool(FADER_ANIM_NAME, false);
         SpecialSceneLoader.instace.ChangeProgress -= UpdateLoadingPercent;
         SpecialSceneLoader.instace.ChangeProgress -= UpdateLoadingProgressBar;
 
     }
-    public void UpdateLoadingPercent(float p)
+    private void UpdateLoadingPercent(float p)
     {
         LoadingPercent.SetValue((int)((p/0.9)*100));
     }
-    public void UpdateLoadingProgressBar(float p)
+    private void UpdateLoadingProgressBar(float p)
     {
         LoadingProgressBar.fillAmount = (p / 0.9f);
     }

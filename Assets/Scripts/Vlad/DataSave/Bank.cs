@@ -7,12 +7,13 @@ public class Bank : MonoBehaviour
     public static Bank instance;
     private string PPCoinName = Constants.PPname.CoinNumb;
     private int CoinNumb;
+
     private void Awake()
     {
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
             return;
         }
         Destroy(this.gameObject);
@@ -38,7 +39,7 @@ public class Bank : MonoBehaviour
         if (coin >= 0)
         {
             CoinNumb += coin;
-            SavaData();
+            SaveData();
             GameEvent.ChangeCoinNumb?.Invoke();
         }
         else
@@ -53,7 +54,7 @@ public class Bank : MonoBehaviour
             if (coin >= 0) 
             {
                 CoinNumb -= coin;
-                SavaData();
+                SaveData();
                 GameEvent.ChangeCoinNumb?.Invoke();
             }
             else
@@ -79,7 +80,7 @@ public class Bank : MonoBehaviour
             CoinNumb = PlayerPrefs.GetInt(PPCoinName);
         }
     }
-    private void SavaData()
+    private void SaveData()
     {
         PlayerPrefs.SetInt(PPCoinName,CoinNumb);
     }

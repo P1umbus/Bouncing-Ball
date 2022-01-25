@@ -19,7 +19,7 @@ public class VisualBallManager : MonoBehaviour
 
     private void TryUpdateMaterial()
     {
-        var a = PlayerPrefs.GetInt("SelectedSkin");
+        var a = PlayerPrefs.GetInt(Constants.PPname.SelectedSkin);
         Ball.material = _Materials[a];
     }
 

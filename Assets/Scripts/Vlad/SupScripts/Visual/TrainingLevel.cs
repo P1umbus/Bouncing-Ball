@@ -10,6 +10,10 @@ public class TrainingLevel : MonoBehaviour
     [SerializeField] private GameObject Cursor;
     private Text Clue;
     private Animator Anim;
+    private const string SCROL_RIGHT = "Base Layer.ScrolRight";
+    private const string SCROL_LEFT = "Base Layer.ScrolLeft";
+    private const string SCROL_UP = "Base Layer.ScrolUp";
+    private const string SCROL_DOWN = "Base Layer.ScrolDown";
     private void Awake()
     {
         Clue = GetComponentInChildren<Text>();
@@ -27,14 +31,19 @@ public class TrainingLevel : MonoBehaviour
     }
     IEnumerator TrainOne()
     {
-        Anim.Play("Base Layer.ScrolRight");
-        yield return new WaitForSeconds(3f);
-        Anim.Play("Base Layer.ScrolLeft");
-        yield return new WaitForSeconds(3f);
-        Anim.Play("Base Layer.ScrolUp");
-        yield return new WaitForSeconds(3f);
-        Anim.Play("Base Layer.ScrolDown");
-        yield return new WaitForSeconds(3f);
+        var waitTime = new WaitForSeconds(3f);
+
+        Anim.Play(SCROL_RIGHT);
+        yield return waitTime;
+
+        Anim.Play(SCROL_LEFT);
+        yield return waitTime;
+
+        Anim.Play(SCROL_UP);
+        yield return waitTime;
+
+        Anim.Play(SCROL_DOWN);
+        yield return waitTime;
         CloseTrain();
     }
 }

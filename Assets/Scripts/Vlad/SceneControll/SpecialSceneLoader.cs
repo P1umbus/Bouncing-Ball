@@ -22,7 +22,7 @@ public class SpecialSceneLoader : MonoBehaviour
    
     public void LoadScene(string sceneName)
     {
-        if (Fader.instanse.isFading)
+        if (Fader.instance.isFading)
         {
             return;
         }
@@ -32,7 +32,7 @@ public class SpecialSceneLoader : MonoBehaviour
     private IEnumerator ILoadScene(string sceneName)
     {
         var waitFading = true;
-        Fader.instanse.FadeStart(() => waitFading = false);
+        Fader.instance.FadeStart(() => waitFading = false);
 
         while (waitFading)
         {
@@ -49,7 +49,7 @@ public class SpecialSceneLoader : MonoBehaviour
         }
         //ChangeProgress.Invoke(asyns.progress);
         asyns.allowSceneActivation = true;
-        Fader.instanse.FadeEnd(() => waitFading = false);
+        Fader.instance.FadeEnd(() => waitFading = false);
 
         while (waitFading)
         {

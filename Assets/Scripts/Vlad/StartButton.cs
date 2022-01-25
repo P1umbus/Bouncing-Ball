@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody))]
 public class StartButton : MonoBehaviour
 {
     [SerializeField] private float _force;

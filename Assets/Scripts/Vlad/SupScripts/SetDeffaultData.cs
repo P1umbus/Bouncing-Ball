@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class SetDeffaultData : MonoBehaviour
 {
+    private const string DEFAUILT_MATERIAL = "Material0";
     private void Awake()
     {
         if (PlayerPrefs.HasKey(Constants.NumbActiveLevel) == false)
         {
-            Debug.Log("2");
             PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
         }
         if (PlayerPrefs.HasKey(Constants.ControlSensivity) == false)
         {
             PlayerPrefs.SetFloat(Constants.ControlSensivity, 0.8f);
         }
-        PlayerPrefs.SetInt("Material0", 1);
+        PlayerPrefs.SetInt(DEFAUILT_MATERIAL, 1);
     }
 }

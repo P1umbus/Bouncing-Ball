@@ -11,6 +11,6 @@ public class Gem : MonoBehaviour, IPickable
         this.gameObject.SetActive(false);
         Bank.instance.PluralIncreaseCoinNumb(Value);
         CoinManager.Instance.IncreaseCoinNumb(Value);
-        TakeCoinTween.Instance.Move(this.transform.position); // Опционально 
+        TakeCoinTween.Instance.Move(this.transform.position); // Optional
     }
 }

@@ -7,11 +7,10 @@ using UnityEngine.Advertisements;
 public class CoinManager : MonoBehaviour
 {
     [HideInInspector] public static CoinManager Instance;
-    public List<Coin> _Coin = new List<Coin>();
     [SerializeField] private Text CoinNumbText;
     [SerializeField]private AudioSource _CoinSound;
-    private int _coinNamber;
-    public int CoinNamber => _coinNamber;
+    private int _coinNumber;
+    public int CoinNumber => _coinNumber;
     private float CollectedCoinsPercentage;
     private bool MultiplyAbility = true;
 
@@ -26,16 +25,16 @@ public class CoinManager : MonoBehaviour
     }
     public int GetCoin()
     {
-        return _coinNamber;
+        return _coinNumber;
     }
     public void MultiplyCoin(Vector3 pos,int Multiply)
     {
         if(MultiplyAbility == true)
         {
-            int MultiplyNumb = _coinNamber * (Multiply - 1);
+            int MultiplyNumb = _coinNumber * (Multiply - 1);
             Bank.instance.PluralIncreaseCoinNumb(MultiplyNumb);
             TakePluralCoinTween.Instance.ScreenMove(pos, MultiplyNumb);
-            _coinNamber *= Multiply;
+            _coinNumber *= Multiply;
             GameEvent.MultiplyCoin?.Invoke();
             MultiplyAbility = false;
         }      
@@ -45,7 +44,7 @@ public class CoinManager : MonoBehaviour
         if (Numb >= 0)
         {
            
-            _coinNamber += Numb;
+            _coinNumber += Numb;
             OnCoinTake();
         }
         else
@@ -61,7 +60,7 @@ public class CoinManager : MonoBehaviour
     }
     private void UpdateUI()
     {
-        CoinNumbText.text = _coinNamber.ToString();
+        CoinNumbText.text = _coinNumber.ToString();
     }
     private void PlayCoinSound()
     {

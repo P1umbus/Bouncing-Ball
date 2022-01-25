@@ -11,8 +11,7 @@ public class SoundOptions : MonoBehaviour
 
     private void Awake()
     {
-        //Object.DontDestroyOnLoad(this);
-        GameEvent.SoundEvents.ChangeSoundÎptions += ChangeMusStatus;
+        GameEvent.SoundEvents.ChangeSoundOptions += ChangeMusStatus;
         GameEvent.SoundEvents.ChangeSoundValue += ChangeMusValue;
     }
 
@@ -22,6 +21,7 @@ public class SoundOptions : MonoBehaviour
         LoadValue();
         ChangeMusVolueInScene();
     }
+
     public void ChangeMusStatus()
     {
         if (IsMusOn == true)
@@ -37,10 +37,12 @@ public class SoundOptions : MonoBehaviour
             ChangeMusVolueInScene();
         }
     }
+
     public bool GetIsMusOn()
     {
         return IsMusOn;
     }
+
     public float GetMusValue()
     {
         return MusValue;
@@ -133,7 +135,8 @@ public class SoundOptions : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameEvent.SoundEvents.ChangeSoundÎptions -= ChangeMusStatus;
+        GameEvent.SoundEvents.ChangeSoundOptions -= ChangeMusStatus;
+        GameEvent.SoundEvents.ChangeSoundValue -= ChangeMusValue;
     }
  
 }

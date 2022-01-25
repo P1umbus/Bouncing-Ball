@@ -9,13 +9,9 @@ public class SetVisualSetting : MonoBehaviour
     [SerializeField] private GameObject MusOff;
     [SerializeField] private Slider MusValue;
     [SerializeField] private Slider SensValue;
-    private SoundOptions _SoundOptions;
+    [SerializeField] private SoundOptions _SoundOptions;
 
-    private void Awake()
-    {
-        _SoundOptions = FindObjectOfType <SoundOptions>();
-    }
-    void Start()
+    private void Start()
     {
         SetActiveMusStatus();
         SetMusValue();

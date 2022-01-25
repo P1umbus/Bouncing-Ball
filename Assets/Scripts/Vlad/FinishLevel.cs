@@ -78,5 +78,6 @@ public class FinishLevel : MonoBehaviour
         {
             FirebaseManager.Instance.EndLevel(_timeCompleteLevel);
         }
+        NextLevelButton.onClick.RemoveListener(NextLevel);
     }
 }

@@ -10,16 +10,15 @@ public class Preloader : MonoBehaviour
     [SerializeField] private Animator _anim;
     [SerializeField] private Text LoadingPercent;
     [SerializeField] private Image LoadingProgressBar;
-    private void Start()
-    {
+    private const string ANIM_TRIGGER_NAME = "FadeEnd";
+    private const string LOADING = "Loading";
 
-    }
     private void LevelLoad()
     {
         StartCoroutine(Loader());
     }
 
-    IEnumerator Loader()
+    private IEnumerator Loader()
     {
         operation = SceneManager.LoadSceneAsync(Constants.MainLevelList.Menu.ToString());
         operation.allowSceneActivation = false;
@@ -28,13 +27,13 @@ public class Preloader : MonoBehaviour
             LoaderUI(operation.progress);
             yield return null;
         }
-        _anim.SetTrigger("FadeEnd");
+        _anim.SetTrigger(ANIM_TRIGGER_NAME);
         LoaderUI(operation.progress);
     }
 
     private void LoaderUI(float progress)
     {
-        LoadingPercent.text = "Loading" + (int)((progress / 0.9) * 100) + "%";
+        LoadingPercent.text = LOADING + (int)((progress / 0.9) * 100) + "%";
         LoadingProgressBar.fillAmount = progress / 0.9f;
     }
     private void FadeStartAnimationOver()

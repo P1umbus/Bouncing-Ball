@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ShopAudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource SellSourse;
-    [SerializeField] private AudioSource BuySourse;
+    [SerializeField] private AudioSource _sellSourse;
+    [SerializeField] private AudioSource _buySourse;
     private void Awake()
     {
         GameEvent.SoundEvents.Shop.Sell += PlaySellMus;
@@ -14,11 +14,11 @@ public class ShopAudioManager : MonoBehaviour
 
     private void PlaySellMus()
     {
-        SellSourse.Play();
+        _sellSourse.Play();
     }
     private void PlayBuyMus()
     {
-        BuySourse.Play();
+        _buySourse.Play();
     }
 
     private void OnDestroy()

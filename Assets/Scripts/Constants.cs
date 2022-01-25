@@ -7,6 +7,7 @@ public static class Constants
     public class PPname
     {
         public const string CoinNumb = "CoinNumb";
+        public const string SelectedSkin = "SelectedSkin";
     }
     public const string ControlSensivity = "ControlSensivity";
 
