@@ -2,10 +2,10 @@
 
 public class CopyRotation : MonoBehaviour 
 {
-    public Transform CopyFrom;
+    [SerializeField] private Transform _copyFrom;
 
-    void LateUpdate() 
+    private void LateUpdate() 
     {
-        transform.rotation = CopyFrom.rotation;
+        transform.rotation = _copyFrom.rotation;
     }
 }

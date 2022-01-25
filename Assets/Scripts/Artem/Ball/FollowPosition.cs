@@ -9,15 +9,15 @@ public class FollowPosition : MonoBehaviour
 
     void FixedUpdate() 
     {
-        float x = Mathf.Lerp(transform.position.x, _target.position.x, Time.deltaTime * _speed);
-        float y = transform.position.y;
+        float x = Mathf.Lerp(transform.localPosition.x, _target.localPosition.x, Time.deltaTime * _speed);
+        float y = transform.localPosition.y;
 
-        if (Mathf.Abs(transform.position.y - _target.position.y) > _yIgnor)
-            y = Mathf.Lerp(transform.position.y, _target.position.y, Time.deltaTime * _speed * 0.3f);
+        if (Mathf.Abs(transform.localPosition.y - _target.localPosition.y) > _yIgnor)
+            y = Mathf.Lerp(transform.localPosition.y, _target.localPosition.y, Time.deltaTime * _speed * 0.3f);
 
         if (y < _minY)
             y = _minY;
 
-        transform.position = new Vector3(x, y, 0);
+        transform.localPosition = new Vector3(x, y, 0);
     }    
 }

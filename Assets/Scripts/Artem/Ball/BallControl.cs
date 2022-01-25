@@ -5,42 +5,24 @@ public class BallControl : MonoBehaviour, IDragHandler
 {
     [Range(0.5f, 1.5f)]
     [SerializeField] private float _controlSensivity;
-
     [SerializeField] private float _limitVerticalBoostSpeed;
+    [SerializeField] private float _torque;
 
-    [Header("Damage system")]
-    [SerializeField] private CanvasGroup _redPanel;
-    [SerializeField] private GameObject[] _hearts;
+    [SerializeField] private Player _player;
 
     private float _verticalBoostSpeed;
 
-    private Player _player;
     private SquashAndStretch _sqAndStr;
     private Rigidbody _rb;
 
     private void Start()
     {
         _controlSensivity = PlayerPrefs.GetFloat(Constants.ControlSensivity);
+        _rb = _player.RB;
+        _player.Touch += OnTouch;
 
-        if (Player.Instance != null)
-        {
-            _player = Player.Instance;
-
-            _rb = _player.RB;
-            _player.Touch += OnTouch;
-
-            if (_player.SqAndStr != null)
-                _sqAndStr = _player.SqAndStr;
-
-            if (_redPanel != null)
-                _player.RedPanel = _redPanel;
-            if (_hearts != null)
-                _player.Hearts = _hearts;
-        }
-        else
-        {
-            Debug.LogWarning("Can't find a player");
-        }
+        if (_player.SqAndStr != null)
+            _sqAndStr = _player.SqAndStr;
 
         FirebaseManager.Instance?.StartLevel();
     }
@@ -52,12 +34,17 @@ public class BallControl : MonoBehaviour, IDragHandler
 
     private void AddRandomTorque()
     {
-        _rb.AddTorque(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        _rb.AddTorque(RandomFloatNumber(_torque), RandomFloatNumber(_torque), RandomFloatNumber(_torque));
+    }
+
+    private float RandomFloatNumber(float num)
+    {
+        return Random.Range(-num, num);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        float screenDifferenceMultiplier = 2160 / (float)Screen.height; // 
+        float screenDifferenceMultiplier = 2160 / (float)Screen.height;
 
         Vector3 vector = (Vector3)eventData.delta * Time.deltaTime * _controlSensivity * screenDifferenceMultiplier;
 
@@ -69,13 +56,13 @@ public class BallControl : MonoBehaviour, IDragHandler
                 vector.y /= 2;
         }
 
-        if (_player.IsGround == false)
+        if (_player.IsGrounded == false)
             _verticalBoostSpeed += Mathf.Abs(vector.y);
 
-        if (_sqAndStr?.IsGround == false)
+        if (_sqAndStr?.IsGrounded == false)
             _rb.velocity += vector;
-        else
-            _sqAndStr.SavedVelocity += vector;
+        else if (_sqAndStr != null)
+            _sqAndStr.AddSaveVelocity(vector);
 
         AddRandomTorque();
     }

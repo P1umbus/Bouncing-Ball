@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DropdownHanler : MonoBehaviour
+public class DropdownHandler : MonoBehaviour
 {
     [SerializeField] private ItemManager[] _itemManagers;
 

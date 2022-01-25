@@ -1,13 +1,26 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
 public class ControlSensitivitySettings : MonoBehaviour
 {
-    [SerializeField] private Slider Value;
+    private Slider _slider;
 
-    public void ChangeSensivity()
+    private void Awake()
     {
-        PlayerPrefs.SetFloat(Constants.ControlSensivity, Value.value);
+        _slider = GetComponent<Slider>();
+
+        _slider.onValueChanged.AddListener(ChangeSensivity);
+    }
+
+    public void ChangeSensivity(float value)
+    {
+        PlayerPrefs.SetFloat(Constants.ControlSensivity, value);
         PlayerPrefs.Save();
+    }
+
+    private void OnDestroy()
+    {
+        _slider.onValueChanged.RemoveListener(ChangeSensivity);
     }
 }
