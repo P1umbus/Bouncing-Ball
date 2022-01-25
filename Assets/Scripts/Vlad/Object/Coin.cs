@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour , IPickable
 {
-    private int value = 1;
-    private void Start()
-    {
-        CoinManager.Instance._Coin.Add(this);
-    }
+    private int _value = 1;
+
     public void OnTake()
     {
-        //GameEvent.TakeCoin?.Invoke();
         this.gameObject.SetActive(false);
-        Bank.instance.PluralIncreaseCoinNumb(value);
-        CoinManager.Instance.IncreaseCoinNumb(value);
+        Bank.instance.PluralIncreaseCoinNumb(_value);
+        CoinManager.Instance.IncreaseCoinNumb(_value);
         TakeCoinTween.Instance.Move(this.transform.position);
     }
 }

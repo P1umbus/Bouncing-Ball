@@ -7,18 +7,16 @@ using UnityEngine.Advertisements;
 public class CoinManager : MonoBehaviour
 {
     [HideInInspector] public static CoinManager Instance;
-    public List<Coin> _Coin = new List<Coin>();
-    [SerializeField] private Text CoinNumbText;
-    [SerializeField]private AudioSource _CoinSound;
-    private int _coinNamber;
-    public int CoinNamber => _coinNamber;
-    private float CollectedCoinsPercentage;
-    private bool MultiplyAbility = true;
+    [SerializeField] private Text _coinNumbText;
+    [SerializeField]private AudioSource _coinSound;
+    private int _coinNumber;
+    public int CoinNumber => _coinNumber;
+    private bool _multiplyAbility = true;
 
     private void Awake()
     {
         Instance = this;
-        _CoinSound = GetComponent<AudioSource>();
+        _coinSound = GetComponent<AudioSource>();
     }
     private void Start()
     {
@@ -26,18 +24,18 @@ public class CoinManager : MonoBehaviour
     }
     public int GetCoin()
     {
-        return _coinNamber;
+        return _coinNumber;
     }
     public void MultiplyCoin(Vector3 pos,int Multiply)
     {
-        if(MultiplyAbility == true)
+        if(_multiplyAbility == true)
         {
-            int MultiplyNumb = _coinNamber * (Multiply - 1);
+            int MultiplyNumb = _coinNumber * (Multiply - 1);
             Bank.instance.PluralIncreaseCoinNumb(MultiplyNumb);
             TakePluralCoinTween.Instance.ScreenMove(pos, MultiplyNumb);
-            _coinNamber *= Multiply;
+            _coinNumber *= Multiply;
             GameEvent.MultiplyCoin?.Invoke();
-            MultiplyAbility = false;
+            _multiplyAbility = false;
         }      
     }
     public void IncreaseCoinNumb(int Numb)
@@ -45,7 +43,7 @@ public class CoinManager : MonoBehaviour
         if (Numb >= 0)
         {
            
-            _coinNamber += Numb;
+            _coinNumber += Numb;
             OnCoinTake();
         }
         else
@@ -61,10 +59,10 @@ public class CoinManager : MonoBehaviour
     }
     private void UpdateUI()
     {
-        CoinNumbText.text = _coinNamber.ToString();
+        _coinNumbText.text = _coinNumber.ToString();
     }
     private void PlayCoinSound()
     {
-        _CoinSound.Play();
+        _coinSound.Play();
     }
 }

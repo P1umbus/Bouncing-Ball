@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class OutActiveLevel : MonoBehaviour
 {
-    private LeanLocalToken LevelNumb;
+    private LeanLocalToken _levelNumb;
     [SerializeField] private Text _maxlevel;
     private void Awake()
     {
-        LevelNumb = GetComponentInChildren<LeanLocalToken>();
+        _levelNumb = GetComponentInChildren<LeanLocalToken>();
     }
     void Start()
     {
@@ -20,10 +20,10 @@ public class OutActiveLevel : MonoBehaviour
 
     private void OutActiveLevelInText()
     {
-        var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
-        if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+        var ActiveLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
+        if (Enum.IsDefined(typeof(GameLevelList), ActiveLevel))
         {
-            LevelNumb.SetValue(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
+            _levelNumb.SetValue(PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel));
         }
         else
         {

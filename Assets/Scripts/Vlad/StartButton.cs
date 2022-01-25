@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
-
+[RequireComponent(typeof(Rigidbody))]
 public class StartButton : MonoBehaviour
 {
     [SerializeField] private float _force;
-    [SerializeField] private GameObject ResetPanel;
+    [SerializeField] private GameObject _resetPanel;
 
     private Rigidbody _ballRB;
 
@@ -17,8 +17,8 @@ public class StartButton : MonoBehaviour
 
     public void OnClick()
     {
-        var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
-        if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+        var ActiveLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
+        if (Enum.IsDefined(typeof(GameLevelList), ActiveLevel))
         {
             if (_isGround == false)
                 _ballRB.velocity += Vector3.right * _force;
@@ -27,7 +27,7 @@ public class StartButton : MonoBehaviour
         }
         else
         {
-            ResetPanel.SetActive(true);
+            _resetPanel.SetActive(true);
         }
     }
 

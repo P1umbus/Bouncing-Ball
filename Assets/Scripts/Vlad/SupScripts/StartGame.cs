@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    [SerializeField] private Rigidbody Ball;
-    [SerializeField] private GameObject Portal;
+    [SerializeField] private Rigidbody _ball;
+    [SerializeField] private GameObject _portal;
  
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out SquashAndStretch squashAndStretch))
         {
-            Ball.isKinematic = true;
-            var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
-            if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+            _ball.isKinematic = true;
+            var ActiveLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
+            if (Enum.IsDefined(typeof(GameLevelList), ActiveLevel))
             {
-                SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)ActiveLevel).ToString());
+                SpecialSceneLoader.instace.LoadScene(((GameLevelList)ActiveLevel).ToString());
             }
            
         }

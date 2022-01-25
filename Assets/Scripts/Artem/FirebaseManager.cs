@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Analytics;
-using Firebase;
-using Firebase.Extensions;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -24,19 +22,10 @@ public class FirebaseManager : MonoBehaviour
             return;
         }
 
-        InitFBCrashlitic();
-        //InitFBAnalitic();        
+        InitFB();
     }
 
-    private void InitFBAnalitic()
-    {
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
-        {
-            FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
-        });
-    }
-
-    private void InitFBCrashlitic()
+    private void InitFB()
     {
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
@@ -57,21 +46,26 @@ public class FirebaseManager : MonoBehaviour
         });
     }
 
+    private void GetLevelNumber()
+    {
+        Debug.Log(PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel));
+    }
+
     public void StartLevel()
     {
+        Debug.Log(PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel));
 
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelStart,
-            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.NumbActiveLevel)));
+            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel)));
     }
 
     public void EndLevel(float timeCompleteLevel)
     {
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelEnd,
-            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.NumbActiveLevel)),
+            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel)),
             new Parameter("timeCompleteLevel", timeCompleteLevel),
-            new Parameter("coins received", CoinManager.Instance.CoinNamber));
+            new Parameter("coins received", CoinManager.Instance.CoinNumber));
 
         Debug.Log(timeCompleteLevel);
-        Debug.Log(CoinManager.Instance.CoinNamber);
     }
 }

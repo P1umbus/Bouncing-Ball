@@ -5,13 +5,27 @@ using UnityEngine.UI;
 
 public class ChangeMus : MonoBehaviour
 {
-    [SerializeField] private Slider Value;
-    public void ChangeMusValue()
+    [SerializeField] private Slider _slider;
+    [SerializeField] private Button _activeMusButton;
+    [SerializeField] private Button _deactivationMusButton;
+    private void Awake()
     {
-        GameEvent.SoundEvents.ChangeSoundValue?.Invoke(Value.value);
+        _slider.onValueChanged.AddListener(delegate { ChangeMusValue();});
+        _activeMusButton.onClick.AddListener(ChangeMusStatus);
+        _deactivationMusButton.onClick.AddListener(ChangeMusStatus);
     }
-    public void ChangeMusStatus()
+    private void ChangeMusValue()
     {
-        GameEvent.SoundEvents.ChangeSoundÎptions?.Invoke();
+        GameEvent.SoundEvents.ChangeSoundValue?.Invoke(_slider.value);
+    }
+    private void ChangeMusStatus()
+    {
+        GameEvent.SoundEvents.ChangeSoundOptions?.Invoke();
+    }
+    private void OnDestroy()
+    {
+        _slider.onValueChanged.RemoveAllListeners();
+        _activeMusButton.onClick.RemoveAllListeners();
+        _deactivationMusButton.onClick.RemoveAllListeners();
     }
 }

@@ -1,21 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SetVisualSetting : MonoBehaviour
 {
-    [SerializeField] private GameObject MusOn;
-    [SerializeField] private GameObject MusOff;
-    [SerializeField] private Slider MusValue;
-    [SerializeField] private Slider SensValue;
-    private SoundOptions _SoundOptions;
-
-    private void Awake()
-    {
-        _SoundOptions = FindObjectOfType <SoundOptions>();
-    }
-    void Start()
+    [SerializeField] private GameObject _musOn;
+    [SerializeField] private GameObject _musOff;
+    [SerializeField] private Slider _musValue;
+    [SerializeField] private Slider _sensValue;
+    [SerializeField] private SoundOptions _soundOptions;
+        
+    private void Start()
     {
         SetActiveMusStatus();
         SetMusValue();
@@ -24,23 +18,23 @@ public class SetVisualSetting : MonoBehaviour
 
     private void SetActiveMusStatus()
     {
-        if (_SoundOptions.GetIsMusOn() == true)
+        if (_soundOptions.GetIsMusOn() == true)
         {
-            MusOn.SetActive(true);
-            MusOff.SetActive(false);
+            _musOn.SetActive(true);
+            _musOff.SetActive(false);
         }
         else
         {
-            MusOn.SetActive(false);
-            MusOff.SetActive(true);
+            _musOn.SetActive(false);
+            _musOff.SetActive(true);
         }
     }
     private void SetMusValue()
     {
-        MusValue.value = _SoundOptions.GetMusValue();
+        _musValue.value = _soundOptions.GetMusValue();
     }
     private void SetSensValue()
     {
-        SensValue.value = PlayerPrefs.GetFloat(Constants.ControlSensivity);
+        _sensValue.value = PlayerPrefs.GetFloat(Constants.PPname.ControlSensivity);
     }
 }

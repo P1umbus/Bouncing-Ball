@@ -7,25 +7,26 @@ using Lean.Localization;
 
 public class Fader : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private LeanLocalToken LoadingPercent;
-    [SerializeField] private Image LoadingProgressBar;
-    private static Fader _instanse;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private LeanLocalToken _loadingPercent;
+    [SerializeField] private Image _loadingProgressBar;
+    private static Fader _instance;
     private const string FADER_PATH = "Fader";
+    private const string FADER_ANIM_NAME = "faded";
 
     public bool isFading { get; private set;}
 
-    public static Fader instanse
+    public static Fader instance
     {
         get
         {
-            if(_instanse == null)
+            if(_instance == null)
             {
                 var prefab = Resources.Load<Fader>(FADER_PATH);
-                _instanse = Instantiate(prefab);
-                DontDestroyOnLoad(_instanse.gameObject);
+                _instance = Instantiate(prefab);
+                DontDestroyOnLoad(_instance.gameObject);
             }
-            return _instanse;
+            return _instance;
         }
     }
 
@@ -42,7 +43,7 @@ public class Fader : MonoBehaviour
         SpecialSceneLoader.instace.ChangeProgress += UpdateLoadingProgressBar;
         isFading = true;
         _faderStartCallBack = faderStartCallBack;
-        animator.SetBool("faded", true);
+        _animator.SetBool(FADER_ANIM_NAME, true);
 
     }
     public void FadeEnd(Action faderEndCallBack)
@@ -53,18 +54,18 @@ public class Fader : MonoBehaviour
         }
         isFading = true;
         _faderEndCallBack = faderEndCallBack;
-        animator.SetBool("faded", false);
+        _animator.SetBool(FADER_ANIM_NAME, false);
         SpecialSceneLoader.instace.ChangeProgress -= UpdateLoadingPercent;
         SpecialSceneLoader.instace.ChangeProgress -= UpdateLoadingProgressBar;
 
     }
-    public void UpdateLoadingPercent(float p)
+    private void UpdateLoadingPercent(float p)
     {
-        LoadingPercent.SetValue((int)((p/0.9)*100));
+        _loadingPercent.SetValue((int)((p/0.9)*100));
     }
-    public void UpdateLoadingProgressBar(float p)
+    private void UpdateLoadingProgressBar(float p)
     {
-        LoadingProgressBar.fillAmount = (p / 0.9f);
+        _loadingProgressBar.fillAmount = (p / 0.9f);
     }
 
 

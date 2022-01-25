@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class OutCoinInText : MonoBehaviour
 {
-    [SerializeField] private Text CoinNubmerText;
+    [SerializeField] private Text _coinNubmerText;
     private void Awake()
     {
         GameEvent.ChangeCoinNumb += OutCoinNumber;
@@ -16,7 +17,7 @@ public class OutCoinInText : MonoBehaviour
     }
     private void OutCoinNumber()
     {
-        CoinNubmerText.text = Bank.instance.GetCoin().ToString();
+        _coinNubmerText.text = Bank.instance.GetCoin().ToString();
     }
     private void OnDestroy()
     {

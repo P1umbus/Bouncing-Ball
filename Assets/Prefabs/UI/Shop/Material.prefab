@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Price: 0
   SkinNumb: 0
-  RarBg:
+  _rareBg:
   - {fileID: 3964906242730145066}
   - {fileID: 3964906243951491748}
   - {fileID: 3964906243991235491}
@@ -325,12 +325,12 @@ MonoBehaviour:
   - {fileID: 3964906244196511061}
   - {fileID: 6496191094005342018}
   - {fileID: 614782924763913958}
-  PriceToken: {fileID: 4419953715009886663}
-  CoinBuyTween: {fileID: 0}
-  CoinSellTween: {fileID: 0}
-  CommonColor: {r: 0.671057, g: 0.858479, b: 0.9433962, a: 1}
-  RareColor: {r: 0.32620147, g: 0.4259225, b: 0.9245283, a: 1}
-  MythicalColor: {r: 0.6156751, g: 0.36769313, b: 0.8584906, a: 1}
+  _priceToken: {fileID: 4419953715009886663}
+  _coinBuyTween: {fileID: 0}
+  _coinSellTween: {fileID: 0}
+  _commonColor: {r: 0.671057, g: 0.858479, b: 0.9433962, a: 1}
+  _rareColor: {r: 0.3254902, g: 0.42745098, b: 0.9254902, a: 1}
+  _mythicalColor: {r: 0.6156751, g: 0.36769313, b: 0.8584906, a: 1}
   _rarity: 0
 --- !u!1 &3964906243212354779
 GameObject:

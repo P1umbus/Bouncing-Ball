@@ -7,22 +7,22 @@ using UnityEngine.UI;
 
 public class FinishLevel : MonoBehaviour
 {
-    [SerializeField] private GameObject ControllCanvas;
-    [SerializeField] private GameObject FinishCanvas;
-    [SerializeField] private Rigidbody _Rigidbody;
-    [SerializeField] private AudioSource _FinishMus;
-    [SerializeField] private Button NextLevelButton;
-    [SerializeField] private ParticleSystem Confetti;
-    private int NumbLevel;
+    [SerializeField] private GameObject _controllCanvas;
+    [SerializeField] private GameObject _finishCanvas;
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private AudioSource _finishMus;
+    [SerializeField] private Button _nextLevelButton;
+    [SerializeField] private ParticleSystem _confetti;
+    private int _numbLevel;
     private int _finishReward = 10;
-    private bool Finished = false;
+    private bool _finished = false;
 
     private float _timeCompleteLevel;
 
     private void Awake()
     {
-        NextLevelButton.onClick.AddListener(NextLevel);
-        NumbLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
+        _nextLevelButton.onClick.AddListener(NextLevel);
+        _numbLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -34,35 +34,35 @@ public class FinishLevel : MonoBehaviour
 
     private void OnFinish()
     {
-        if(Finished == false)
+        if(_finished == false)
         {
             SetData();
-            Confetti.gameObject.SetActive(true);
-            ControllCanvas.SetActive(false);
-            _Rigidbody.isKinematic = true;
-            FinishCanvas.SetActive(true);
+            _confetti.gameObject.SetActive(true);
+            _controllCanvas.SetActive(false);
+            _rigidbody.isKinematic = true;
+            _finishCanvas.SetActive(true);
             AddFinishReward(_finishReward);
-            _FinishMus.Play();
+            _finishMus.Play();
 
             _timeCompleteLevel = Time.timeSinceLevelLoad;
 
-            Finished = true;
+            _finished = true;
         }
     }
     public void NextLevel()
     {
-        if (Enum.IsDefined(typeof(Constants.GameLevelList), NumbLevel+1))
+        if (Enum.IsDefined(typeof(GameLevelList), _numbLevel+1))
         {
-            SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)(NumbLevel+1)).ToString());
+            SpecialSceneLoader.instace.LoadScene(((GameLevelList)(_numbLevel+1)).ToString());
         }   
     }
     public void RestartButton()
     {
-        SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)NumbLevel).ToString()); 
+        SpecialSceneLoader.instace.LoadScene(((GameLevelList)_numbLevel).ToString()); 
     }
     private void SetData()
     {
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel, NumbLevel + 1);
+        PlayerPrefs.SetInt(Constants.PPname.NumbActiveLevel, _numbLevel + 1);
         PlayerPrefs.Save();
     }
     private void AddFinishReward(int reward)
@@ -74,9 +74,10 @@ public class FinishLevel : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Finished == true)
+        if (_finished == true)
         {
             FirebaseManager.Instance.EndLevel(_timeCompleteLevel);
         }
+        _nextLevelButton.onClick.RemoveListener(NextLevel);
     }
 }

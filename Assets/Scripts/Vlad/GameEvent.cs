@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameEvent : MonoBehaviour
 {
-    //public static Action TakeCoin;
     public static Action ChangeCoinNumb;
     public static Action <ItemManager> TrySell;
     public static Action MultiplyCoin;
@@ -17,7 +16,7 @@ public class GameEvent : MonoBehaviour
             public static Action Sell;
             public static Action Buy;
         }
-        public static Action ChangeSoundÎptions;
+        public static Action ChangeSoundOptions;
         public static Action <float> ChangeSoundValue;
        
     }
