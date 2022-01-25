@@ -6,18 +6,18 @@ using Lean.Localization;
 
 public class ItemManager : MonoBehaviour
 {
-    [SerializeField] private int Price;
-    [SerializeField] private int SkinNumb;
-    [SerializeField] private Image[] RarBg;
-    [SerializeField] private Text[] StatusText;
-    [SerializeField] private LeanLocalToken PriceToken;
-    [SerializeField] private CoinTween CoinBuyTween;
-    [SerializeField] private CoinTween CoinSellTween;
-    [SerializeField] private Color CommonColor;
-    [SerializeField] private Color RareColor;
-    [SerializeField] private Color MythicalColor;
-    private int SellPrice;
-    private int Status;
+    [SerializeField] private int _price;
+    [SerializeField] private int _skinNumb;
+    [SerializeField] private Image[] _rareBg;
+    [SerializeField] private Text[] _statusText;
+    [SerializeField] private LeanLocalToken _priceToken;
+    [SerializeField] private CoinTween _coinBuyTween;
+    [SerializeField] private CoinTween _coinSellTween;
+    [SerializeField] private Color _commonColor;
+    [SerializeField] private Color _rareColor;
+    [SerializeField] private Color _mythicalColor;
+    private int _sellPrice;
+    private int _status;
     private bool isPurchased = false;
     private string PPname;
   
@@ -34,19 +34,19 @@ public class ItemManager : MonoBehaviour
     private void Start()
     {
         CheckStatus();
-        SellPrice = Price / 3;
+        _sellPrice = _price / 3;
     }
 
     public void Buy()
     {
-        if (Bank.instance.IsEnough(Price) && isPurchased == false)
+        if (Bank.instance.IsEnough(_price) && isPurchased == false)
         {
             PlayerPrefs.SetInt(PPname, 1);
             PlayerPrefs.Save();
-            Bank.instance.ReduceCoinNumb(Price);
+            Bank.instance.ReduceCoinNumb(_price);
             UpdateChange();
             GameEvent.SoundEvents.Shop.Buy?.Invoke();
-            CoinBuyTween.OnBuy(this.gameObject.transform);
+            _coinBuyTween.OnBuy(this.gameObject.transform);
         }
         else if (isPurchased == true)
         {
@@ -65,11 +65,11 @@ public class ItemManager : MonoBehaviour
         if (isPurchased == true)
         {
             GameEvent.SoundEvents.Shop.Sell?.Invoke();
-            CoinSellTween.OnSell(this.gameObject.transform);
+            _coinSellTween.OnSell(this.gameObject.transform);
             if (IsSelectedSkin() == true)
             {
                 PlayerPrefs.SetInt(PPname, 0);
-                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+                Bank.instance.PluralIncreaseCoinNumb(_sellPrice);
                 PlayerPrefs.SetInt("SelectedSkin", 0);
                 GameEvent.SkinsUpdate?.Invoke();
                 UpdateChange();
@@ -79,14 +79,14 @@ public class ItemManager : MonoBehaviour
             {
                 PlayerPrefs.SetInt(PPname, 0);
                 UpdateChange();
-                StatusText[0].text = Price.ToString();
-                Bank.instance.PluralIncreaseCoinNumb(SellPrice);
+                _statusText[0].text = _price.ToString();
+                Bank.instance.PluralIncreaseCoinNumb(_sellPrice);
             }
         }
     }
     public int GetSellPrice()
     {
-        return SellPrice;
+        return _sellPrice;
     }
     public bool IsItemBougnt()
     {
@@ -94,14 +94,14 @@ public class ItemManager : MonoBehaviour
     }
     private void Select()
     {
-        PlayerPrefs.SetInt("SelectedSkin", SkinNumb);
+        PlayerPrefs.SetInt("SelectedSkin", _skinNumb);
         CheckStatus();
         GameEvent.SkinsUpdate?.Invoke();
     }
     private bool IsSelectedSkin()
     {
         var a = PlayerPrefs.GetInt("SelectedSkin");
-        if (SkinNumb == a)
+        if (_skinNumb == a)
         {
             return true;
         }
@@ -109,13 +109,13 @@ public class ItemManager : MonoBehaviour
     }
     private void CheckStatus()
     {
-        if(Status == 0)
+        if(_status == 0)
         {
             UpdateStatus(0);
-            PriceToken.SetValue(Price);
+            _priceToken.SetValue(_price);
             isPurchased = false;
         }
-        else if(Status == 1)
+        else if(_status == 1)
         {
             if (IsSelectedSkin())
             {
@@ -133,29 +133,29 @@ public class ItemManager : MonoBehaviour
     private void UpdateStatus(int activeText)
     {
 
-        for (int i = 0; i < StatusText.Length; i++)
+        for (int i = 0; i < _statusText.Length; i++)
         {
             if(i != activeText)
             {
-                StatusText[i].gameObject.SetActive(false);
+                _statusText[i].gameObject.SetActive(false);
             }
             else
             {
-                StatusText[i].gameObject.SetActive(true);
+                _statusText[i].gameObject.SetActive(true);
             }
         }
     }
     private void LoadDate()
     {
-        PPname = "Material" + SkinNumb;
+        PPname = "Material" + _skinNumb;
         if (PlayerPrefs.HasKey(PPname))
         {
-            Status = PlayerPrefs.GetInt(PPname);
+            _status = PlayerPrefs.GetInt(PPname);
         }
         else
         {
             PlayerPrefs.SetInt(PPname, 0);
-            Status = PlayerPrefs.GetInt(PPname);
+            _status = PlayerPrefs.GetInt(PPname);
         }
     }
     private void UpdateChange()
@@ -167,20 +167,20 @@ public class ItemManager : MonoBehaviour
     {
         if (_rarity == Constants.Rarity.Common)
         {
-            UpdateBgColor(CommonColor);
+            UpdateBgColor(_commonColor);
         }
         else if (_rarity == Constants.Rarity.Rare)
         {
-            UpdateBgColor(RareColor);
+            UpdateBgColor(_rareColor);
         }
         else if (_rarity == Constants.Rarity.Mythical)
         {
-            UpdateBgColor(MythicalColor);
+            UpdateBgColor(_mythicalColor);
         }
     }
     private void UpdateBgColor(Color activeColor)
     {
-        foreach (Image bg in RarBg)
+        foreach (Image bg in _rareBg)
         {
             bg.color = activeColor;
         }
@@ -189,12 +189,12 @@ public class ItemManager : MonoBehaviour
     [ContextMenu("UpdateUI")]
     private void UpdateUI()
     {
-        foreach (Image bg in RarBg)
+        foreach (Image bg in _rareBg)
         {
             Undo.RecordObject(bg, "test");
         }
-        Undo.RecordObject(StatusText[0], "test");
-        StatusText[0].text = Price.ToString();
+        Undo.RecordObject(_statusText[0], "test");
+        _statusText[0].text = _price.ToString();
         RarCheck();
     }
     #endif

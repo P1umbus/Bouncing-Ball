@@ -6,7 +6,7 @@ public class Bank : MonoBehaviour
 {
     public static Bank instance;
     private string PPCoinName = Constants.PPname.CoinNumb;
-    private int CoinNumb;
+    private int _coinNumb;
 
     private void Awake()
     {
@@ -24,11 +24,11 @@ public class Bank : MonoBehaviour
     }
     public int GetCoin()
     {
-        return CoinNumb;
+        return _coinNumb;
     }
     public bool IsEnough(int namber)
     {
-        if (CoinNumb >= namber)
+        if (_coinNumb >= namber)
         {
             return true;
         }
@@ -38,7 +38,7 @@ public class Bank : MonoBehaviour
     {
         if (coin >= 0)
         {
-            CoinNumb += coin;
+            _coinNumb += coin;
             SaveData();
             GameEvent.ChangeCoinNumb?.Invoke();
         }
@@ -53,7 +53,7 @@ public class Bank : MonoBehaviour
         {
             if (coin >= 0) 
             {
-                CoinNumb -= coin;
+                _coinNumb -= coin;
                 SaveData();
                 GameEvent.ChangeCoinNumb?.Invoke();
             }
@@ -72,16 +72,16 @@ public class Bank : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(PPCoinName))
         {
-            CoinNumb = PlayerPrefs.GetInt(PPCoinName);
+            _coinNumb = PlayerPrefs.GetInt(PPCoinName);
         }
         else
         {
             PlayerPrefs.SetInt(PPCoinName, 0);
-            CoinNumb = PlayerPrefs.GetInt(PPCoinName);
+            _coinNumb = PlayerPrefs.GetInt(PPCoinName);
         }
     }
     private void SaveData()
     {
-        PlayerPrefs.SetInt(PPCoinName,CoinNumb);
+        PlayerPrefs.SetInt(PPCoinName,_coinNumb);
     }
 }

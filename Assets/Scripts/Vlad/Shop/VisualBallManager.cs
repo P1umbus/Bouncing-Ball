@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class VisualBallManager : MonoBehaviour
 {
-    [SerializeField] private Material[] _Materials;
-    [SerializeField] private Renderer Ball;
+    [SerializeField] private Material[] _materials;
+    [SerializeField] private Renderer _ball;
 
     private void Awake()
     {
@@ -20,7 +18,7 @@ public class VisualBallManager : MonoBehaviour
     private void TryUpdateMaterial()
     {
         var a = PlayerPrefs.GetInt(Constants.PPname.SelectedSkin);
-        Ball.material = _Materials[a];
+        _ball.material = _materials[a];
     }
 
     private void OnDestroy()

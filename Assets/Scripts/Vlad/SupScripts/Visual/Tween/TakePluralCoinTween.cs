@@ -35,8 +35,4 @@ public class TakePluralCoinTween : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-    private void OnDestroy()
-    {
-        LeanTween.cancel(MoveTo);
-    }
 }

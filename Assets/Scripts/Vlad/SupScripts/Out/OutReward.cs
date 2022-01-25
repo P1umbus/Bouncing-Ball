@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class OutReward : MonoBehaviour
 {
-    private Text NumbText;
+    private Text _numbText;
     private void Awake()
     {
-        NumbText = GetComponent<Text>();
+        _numbText = GetComponent<Text>();
         GameEvent.MultiplyCoin += OutRewardInText;
     }
     private void Start()
@@ -17,7 +17,7 @@ public class OutReward : MonoBehaviour
     }
     private void OutRewardInText()
     {
-        NumbText.text = CoinManager.Instance.GetCoin().ToString();
+        _numbText.text = CoinManager.Instance.GetCoin().ToString();
     }
     private void OnDestroy()
     {

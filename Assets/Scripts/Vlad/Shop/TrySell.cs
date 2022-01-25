@@ -5,13 +5,13 @@ using Lean.Localization;
 
 public class TrySell : MonoBehaviour
 {
-    private LeanLocalToken SellInfo;
+    private LeanLocalToken _sellInfo;
     private ItemManager _ItemManager;    
 
     private void Awake()
     {
         GameEvent.TrySell += OnTrySell;
-        SellInfo = GetComponentInChildren<LeanLocalToken>();
+        _sellInfo = GetComponentInChildren<LeanLocalToken>();
         this.gameObject.SetActive(false);
     }
 
@@ -29,7 +29,7 @@ public class TrySell : MonoBehaviour
     }
     private void OutSellInfo()
     {
-        SellInfo.SetValue(_ItemManager.GetSellPrice());
+        _sellInfo.SetValue(_ItemManager.GetSellPrice());
     }
 
     private void OnDestroy()

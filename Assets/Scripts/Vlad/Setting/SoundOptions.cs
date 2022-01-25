@@ -6,8 +6,8 @@ public class SoundOptions : MonoBehaviour
 {
     private string PPMusStatusName = "MusStatus";
     private string PPMusValueName = "MusValue";
-    private float MusValue;
-    private bool IsMusOn = true;
+    private float _musValue;
+    private bool _isMusOn = true;
 
     private void Awake()
     {
@@ -24,15 +24,15 @@ public class SoundOptions : MonoBehaviour
 
     public void ChangeMusStatus()
     {
-        if (IsMusOn == true)
+        if (_isMusOn == true)
         {
-            IsMusOn = false;
+            _isMusOn = false;
             SaveMusStatus();
             ChangeMusVolueInScene();
         }
         else
         {
-            IsMusOn = true;
+            _isMusOn = true;
             SaveMusStatus();
             ChangeMusVolueInScene();
         }
@@ -40,16 +40,16 @@ public class SoundOptions : MonoBehaviour
 
     public bool GetIsMusOn()
     {
-        return IsMusOn;
+        return _isMusOn;
     }
 
     public float GetMusValue()
     {
-        return MusValue;
+        return _musValue;
     }
     private void MusicOn()
     {
-        AudioListener.volume = MusValue;
+        AudioListener.volume = _musValue;
 
     }
 
@@ -60,7 +60,7 @@ public class SoundOptions : MonoBehaviour
 
     private void ChangeMusValue(float Value)
     {
-        MusValue = Value;
+        _musValue = Value;
         SaveMusValue();
         ChangeMusVolueInScene();
     }
@@ -69,7 +69,7 @@ public class SoundOptions : MonoBehaviour
 
     private void ChangeMusVolueInScene()
     {
-        if (IsMusOn == true)
+        if (_isMusOn == true)
         {
             MusicOn();
         }
@@ -97,12 +97,12 @@ public class SoundOptions : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(PPMusValueName))
         {
-            MusValue = PlayerPrefs.GetFloat(PPMusValueName);
+            _musValue = PlayerPrefs.GetFloat(PPMusValueName);
         }
         else
         {
             PlayerPrefs.SetFloat(PPMusValueName, 1);
-            MusValue = PlayerPrefs.GetFloat(PPMusValueName);
+            _musValue = PlayerPrefs.GetFloat(PPMusValueName);
         }
     }
 
@@ -110,16 +110,16 @@ public class SoundOptions : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(PPMusStatusName) == 1)
         {
-            IsMusOn = true;
+            _isMusOn = true;
         }
         else
         {
-            IsMusOn = false;
+            _isMusOn = false;
         }
     }
     private void SaveMusStatus()
     {
-        if (IsMusOn == true)
+        if (_isMusOn == true)
         {
             PlayerPrefs.SetInt(PPMusStatusName, 1);
         }
@@ -130,7 +130,7 @@ public class SoundOptions : MonoBehaviour
     }
     private void SaveMusValue()
     {
-        PlayerPrefs.SetFloat(PPMusValueName, MusValue);
+        PlayerPrefs.SetFloat(PPMusValueName, _musValue);
     }
 
     private void OnDestroy()

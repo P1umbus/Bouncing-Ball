@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Preloader : MonoBehaviour
 {
     private AsyncOperation operation;
     [SerializeField] private Animator _anim;
-    [SerializeField] private Text LoadingPercent;
-    [SerializeField] private Image LoadingProgressBar;
+    [SerializeField] private Text _loadingPercent;
+    [SerializeField] private Image _loadingProgressBar;
     private const string ANIM_TRIGGER_NAME = "FadeEnd";
     private const string LOADING = "Loading";
 
@@ -33,8 +34,8 @@ public class Preloader : MonoBehaviour
 
     private void LoaderUI(float progress)
     {
-        LoadingPercent.text = LOADING + (int)((progress / 0.9) * 100) + "%";
-        LoadingProgressBar.fillAmount = progress / 0.9f;
+        _loadingPercent.text = LOADING + (int)((progress / 0.9) * 100) + "%";
+        _loadingProgressBar.fillAmount = progress / 0.9f;
     }
     private void FadeStartAnimationOver()
     {

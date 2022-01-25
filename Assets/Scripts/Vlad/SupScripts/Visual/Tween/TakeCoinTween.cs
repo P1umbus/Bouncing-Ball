@@ -22,8 +22,4 @@ public class TakeCoinTween : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-    private void OnDestroy()
-    {
-        LeanTween.cancel(MoveTo);
-    }
 }

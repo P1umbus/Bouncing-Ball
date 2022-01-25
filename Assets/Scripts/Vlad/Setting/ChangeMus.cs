@@ -16,7 +16,7 @@ public class ChangeMus : MonoBehaviour
     }
     private void ChangeMusValue()
     {
-        GameEvent.SoundEvents.ChangeSoundValue?.Invoke(2);
+        GameEvent.SoundEvents.ChangeSoundValue?.Invoke(_slider.value);
     }
     private void ChangeMusStatus()
     {
