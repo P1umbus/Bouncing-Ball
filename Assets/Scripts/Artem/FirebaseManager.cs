@@ -65,7 +65,5 @@ public class FirebaseManager : MonoBehaviour
             new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel)),
             new Parameter("timeCompleteLevel", timeCompleteLevel),
             new Parameter("coins received", CoinManager.Instance.CoinNumber));
-
-        Debug.Log(timeCompleteLevel);
     }
 }

@@ -17,7 +17,7 @@ public class BallControl : MonoBehaviour, IDragHandler
 
     private void Start()
     {
-        _controlSensivity = PlayerPrefs.GetFloat(Constants.ControlSensivity);
+        _controlSensivity = PlayerPrefs.GetFloat(Constants.PPname.ControlSensivity);
         _rb = _player.RB;
         _player.Touch += OnTouch;
 

@@ -15,7 +15,7 @@ public class ControlSensitivitySettings : MonoBehaviour
 
     public void ChangeSensivity(float value)
     {
-        PlayerPrefs.SetFloat(Constants.ControlSensivity, value);
+        PlayerPrefs.SetFloat(Constants.PPname.ControlSensivity, value);
         PlayerPrefs.Save();
     }
 
