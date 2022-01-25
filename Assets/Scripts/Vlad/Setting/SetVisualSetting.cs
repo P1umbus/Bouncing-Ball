@@ -35,6 +35,6 @@ public class SetVisualSetting : MonoBehaviour
     }
     private void SetSensValue()
     {
-        _sensValue.value = PlayerPrefs.GetFloat(Constants.ControlSensivity);
+        _sensValue.value = PlayerPrefs.GetFloat(Constants.PPname.ControlSensivity);
     }
 }

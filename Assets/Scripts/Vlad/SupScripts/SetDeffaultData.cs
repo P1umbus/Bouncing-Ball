@@ -7,13 +7,13 @@ public class SetDeffaultData : MonoBehaviour
     private const string DEFAUILT_MATERIAL = "Material0";
     private void Awake()
     {
-        if (PlayerPrefs.HasKey(Constants.NumbActiveLevel) == false)
+        if (PlayerPrefs.HasKey(Constants.PPname.NumbActiveLevel) == false)
         {
-            PlayerPrefs.SetInt(Constants.NumbActiveLevel, 1);
+            PlayerPrefs.SetInt(Constants.PPname.NumbActiveLevel, 1);
         }
-        if (PlayerPrefs.HasKey(Constants.ControlSensivity) == false)
+        if (PlayerPrefs.HasKey(Constants.PPname.ControlSensivity) == false)
         {
-            PlayerPrefs.SetFloat(Constants.ControlSensivity, 0.8f);
+            PlayerPrefs.SetFloat(Constants.PPname.ControlSensivity, 0.8f);
         }
         PlayerPrefs.SetInt(DEFAUILT_MATERIAL, 1);
     }

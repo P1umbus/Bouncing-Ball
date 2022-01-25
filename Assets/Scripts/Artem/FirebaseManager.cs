@@ -48,21 +48,21 @@ public class FirebaseManager : MonoBehaviour
 
     private void GetLevelNumber()
     {
-        Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
+        Debug.Log(PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel));
     }
 
     public void StartLevel()
     {
-        Debug.Log(PlayerPrefs.GetInt(Constants.NumbActiveLevel));
+        Debug.Log(PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel));
 
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelStart,
-            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.NumbActiveLevel)));
+            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel)));
     }
 
     public void EndLevel(float timeCompleteLevel)
     {
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelEnd,
-            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.NumbActiveLevel)),
+            new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel)),
             new Parameter("timeCompleteLevel", timeCompleteLevel),
             new Parameter("coins received", CoinManager.Instance.CoinNumber));
 

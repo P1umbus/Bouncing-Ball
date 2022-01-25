@@ -21,7 +21,7 @@ public class Preloader : MonoBehaviour
 
     private IEnumerator Loader()
     {
-        operation = SceneManager.LoadSceneAsync(Constants.MainLevelList.Menu.ToString());
+        operation = SceneManager.LoadSceneAsync(MainLevelList.Menu.ToString());
         operation.allowSceneActivation = false;
         while (operation.progress < 0.89)
         {

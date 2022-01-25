@@ -17,8 +17,8 @@ public class StartButton : MonoBehaviour
 
     public void OnClick()
     {
-        var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
-        if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+        var ActiveLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
+        if (Enum.IsDefined(typeof(GameLevelList), ActiveLevel))
         {
             if (_isGround == false)
                 _ballRB.velocity += Vector3.right * _force;

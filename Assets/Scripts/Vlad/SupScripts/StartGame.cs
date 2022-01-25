@@ -14,10 +14,10 @@ public class StartGame : MonoBehaviour
         if (other.TryGetComponent(out SquashAndStretch squashAndStretch))
         {
             _ball.isKinematic = true;
-            var ActiveLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
-            if (Enum.IsDefined(typeof(Constants.GameLevelList), ActiveLevel))
+            var ActiveLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
+            if (Enum.IsDefined(typeof(GameLevelList), ActiveLevel))
             {
-                SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)ActiveLevel).ToString());
+                SpecialSceneLoader.instace.LoadScene(((GameLevelList)ActiveLevel).ToString());
             }
            
         }

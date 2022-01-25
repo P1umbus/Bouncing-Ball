@@ -23,7 +23,7 @@ public class ItemManager : MonoBehaviour
   
 
     //Artem
-    [SerializeField] private Constants.Rarity _rarity;
+    [SerializeField] private Rarity _rarity;
     public int Rarity => ((int)_rarity);
 
     private void Awake()
@@ -165,15 +165,15 @@ public class ItemManager : MonoBehaviour
     }
     private void RarCheck()
     {
-        if (_rarity == Constants.Rarity.Common)
+        if (_rarity == global::Rarity.Common)
         {
             UpdateBgColor(_commonColor);
         }
-        else if (_rarity == Constants.Rarity.Rare)
+        else if (_rarity == global::Rarity.Rare)
         {
             UpdateBgColor(_rareColor);
         }
-        else if (_rarity == Constants.Rarity.Mythical)
+        else if (_rarity == global::Rarity.Mythical)
         {
             UpdateBgColor(_mythicalColor);
         }

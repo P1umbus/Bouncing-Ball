@@ -22,7 +22,7 @@ public class FinishLevel : MonoBehaviour
     private void Awake()
     {
         _nextLevelButton.onClick.AddListener(NextLevel);
-        _numbLevel = PlayerPrefs.GetInt(Constants.NumbActiveLevel);
+        _numbLevel = PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -51,18 +51,18 @@ public class FinishLevel : MonoBehaviour
     }
     public void NextLevel()
     {
-        if (Enum.IsDefined(typeof(Constants.GameLevelList), _numbLevel+1))
+        if (Enum.IsDefined(typeof(GameLevelList), _numbLevel+1))
         {
-            SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)(_numbLevel+1)).ToString());
+            SpecialSceneLoader.instace.LoadScene(((GameLevelList)(_numbLevel+1)).ToString());
         }   
     }
     public void RestartButton()
     {
-        SpecialSceneLoader.instace.LoadScene(((Constants.GameLevelList)_numbLevel).ToString()); 
+        SpecialSceneLoader.instace.LoadScene(((GameLevelList)_numbLevel).ToString()); 
     }
     private void SetData()
     {
-        PlayerPrefs.SetInt(Constants.NumbActiveLevel, _numbLevel + 1);
+        PlayerPrefs.SetInt(Constants.PPname.NumbActiveLevel, _numbLevel + 1);
         PlayerPrefs.Save();
     }
     private void AddFinishReward(int reward)
