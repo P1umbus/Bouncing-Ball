@@ -84,7 +84,7 @@ public class SquashAndStretch : MonoBehaviour
         if (_isSquashDelay)
             return;
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Trampoline"))
+        if (collision.gameObject.layer == Constants.Layers.Trampoline)
         {
             if (collision.gameObject.TryGetComponent(out ITouching physicalImpactObject) == true)
                 physicalImpactObject.OnTouch(_rb);
