@@ -1092,8 +1092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 896897513}
-  LoadingPercent: {fileID: 169653446}
-  LoadingProgressBar: {fileID: 893232824}
+  _loadingPercent: {fileID: 169653446}
+  _loadingProgressBar: {fileID: 893232824}
 --- !u!1 &974753679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,6 +1125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loaders:
   - {fileID: 11400000, guid: d6b540a793560534eadd60df61805bf4, type: 2}
+  - {fileID: 11400000, guid: 9e8cd5e5aa9f5da4188ffc8d9da059e0, type: 2}
 --- !u!4 &974753681
 Transform:
   m_ObjectHideFlags: 0
@@ -2331,7 +2332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914c0daf379bde24ba310f17d60ec2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Materials:
+  _materials:
   - {fileID: 2100000, guid: c6c0973a20e300448bf8c47f3d179cfc, type: 2}
   - {fileID: 2100000, guid: 932e71a8fed40ff41932ba0bb82368a7, type: 2}
   - {fileID: 2100000, guid: c01cee6b529c59d4d8d007f2ab78074b, type: 2}
@@ -2339,7 +2340,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f403b7471785eab45b5df2d9f2ed5272, type: 2}
   - {fileID: 2100000, guid: 80465103a4f36ff4a8231857ee151bf4, type: 2}
   - {fileID: 2100000, guid: 6cc468af7083d7d45a5c9adacbf4e8c1, type: 2}
-  - {fileID: 2100000, guid: 462b80f553010074d946bd77daec05a7, type: 2}
+  - {fileID: 2100000, guid: 2f50e5996e74ad0479cca242ec491501, type: 2}
   - {fileID: 2100000, guid: 33636c50e54ebf24baa06d35a8cd1a40, type: 2}
   - {fileID: 2100000, guid: dcc58d72a7219ba47bba21b424743570, type: 2}
   - {fileID: 2100000, guid: 1ebfc7ad1df606944b5a32c262d698cb, type: 2}
@@ -2350,7 +2351,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d7576592f4a450e4481512e365583ffe, type: 2}
   - {fileID: 2100000, guid: ff3e77341739ce44a904b51f3ed7cb41, type: 2}
   - {fileID: 2100000, guid: bbbc25a37036cf144a9fd909f6e6de63, type: 2}
-  Ball: {fileID: 1955096860}
+  _ball: {fileID: 1955096860}
 --- !u!114 &1955096857
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private MainLevelList _gameLevelList;
-    
+
     public void LoadScene()
     {
         SpecialSceneLoader.instace.LoadScene(_gameLevelList.ToString());

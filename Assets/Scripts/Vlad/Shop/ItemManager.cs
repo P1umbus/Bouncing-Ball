@@ -39,11 +39,11 @@ public class ItemManager : MonoBehaviour
 
     public void Buy()
     {
-        if (Bank.instance.IsEnough(_price) && isPurchased == false)
+        if (DataLoadSystem.GetLoader<Bank>("1").IsEnough(_price) && isPurchased == false)
         {
             PlayerPrefs.SetInt(PPname, 1);
             PlayerPrefs.Save();
-            Bank.instance.ReduceCoinNumb(_price);
+            DataLoadSystem.GetLoader<Bank>("1").ReduceCoinNumb(_price);
             UpdateChange();
             GameEvent.SoundEvents.Shop.Buy?.Invoke();
             _coinBuyTween.OnBuy(this.gameObject.transform);
@@ -69,7 +69,7 @@ public class ItemManager : MonoBehaviour
             if (IsSelectedSkin() == true)
             {
                 PlayerPrefs.SetInt(PPname, 0);
-                Bank.instance.PluralIncreaseCoinNumb(_sellPrice);
+                DataLoadSystem.GetLoader<Bank>("1").PluralIncreaseCoinNumb(_sellPrice);
                 PlayerPrefs.SetInt("SelectedSkin", 0);
                 GameEvent.SkinsUpdate?.Invoke();
                 UpdateChange();
@@ -80,7 +80,7 @@ public class ItemManager : MonoBehaviour
                 PlayerPrefs.SetInt(PPname, 0);
                 UpdateChange();
                 _statusText[0].text = _price.ToString();
-                Bank.instance.PluralIncreaseCoinNumb(_sellPrice);
+                DataLoadSystem.GetLoader<Bank>("1").PluralIncreaseCoinNumb(_sellPrice);
             }
         }
     }

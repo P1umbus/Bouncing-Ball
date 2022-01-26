@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 012f86f2e32554748b65eb166dc07005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGrounded: 0
-  SavedVelocity: {x: 0, y: 0, z: 0}
   _stretchMultiplier: 0.003
   _squashMultiplier: 0.06
   _delayMultiplier: 0.099
@@ -135,15 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98ec730520bb3349ab299998d9e25f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RedPanel: {fileID: 0}
-  Hearts: []
   SqAndStr: {fileID: 0}
   RB: {fileID: 0}
-  IsGrounded: 0
-  _rednessDuration: 0.3
-  _rednessMaxAlpha: 0.7
-  _deadScreen: {fileID: 0}
-  _maineScreen: {fileID: 0}
+  _uiDamageSystem: {fileID: 0}
   _immunitySphere: {fileID: 2114767831287713965}
   _maxHealth: 3
   _immunityTime: 4
@@ -162,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914c0daf379bde24ba310f17d60ec2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Materials:
+  _materials:
   - {fileID: 2100000, guid: c6c0973a20e300448bf8c47f3d179cfc, type: 2}
   - {fileID: 2100000, guid: 932e71a8fed40ff41932ba0bb82368a7, type: 2}
   - {fileID: 2100000, guid: c01cee6b529c59d4d8d007f2ab78074b, type: 2}
@@ -181,7 +173,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d7576592f4a450e4481512e365583ffe, type: 2}
   - {fileID: 2100000, guid: ff3e77341739ce44a904b51f3ed7cb41, type: 2}
   - {fileID: 2100000, guid: bbbc25a37036cf144a9fd909f6e6de63, type: 2}
-  Ball: {fileID: 3584698452484104033}
+  _ball: {fileID: 3584698452484104033}
 --- !u!114 &5502378530584054697
 MonoBehaviour:
   m_ObjectHideFlags: 0

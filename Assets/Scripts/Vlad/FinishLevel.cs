@@ -67,8 +67,9 @@ public class FinishLevel : MonoBehaviour
     }
     private void AddFinishReward(int reward)
     {
-        Bank.instance.PluralIncreaseCoinNumb(reward);
+        DataLoadSystem.GetLoader<Bank>("1").PluralIncreaseCoinNumb(reward);
         CoinManager.Instance.IncreaseCoinNumb(reward);
+        Debug.Log(TakePluralCoinTween.Instance);
         TakePluralCoinTween.Instance.WorldMove(this.transform.position, reward);
     }
 

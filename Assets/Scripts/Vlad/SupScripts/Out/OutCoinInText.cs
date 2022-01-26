@@ -17,7 +17,7 @@ public class OutCoinInText : MonoBehaviour
     }
     private void OutCoinNumber()
     {
-        _coinNubmerText.text = Bank.instance.GetCoin().ToString();
+        _coinNubmerText.text = DataLoadSystem.GetLoader<Bank>("1").GetCoin().ToString();
     }
     private void OnDestroy()
     {

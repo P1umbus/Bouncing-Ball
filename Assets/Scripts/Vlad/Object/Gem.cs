@@ -10,7 +10,7 @@ public class Gem : MonoBehaviour, IPickable
     public void OnTake()
     {
         this.gameObject.SetActive(false);
-        Bank.instance.PluralIncreaseCoinNumb(_value);
+        DataLoadSystem.GetLoader<Bank>("1").PluralIncreaseCoinNumb(_value);
         CoinManager.Instance.IncreaseCoinNumb(_value);
         TakeCoinTween.Instance.Move(this.transform.position); // Optional
     }

@@ -17,13 +17,16 @@ public class TakePluralCoinTween : MonoBehaviour
     }
     public void WorldMove(Vector3 objectPosition, int numb)
     {
+        Debug.Log("Pos1" + _camera.WorldToScreenPoint(objectPosition));
         this.transform.position = _camera.WorldToScreenPoint(objectPosition);
         this.gameObject.SetActive(true);
         _textCoinNumb.text = numb.ToString();
         LeanTween.move(this.gameObject, _moveTo.transform.position, _moveTime).setOnComplete(OnEnd);
+        Debug.Log("Pos2" + _moveTo.transform.position);
     }
     public void ScreenMove(Vector3 objectPosition, int numb)
     {
+        Debug.Log("Work");
         this.transform.position = objectPosition;
         this.gameObject.SetActive(true);
         _textCoinNumb.text = numb.ToString();

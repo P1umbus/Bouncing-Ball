@@ -2,24 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bank : MonoBehaviour
+[CreateAssetMenu(menuName = "Manager/Bank", fileName = "Bank")]
+
+public class Bank : BaseDataLoader
 {
-    public static Bank instance;
     private string PPCoinName = Constants.PPname.CoinNumb;
     private int _coinNumb;
 
-    private void Awake()
+    public override IEnumerator Init()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            return;
-        }
-        Destroy(this.gameObject);
-    }
-    private void Start()
-    {
+        yield return new WaitForSeconds(0f);
         DataLoad();
     }
     public int GetCoin()
@@ -84,4 +76,5 @@ public class Bank : MonoBehaviour
     {
         PlayerPrefs.SetInt(PPCoinName,_coinNumb);
     }
+
 }

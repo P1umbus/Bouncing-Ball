@@ -315,13 +315,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b23b22168dded34487bf77f4dcc94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Price: 0
-  SkinNumb: 0
+  _price: 0
+  _skinNumb: 0
   _rareBg:
   - {fileID: 3964906242730145066}
   - {fileID: 3964906243951491748}
   - {fileID: 3964906243991235491}
-  StatusText:
+  _statusText:
   - {fileID: 3964906244196511061}
   - {fileID: 6496191094005342018}
   - {fileID: 614782924763913958}

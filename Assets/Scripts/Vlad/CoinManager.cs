@@ -31,7 +31,7 @@ public class CoinManager : MonoBehaviour
         if(_multiplyAbility == true)
         {
             int MultiplyNumb = _coinNumber * (Multiply - 1);
-            Bank.instance.PluralIncreaseCoinNumb(MultiplyNumb);
+            DataLoadSystem.GetLoader<Bank>("1").PluralIncreaseCoinNumb(MultiplyNumb);
             TakePluralCoinTween.Instance.ScreenMove(pos, MultiplyNumb);
             _coinNumber *= Multiply;
             GameEvent.MultiplyCoin?.Invoke();
