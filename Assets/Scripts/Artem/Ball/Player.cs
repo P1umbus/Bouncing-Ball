@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Trap") && _currentImmunityTime >= _immunityTime)
+        if (collision.gameObject.layer == Constants.Layers.Trap && _currentImmunityTime >= _immunityTime)
         {
             GetDamaged();
             Handheld.Vibrate();

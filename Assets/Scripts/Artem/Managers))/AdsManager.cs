@@ -5,10 +5,8 @@ using UnityEngine.Advertisements;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = "Manager/AdsManager", fileName = "AdsManager")]
-public class AdsManager : BaseDataLoader, IUnityAdsInitializationListener, IUnityAdsLoadListener/*, IDataLoader*/
+public class AdsManager : BaseDataLoader, IUnityAdsInitializationListener, IUnityAdsLoadListener
 {
-    //public static AdsManager Instance { get; private set; }
-
     public static bool RewardedAdIsLoad { get; private set; }
     public static UnityEvent<string> AdLoadChange = new UnityEvent<string>();
 
@@ -19,6 +17,11 @@ public class AdsManager : BaseDataLoader, IUnityAdsInitializationListener, IUnit
     [Header("AdsSettings")]
     [SerializeField] private static List<string> _adsUsed = new List<string>{ "Rewarded_Android" };
 
+    public AdsManager()
+    {
+        Key = DataLoaders.AdsManager;
+    }
+
     public void AdIncluded(string placementId)
     {
         if (placementId == _adsUsed[0])
@@ -27,30 +30,6 @@ public class AdsManager : BaseDataLoader, IUnityAdsInitializationListener, IUnit
         LoadAd(placementId);
         AdLoadChange.Invoke(placementId);
     }
-
-    //private void Awake()
-    //{
-    //    if (Instance == null)
-    //    {
-    //        Instance = this;
-    //        DontDestroyOnLoad(this.gameObject);
-    //    }
-    //    else
-    //    {
-    //        Destroy(this.gameObject);
-    //        return;
-    //    }
-
-    //    Advertisement.Initialize(_androidGameId, _testMode);
-    //    Invoke(nameof(LoadAds), 1);
-    //}
-
-    //IEnumerator IDataLoader.Init()
-    //{
-    //    Advertisement.Initialize(_androidGameId, _testMode);
-    //    yield return new WaitForSeconds(1f);
-    //    LoadAds();
-    //}
 
     public override IEnumerator Init()
     {

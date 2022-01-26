@@ -24,7 +24,8 @@ public class BallControl : MonoBehaviour, IDragHandler
         if (_player.SqAndStr != null)
             _sqAndStr = _player.SqAndStr;
 
-        FirebaseManager.Instance?.StartLevel();
+        FirebaseManager firebaseManager = DataLoadSystem.GetLoader<FirebaseManager>(DataLoaders.FirebaseManager);
+        firebaseManager.StartLevel();
     }
 
     private void OnTouch()

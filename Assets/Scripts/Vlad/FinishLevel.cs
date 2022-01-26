@@ -76,7 +76,8 @@ public class FinishLevel : MonoBehaviour
     {
         if (_finished == true)
         {
-            FirebaseManager.Instance.EndLevel(_timeCompleteLevel);
+            FirebaseManager firebaseManager = DataLoadSystem.GetLoader<FirebaseManager>(DataLoaders.FirebaseManager);
+            firebaseManager.EndLevel(_timeCompleteLevel);
         }
         _nextLevelButton.onClick.RemoveListener(NextLevel);
     }

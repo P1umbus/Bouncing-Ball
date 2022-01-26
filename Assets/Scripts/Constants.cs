@@ -11,7 +11,21 @@ public static class Constants
         public const string ControlSensivity = "ControlSensivity";
         public const string NumbActiveLevel = "NumbActiveLevel";
     }
+
+    public class Layers
+    {
+        public const int Ball = 6;
+        public const int Trampoline = 7;
+        public const int Trap = 8;
+    }
+
     public const string ImmunitySphereAmount = "_Amount";
+}
+
+public enum DataLoaders
+{
+    AdsManager,
+    FirebaseManager
 }
 
 public enum Rarity

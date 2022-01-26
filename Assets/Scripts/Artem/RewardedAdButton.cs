@@ -22,7 +22,7 @@ public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
 
     private void Start()
     {
-        _adsManager = DataLoadSystem.GetLoader<AdsManager>("0");
+        _adsManager = DataLoadSystem.GetLoader<AdsManager>(DataLoaders.AdsManager);
         AdsManager.AdLoadChange.AddListener(AdLoaded);
         AdLoaded(_placementId);
     }

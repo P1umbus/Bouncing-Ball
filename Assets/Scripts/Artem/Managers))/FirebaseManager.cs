@@ -3,29 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Analytics;
 
-public class FirebaseManager : MonoBehaviour
+[CreateAssetMenu(menuName = "Manager/FirebaseManager", fileName = "FirebaseManager")]
+public class FirebaseManager : BaseDataLoader
 {
-    public static FirebaseManager Instance { get; private set; }
-
     private Firebase.FirebaseApp _app;
 
-    private void Awake()
+    public FirebaseManager()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-
-        InitFB();
+        Key = DataLoaders.FirebaseManager;
     }
 
-    private void InitFB()
+    public override IEnumerator Init()
     {
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
             var dependencyStatus = task.Result;
@@ -44,6 +32,8 @@ public class FirebaseManager : MonoBehaviour
                 // Firebase Unity SDK is not safe to use here.
             }
         });
+
+        yield return null;
     }
 
     private void GetLevelNumber()
