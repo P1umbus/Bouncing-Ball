@@ -7989,6 +7989,14 @@ PrefabInstance:
       propertyPath: currentLanguage
       value: Russian
       objectReference: {fileID: 0}
+    - target: {fileID: 6005877903433719348, guid: ba4da5e2d15cf824b8cf14169de51951, type: 3}
+      propertyPath: defaultLanguage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005877903433719348, guid: ba4da5e2d15cf824b8cf14169de51951, type: 3}
+      propertyPath: prefabs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6005877903433719349, guid: ba4da5e2d15cf824b8cf14169de51951, type: 3}
       propertyPath: m_RootOrder
       value: 8
