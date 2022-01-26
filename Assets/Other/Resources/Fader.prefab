@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50021cfab900e4d46891131b87ed9439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4775870673329850480}
-  LoadingPercent: {fileID: 5895944534856902128}
-  LoadingProgressBar: {fileID: 2508465138502141673}
+  _animator: {fileID: 4775870673329850480}
+  _loadingPercent: {fileID: 5895944534856902128}
+  _loadingProgressBar: {fileID: 2508465138502141673}
 --- !u!1 &5861928273608436706
 GameObject:
   m_ObjectHideFlags: 0

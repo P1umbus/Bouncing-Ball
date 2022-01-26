@@ -1,8 +1,7 @@
-using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using UnityEditor;
 using Lean.Localization;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {

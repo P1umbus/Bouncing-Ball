@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Firebase.Analytics;
+using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Manager/FirebaseManager", fileName = "FirebaseManager")]
 public class FirebaseManager : BaseDataLoader
@@ -43,8 +42,6 @@ public class FirebaseManager : BaseDataLoader
 
     public void StartLevel()
     {
-        Debug.Log(PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel));
-
         FirebaseAnalytics.LogEvent(FirebaseAnalytics.EventLevelStart,
             new Parameter(FirebaseAnalytics.ParameterLevelName, PlayerPrefs.GetInt(Constants.PPname.NumbActiveLevel)));
     }

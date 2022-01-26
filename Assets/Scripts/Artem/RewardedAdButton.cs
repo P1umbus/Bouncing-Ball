@@ -60,7 +60,7 @@ public class RewardedAdButton : MonoBehaviour, IUnityAdsShowListener
         if (placementId.Equals(_placementId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             CoinManager.Instance.MultiplyCoin(_pos, _coinMultiplier);
-            Debug.Log("Unity Ads Rewarded Ad Completed1");
+            Debug.Log("Unity Ads Rewarded Ad Completed");
         }
     }
 
