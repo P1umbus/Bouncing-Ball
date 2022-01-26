@@ -25,7 +25,8 @@ public static class Constants
 public enum DataLoaders
 {
     AdsManager,
-    FirebaseManager
+    FirebaseManager,
+    Bank
 }
 
 public enum Rarity

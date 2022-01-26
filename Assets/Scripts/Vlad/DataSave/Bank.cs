@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Manager/Bank", fileName = "Bank")]
-
 public class Bank : BaseDataLoader
 {
     private string PPCoinName = Constants.PPname.CoinNumb;
     private int _coinNumb;
+
+    public Bank()
+    {
+        Key = DataLoaders.Bank;
+    }
 
     public override IEnumerator Init()
     {
